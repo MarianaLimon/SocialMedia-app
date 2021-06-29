@@ -1,0 +1,13 @@
+.InputComponent{
+    border-radius: 4px;
+    color: var(--text-color);
+    border: 0px;
+    padding: 10px 24px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+::placeholder{
+    color: var(--text-color);
+    opacity: 1;
+}
