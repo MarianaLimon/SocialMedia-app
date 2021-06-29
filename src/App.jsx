@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 import Footer from "./components/footer";
-import { Icon } from '@iconify/react';
-import doctorIcon from '@iconify/icons-vaadin/doctor';
+import { Icon } from "@iconify/react";
+import doctorIcon from "@iconify/icons-vaadin/doctor";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -27,6 +27,7 @@ function App() {
       </div>
       
     </React.Fragment>
+
 
 
   );
