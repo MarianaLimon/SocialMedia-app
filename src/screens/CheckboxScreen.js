@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Checkbox from "../components/Checkbox";
+import AppCheckbox from "../components/AppCheckbox";
 
 const OPTIONS = ["One", "Two", "Three"];
 
@@ -52,7 +52,7 @@ class App extends Component {
   };
 
   createCheckbox = option => (
-    <Checkbox
+    <AppCheckbox
       label={option}
       isSelected={this.state.checkboxes[option]}
       onCheckboxChange={this.handleCheckboxChange}
