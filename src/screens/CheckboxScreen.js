@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import AppCheckbox from "../components/AppCheckbox";
+import AppCheckbox from "../components/commons/AppCheckbox";
 
-const OPTIONS = ["One", "Two", "Three"];
+const OPTIONS = ["One", "Two", "Three", "Four", "Five"];
 
 class App extends Component {
   state = {

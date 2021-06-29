@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import Footer from "./components/footer";
 import { Icon } from "@iconify/react";
@@ -10,14 +10,13 @@ import CheckboxScreen from "./screens/CheckboxScreen";
 
 function App() {
   return (
-
     <React.Fragment>
 
-    <Router>
-      <Route exact path="/checkbox">
-          <CheckboxScreen />
-      </Route>        
-    </Router>
+      <Router>
+        <Route exact path="/checkbox">
+            <CheckboxScreen />
+        </Route>        
+      </Router>
 
       <div className="App">
         <p>Holiiiii</p>
@@ -27,7 +26,6 @@ function App() {
       </div>
       
     </React.Fragment>
-
 
 
   );
