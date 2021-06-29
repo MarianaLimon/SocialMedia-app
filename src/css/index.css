@@ -4,8 +4,19 @@
     --blue-primary: #3C58C1;
     --blue-secondary: #5A96C4;
     --blue-ligth: #CBE8F6;
+    --hover-blue: invert(25%) sepia(43%) saturate(2122%) hue-rotate(207deg) brightness(111%) contrast(91%)
 }
 
 body{
     background-color: #F0F2F5;
+    font-family: 'Roboto', sans-serif;
+}
+
+.icon-left-menu{
+    color: var(--text-color);
+    font-size: 30px;
+}
+.icon-left-menu:hover{
+    filter: var(--hover-blue);
+    cursor: pointer;
 }
