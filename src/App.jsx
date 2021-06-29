@@ -6,8 +6,7 @@ import doctorIcon from '@iconify/icons-vaadin/doctor';
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Input from "./components/Input";
-import AppCheckbox from "./screens/AppCheckbox";
+import CheckboxScreen from "./screens/CheckboxScreen";
 
 function App() {
   return (
@@ -16,7 +15,7 @@ function App() {
 
     <Router>
       <Route exact path="/checkbox">
-          <AppCheckbox />
+          <CheckboxScreen />
       </Route>        
     </Router>
 

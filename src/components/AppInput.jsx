@@ -1,7 +1,7 @@
 // component pass ✅
 import React, { useState, useEffect } from 'react'
 
-import Styles from "./input.module.css"
+import Styles from "./AppInput.module.css"
 
 const Input = ({
   //classNameInput = '',

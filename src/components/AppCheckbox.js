@@ -1,8 +1,8 @@
 import React from "react";
 
-import Styles from "./Checkbox.module.css"
+import Styles from "./AppCheckbox.module.css"
 
-const Checkbox = ({ label, isSelected, onCheckboxChange }) => (
+const AppCheckbox = ({ label, isSelected, onCheckboxChange }) => (
   <div className="form-check">
     <label>
       <input
@@ -17,4 +17,4 @@ const Checkbox = ({ label, isSelected, onCheckboxChange }) => (
   </div>
 );
 
-export default Checkbox;
+export default AppCheckbox;
