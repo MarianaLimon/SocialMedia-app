@@ -3,7 +3,7 @@ import React from "react";
 import Styles from "./AppCheckbox.module.css"
 
 const AppCheckbox = ({ label, isSelected, onCheckboxChange }) => (
-  <div className="form-check">
+  <div className={`${Styles.CheckboxComponent}`}>
     <label>
       <input
         type="checkbox"
