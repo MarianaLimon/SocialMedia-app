@@ -1,8 +1,7 @@
 import React from "react";
 
 import Footer from "./components/footer";
-import { Icon } from "@iconify/react";
-import doctorIcon from "@iconify/icons-vaadin/doctor";
+import Icons from "./components/commons/icons";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -11,6 +10,8 @@ import CheckboxScreen from "./screens/CheckboxScreen";
 function App() {
   return (
     <React.Fragment>
+      <Icons value={'doctor'}/>
+      <Icons value={'home'}/>
 
       <Router>
         <Route exact path="/checkbox">
@@ -26,8 +27,6 @@ function App() {
       </div>
       
     </React.Fragment>
-
-
   );
 }
 
