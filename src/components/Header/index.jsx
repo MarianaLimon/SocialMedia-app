@@ -1,6 +1,7 @@
 import React from "react";
 
 import Logo from "./Logo";
+import AppImage from "../commons/AppImage";
 
 import "./index.css";
 
@@ -12,10 +13,10 @@ class Header extends React.Component {
           <Logo url="/" />
         </div>
         <div className="auth d-flex justify-content-center align-items-center">
-          <img
-            src="https://image.shutterstock.com/image-vector/vector-medical-doctor-icon-uniform-600w-1329028268.jpg"
-            alt="avatar"
-            className="tempAvatar"
+          <AppImage
+            pathImage="https://image.shutterstock.com/image-vector/vector-medical-doctor-icon-uniform-600w-1329028268.jpg"
+            classImage="avatar"
+            altImage="User Name"
           />
         </div>
       </nav>

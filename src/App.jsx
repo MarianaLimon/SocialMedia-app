@@ -1,6 +1,7 @@
 import React from "react";
 
 import Footer from "./components/footer";
+import Header from "./components/Header";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -18,7 +19,7 @@ function App() {
           <Route exact path="/test" component={Test} />
         </Switch>
       </Router>
-
+      <Header />
       <div className="App">
         <Footer />
       </div>
