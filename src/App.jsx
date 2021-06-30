@@ -1,7 +1,6 @@
 import React from "react";
 
 import Footer from "./components/footer";
-import Icons from "./components/commons/icons";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -11,9 +10,6 @@ import Test from "./screens/Test.js";
 function App() {
   return (
     <React.Fragment>
-      <Icons value={"doctor"} />
-      <Icons value={"home"} />
-
       <Router>
         <Switch>
           <Route exact path="/checkbox">
@@ -24,7 +20,6 @@ function App() {
       </Router>
 
       <div className="App">
-        <p>Holiiiii</p>
         <Footer />
       </div>
     </React.Fragment>
