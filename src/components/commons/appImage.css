@@ -1,0 +1,30 @@
+.avatar {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  border: 1px solid var(--text-color);
+  box-sizing: border-box;
+  border-radius: 71px;
+}
+.avatar-profile {
+  width: 140px;
+  height: 140px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  border-radius: 71px;
+}
+
+@media only screen and (min-width: 1024px) {
+  .avatar-profile {
+    width: 310px;
+    height: 310px;
+    border-radius: 200px;
+  }
+  .avatar {
+    width: 50px;
+    height: 50px;
+  }
+}
