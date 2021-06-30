@@ -1,12 +1,11 @@
 import Footer from "./components/footer";
-import { Icon } from '@iconify/react';
-import doctorIcon from '@iconify/icons-vaadin/doctor';
+import Icono from "./components/icono";
 
 function App() {
   return (
     <div className="App">
       <p>Holiiiii</p>
-      <Icon icon={doctorIcon} className='icon-left-menu' />
+      <Icono />
       <Footer />
     </div>
   );

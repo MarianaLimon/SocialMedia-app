@@ -1,0 +1,14 @@
+.icon{
+    color: var(--text-color);
+    font-size: 30px;
+}
+.icon:hover{
+    filter: var(--hover-blue);
+    cursor: pointer;
+}
+.active{
+    color: var(--blue-primary);
+}
+.active:hover{
+    color: var(--hover-blue) !important;
+}
