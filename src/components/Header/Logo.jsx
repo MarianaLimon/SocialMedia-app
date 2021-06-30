@@ -4,7 +4,7 @@ import imgLogo from "../../img/logo.png";
 const Logo = ({ url, props }) => {
   return (
     <a href={url ? url : "/"}>
-      <img src={imgLogo} alt="SocialMedic" />
+      <img src={imgLogo} className="logo" alt="SocialMedic" />
     </a>
   );
 };

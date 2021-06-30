@@ -1,0 +1,14 @@
+.header {
+  width: 100%;
+  padding: 0.5rem 2rem;
+  background: var(--blue-primary);
+}
+
+.header .logo {
+  margin: 0;
+  height: 2rem;
+}
+.header .tempAvatar {
+  height: 2rem;
+  border-radius: 50%;
+}
