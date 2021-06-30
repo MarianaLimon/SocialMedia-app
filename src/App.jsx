@@ -1,11 +1,11 @@
 import Footer from "./components/footer";
-import Icono from "./components/icono";
+import Icons from "./components/commons/icons";
 
 function App() {
   return (
     <div className="App">
       <p>Holiiiii</p>
-      <Icono />
+      <Icons />
       <Footer />
     </div>
   );
