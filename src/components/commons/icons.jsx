@@ -40,4 +40,5 @@ function Icons() {
     <SwitchCase value={'delete'} />
   );
 }
+
 export default Icons;
