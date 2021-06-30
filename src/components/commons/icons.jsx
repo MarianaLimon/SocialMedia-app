@@ -11,7 +11,6 @@ import filterIcon from '@iconify/icons-vaadin/filter';
 import doctorIcon from '@iconify/icons-vaadin/doctor';
 import trashIcon from '@iconify/icons-vaadin/trash';
 
-
 function Icons(props) {
   switch(props.value) {
     case 'home':
