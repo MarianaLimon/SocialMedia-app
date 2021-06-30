@@ -1,4 +1,20 @@
-.footer{
+footer{
     background-color: var(--blue-ligth);
-    height: 100px;
+    height: 90px;
+    display:grid;
+    align-items: center;
+}
+
+.footer-menu{
+    justify-content: space-around;
+}
+
+footer .icon{
+    font-size: 45px;
+    color: var(--blue-secondary);
+}
+
+
+footer .active{
+    color: var(--blue-primary) !important;
 }

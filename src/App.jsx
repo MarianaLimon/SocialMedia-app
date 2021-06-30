@@ -1,7 +1,6 @@
 import React from "react";
 
 import Footer from "./components/footer";
-import Icons from "./components/commons/icons";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -10,9 +9,6 @@ import CheckboxScreen from "./screens/CheckboxScreen";
 function App() {
   return (
     <React.Fragment>
-      <Icons value={'doctor'}/>
-      <Icons value={'home'}/>
-
       <Router>
         <Route exact path="/checkbox">
             <CheckboxScreen />
