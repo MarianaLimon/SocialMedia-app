@@ -21,8 +21,6 @@ function App() {
 
       <div className="App">
         <p>Holiiiii</p>
-        <Icon icon={doctorIcon} className='icon-left-menu' />
-
         <Footer />
       </div>
       
