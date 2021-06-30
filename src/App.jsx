@@ -5,7 +5,8 @@ function App() {
   return (
     <div className="App">
       <p>Holiiiii</p>
-      <Icons />
+      <Icons value={'doctor'}/>
+      <Icons value={'home'}/>
       <Footer />
     </div>
   );

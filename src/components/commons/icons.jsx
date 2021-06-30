@@ -12,33 +12,29 @@ import doctorIcon from '@iconify/icons-vaadin/doctor';
 import trashIcon from '@iconify/icons-vaadin/trash';
 
 
-function Icons() {
-  function SwitchCase(props) {
-    switch(props.value) {
-       case 'home':
-         return <Icon icon={homeIcon} className='icon'/>;
-       case 'webinars':
-         return <Icon icon={movieIcon} className='icon'/>;
-       case 'articles':
-         return <Icon icon={newspaperIcon} className='icon'/>;
-       case 'products':
-         return <Icon icon={pillsIcon} className='icon'/>;
-       case 'likes':
-         return <Icon icon={thumbsUp} className='icon'/>;
-       case 'comments':
-         return <Icon icon={commentsIcon} className='icon'/>;
-       case 'filter':
-         return <Icon icon={filterIcon} className= 'icon'/>;
-       case 'doctor':
-         return <Icon icon={doctorIcon} className= 'icon'/>;
-       case 'delete':
-         return <Icon icon={trashIcon} className= 'icon'/>;
-    }
+function Icons(props) {
+  switch(props.value) {
+    case 'home':
+      return <Icon icon={homeIcon}className='icon'/>;
+    case 'webinars':
+      return <Icon icon={movieIcon} className='icon'/>;
+    case 'articles':
+      return <Icon icon={newspaperIcon} className='icon'/>;
+    case 'products':
+      return <Icon icon={pillsIcon} className='icon'/>;
+    case 'likes':
+      return <Icon icon={thumbsUp} className='icon'/>;
+    case 'comments':
+      return <Icon icon={commentsIcon} className='icon'/>;
+    case 'filter':
+      return <Icon icon={filterIcon} className= 'icon'/>;
+    case 'doctor':
+      return <Icon icon={doctorIcon} className= 'icon'/>;
+    case 'delete':
+      return <Icon icon={trashIcon} className= 'icon'/>;
+    default:
+      return "sin icono"
   }
-  
-  return (
-    <SwitchCase value={'delete'} />
-  );
 }
 
 export default Icons;
