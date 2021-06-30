@@ -1,0 +1,29 @@
+.btn-link {
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 20px;
+  padding: 0.5rem 0.5rem;
+}
+.btn-link.aqua {
+  color: var(--aqua);
+}
+.btn-link.blue {
+  color: var(--blue-primary);
+}
+.button {
+  color: var(--white);
+  border-radius: 20px;
+  padding: 0.5rem 2rem;
+  /*border: 1px solid var(--text-color);*/
+}
+
+.button:hover {
+  color: var(--text-color);
+}
+.button.aqua {
+  background-color: var(--aqua);
+}
+
+.button.blue {
+  background-color: var(--blue-primary);
+}
