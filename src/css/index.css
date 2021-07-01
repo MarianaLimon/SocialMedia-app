@@ -4,9 +4,7 @@
   --blue-primary: #3c58c1;
   --blue-secondary: #5a96c4;
   --blue-ligth: #cbe8f6;
-  --hover-blue: invert(25%) sepia(43%) saturate(2122%) hue-rotate(207deg)
-    brightness(111%) contrast(91%);
-
+  --hover-blue: invert(25%) sepia(43%) saturate(2122%) hue-rotate(207deg) brightness(111%) contrast(91%);
   --background-color: #f0f2f5;
   --white: #ffffff;
   --blue-menu: #b8dff3;
