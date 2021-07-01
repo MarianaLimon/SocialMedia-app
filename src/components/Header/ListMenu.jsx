@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import Styles from "./listMenu.module.css";
 
 export default function ListMenu({ open }) {
-  const [closeMenu, setCloseMenu] = useState("d-none");
   const [openMenu, setOpenMenu] = useState("d-none");
 
   useEffect(() => {
