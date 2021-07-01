@@ -1,4 +1,5 @@
 import React from "react";
+import "./appImage.css";
 
 export default function AppImage(props) {
   const { pathImage, altImage, classImage } = props;
