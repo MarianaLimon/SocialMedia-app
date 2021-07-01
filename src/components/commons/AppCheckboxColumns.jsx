@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import AppCheckbox from "./commons/AppCheckbox";
+import AppCheckbox from "./AppCheckbox";
 
-import Styles from "./CheckboxColumns.module.css"
+import Styles from "./AppCheckboxColumns.module.css"
 
 const OPTIONS = ["Category 1", "Category 2", "Category 3", "Category 4", "Category 5"];
 
