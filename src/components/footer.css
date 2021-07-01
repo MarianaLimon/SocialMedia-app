@@ -3,6 +3,10 @@ footer{
     height: 90px;
     display:grid;
     align-items: center;
+    bottom: 0 !important;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
 }
 
 .footer-menu{
