@@ -8,13 +8,18 @@ footer{
     position: absolute;
     width: 100%;
 }
+@media screen and (max-width: 770px){
+    footer {
+        height: 65px !important;
+    }
+}
 
 .footer-menu{
     justify-content: space-around;
 }
 
 footer .icon{
-    font-size: 45px;
+    font-size: 40px;
     color: var(--blue-secondary);
 }
 
