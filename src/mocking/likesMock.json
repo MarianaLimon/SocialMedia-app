@@ -1,0 +1,38 @@
+{
+    "data": {
+        "likes": [
+            {
+                "_id": "60c6d560a810074068b8ede5",
+                "document_type": "webinars",
+                "document_id": "123",
+                "user_id": "55565",
+                "creationdate": "2021-06-14T04:04:48.603Z",
+                "__v": 0
+            },
+            {
+                "_id": "60c6d88cd599723c8cfcbede",
+                "document_type": "webinars",
+                "document_id": "123",
+                "user_id": "55545",
+                "creationdate": "2021-06-14T04:18:20.091Z",
+                "__v": 0
+            },
+            {
+                "_id": "60d277fe9fe8a9448c4fa504",
+                "document_type": "articles",
+                "document_id": "123123",
+                "user_id": "55545",
+                "creationdate": "2021-06-22T23:53:34.487Z",
+                "__v": 0
+            },
+            {
+                "_id": "60d278489fe8a9448c4fa505",
+                "document_type": "articles",
+                "document_id": "123123",
+                "user_id": "555445",
+                "creationdate": "2021-06-22T23:54:48.370Z",
+                "__v": 0
+            }
+        ]
+    }
+}

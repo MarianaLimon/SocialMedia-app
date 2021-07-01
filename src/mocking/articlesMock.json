@@ -1,0 +1,19 @@
+{
+    "data": {
+        "article": {
+            "tags": [
+                "covid"
+            ],
+            "_id": "60d2bb6287a4c540600d08e8",
+            "title": "titulo",
+            "image": "url",
+            "content": "Contentasdasd",
+            "user_id": "sdf234234",
+            "category_id": "sadasdasd",
+            "status": "enabled",
+            "creationdate": "2021-06-23T04:41:06.444Z",
+            "updatedate": "2021-06-23T04:41:06.444Z",
+            "__v": 0
+        }
+    }
+}
