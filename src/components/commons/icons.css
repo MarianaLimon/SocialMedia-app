@@ -3,7 +3,7 @@
   /* font-size: 30px; */
 }
 .icon:hover {
-  filter: var(--hover-blue);
+  /*filter: var(--hover-blue);*/
   cursor: pointer;
 }
 .active {
