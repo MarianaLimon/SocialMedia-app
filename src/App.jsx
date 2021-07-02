@@ -2,6 +2,7 @@ import React from "react";
 
 import Footer from "./components/footer";
 import Header from "./components/Header";
+import Login from "./screens/Login";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -25,6 +26,9 @@ function App() {
           </Route>
           <Route exact path="/tnksregister">
             <TnksRegister />
+          </Route>
+          <Route exact path="/login">
+            <Login />
           </Route>
           <Route exact path="/checkbox">
             <CheckboxScreen />
