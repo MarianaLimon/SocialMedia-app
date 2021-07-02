@@ -28,11 +28,19 @@ const AppModal = props => {
     >
       <div className="modal" onClick={props.onClose}>
         <div className="modal-content" onClick={e => e.stopPropagation()}>
+          {/* Modal Header */}
           <div className="modal-header">
             <h4 className="modal-title">{props.title}</h4>
           </div>
+          {/* Modal Body */}
           <div className="modal-body">{props.children}</div>
+          {/* Modal Footer */}
           <div className="modal-footer">
+            {/* Button Aceptar */}
+            <button onClick={props.onClose} className="button">
+              Aceptar
+            </button>
+            {/* Button Cancelar */}
             <button onClick={props.onClose} className="button">
               Aceptar
             </button>
