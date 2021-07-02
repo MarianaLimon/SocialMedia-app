@@ -34,6 +34,9 @@ const AppModal = props => {
           <div className="modal-body">{props.children}</div>
           <div className="modal-footer">
             <button onClick={props.onClose} className="button">
+              Aceptar
+            </button>
+            <button onClick={props.onClose} className="button">
               Cancelar
             </button>
           </div>
