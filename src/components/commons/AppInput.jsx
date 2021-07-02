@@ -32,6 +32,7 @@ const Input = ({
     <div className={`control ${classContainerInput}`}>
       <input
         //className={`${classNameInput}`}
+        type={props.type ? props.type : "text"}
         className={`${Styles.InputComponent}`}
         placeholder={`${placeholder}`}
         aria-describedby={ariaDescribedBy}
