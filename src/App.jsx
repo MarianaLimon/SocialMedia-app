@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Register from "./screens/Register";
+import TnksRegister from "./screens/ThanksRegister";
 import CheckboxScreen from "./screens/CheckboxScreen";
 import ModalScreen from "./screens/ModalScreen";
 import AppCard from "./components/commons/AppCard";
@@ -22,7 +23,9 @@ function App() {
           <Route exact path="/register">
             <Register />
           </Route>
-
+          <Route exact path="/tnksregister">
+            <TnksRegister />
+          </Route>
           <Route exact path="/checkbox">
             <CheckboxScreen />
           </Route>
