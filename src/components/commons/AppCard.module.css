@@ -1,8 +1,15 @@
 
-
+article{
+    box-shadow: 1px 2px 5px #666;
+}
 .AuthorWrapper{
     height: auto;
     display: flex;
+}
+
+.CardImage{
+    height: 230px;
+    object-fit: cover;
 }
 
 /*Name and creation Date*/

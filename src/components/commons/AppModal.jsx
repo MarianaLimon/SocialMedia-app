@@ -7,6 +7,33 @@ import "./AppModal.css";
 
 const AppModal = props => {
 
+  const botones = () => {
+    if(props.estado === "aviso"){
+      return (
+        <div className="modal-footer">
+        {/* Button Aceptar */}
+        <button onClick={props.onClose} className="button">
+          Aceptar
+        </button>
+      </div>
+      )
+    }
+
+    return(
+      <div className="modal-footer">
+        {/* Button Aceptar */}
+        <button onClick={props.onClose} className="button">
+          Aceptar
+        </button>
+        {/* Button Cancelar */}
+        <button onClick={props.onClose} className="button">
+          Cancelar
+        </button>
+      </div>
+    )
+
+  }
+
   const closeOnEscapeKeyDown = e => {
     if ((e.charCode || e.keyCode) === 27) {
       props.onClose();
@@ -34,20 +61,8 @@ const AppModal = props => {
           </div>
           {/* Modal Body */}
           <div className="modal-body">{props.children}</div>
-          {/* Modal Footer */}
-          <div className="modal-footer">
-            {/* Button Aceptar */}
-            <button onClick={props.onClose} className="button">
-              Aceptar
-            </button>
-            {/* Button Cancelar */}
-            <button onClick={props.onClose} className="button">
-              Aceptar
-            </button>
-            <button onClick={props.onClose} className="button">
-              Cancelar
-            </button>
-          </div>
+
+          {botones()}
         </div>
       </div>
     </CSSTransition>,
