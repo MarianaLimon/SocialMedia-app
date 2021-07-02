@@ -1,6 +1,6 @@
 import React from "react";
 import "./icons.css";
-import { Icon } from "@iconify/react";
+import { Icon, InlineIcon } from "@iconify/react";
 import homeIcon from "@iconify/icons-vaadin/home";
 import movieIcon from "@iconify/icons-vaadin/movie";
 import newspaperIcon from "@iconify/icons-vaadin/newspaper";

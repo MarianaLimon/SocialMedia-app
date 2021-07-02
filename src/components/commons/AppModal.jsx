@@ -42,6 +42,9 @@ const AppModal = props => {
             </button>
             {/* Button Cancelar */}
             <button onClick={props.onClose} className="button">
+              Aceptar
+            </button>
+            <button onClick={props.onClose} className="button">
               Cancelar
             </button>
           </div>

@@ -6,6 +6,26 @@
   /*filter: var(--hover-blue);*/
   cursor: pointer;
 }
+
+.icons-home .icon{
+  font-size: 200px;
+  color: var(--blue-secondary);
+  display:block;
+  margin:auto;
+}
+
+.icon-label{
+  font-size: 22px;
+  text-align: center;
+  color: var(--blue-secondary);
+  padding-top: 20px;
+  font-weight: bold;
+}
+
+a{
+  text-decoration: none;
+}
+
 .active {
   color: var(--blue-primary);
 }
