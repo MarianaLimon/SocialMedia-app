@@ -8,7 +8,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Register from "./screens/Register";
 import CheckboxScreen from "./screens/CheckboxScreen";
 import ModalScreen from "./screens/ModalScreen";
-import Card from "./components/commons/AppCard";
+import AppCard from "./components/commons/AppCard";
+import AppCardDetail from "./components/commons/AppCardDetail";
 import Test from "./screens/Test.js";
 
 function App() {
@@ -35,9 +36,21 @@ function App() {
               <div className="row">
                 <div className="col-2"></div>
                 <div className="col-8">
-                  <Card />
+                  <AppCard />
                 </div>
                 <div className="col-2"></div>
+              </div>
+            </div>
+          </Route>
+
+
+          <Route exact path="/card-detail">
+            <div className="container">
+              <div className="row">
+                <div className="col-2"></div>
+                <div className="col-10">
+                  <AppCardDetail />
+                </div>
               </div>
             </div>
           </Route>
