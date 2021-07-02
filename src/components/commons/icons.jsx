@@ -25,7 +25,7 @@ function Icons(props) {
     case "likes":
       return <Icon icon={thumbsUp} className="icon" />;
     case "comments":
-      return <Icon icon={commentsIcon} className="icon" />;
+      return <Icon icon={commentsIcon} className="icon commentsIcon" />;
     case "filter":
       return <Icon icon={filterIcon} className="icon" />;
     case "doctor":
