@@ -1,81 +1,62 @@
 
 
-.AuthorWrapper{
-    height: auto;
-    display: flex;
-}
-
-/*Name and creation Date*/
-
-.AuthorName{
-    padding-left: 0.5rem;
-    display: flex;
-    align-items: center;
-}
-
-.AuthorName div:first-of-type{
-    font-weight: bold;
-    font-size: 0.875rem;
-    color: var(--text-color);
-    margin-right: 12px;
-}
-
-.AuthorName div:last-of-type{
-    font-size: 0.875rem;
-    color: var(--text-color);
-}
-
-.AuthorName div:hover{
-    color: var(--text-color);
+.CardBody{
+    border-bottom: 1px solid #dee2e6;
+    padding: 2rem;
 }
 
 /*Card Title*/
 
-.CardTitle{
+.PublishedTitle{
     font-size: 2.25rem;
     margin: 6px 0;
 }
 
-.CardTitle a{
+.PublishedTitle a{
     color: var(--text-color);
     text-decoration: none;
     
 }
 
-.CardTitle a:hover{
+.PublishedTitle a:hover{
     color: var(--blue-primary)
 }
 
 /*Tags*/
 
-.Tags {
+.PublishedTags {
     margin-bottom: 0.75rem;
     font-size: 0.875rem;
     display: inline-block;
     color: var(--blue-secondary);
 }
-.Tags a:link, .Tags a:visited, .Tags a:active {
+.PublishedTags a:link, .PublishedTags a:visited, .PublishedTags a:active {
     text-decoration: none;
     color: var(--dark-grey);
     line-height: 1.3;
     border-radius: 5px;
     padding: 0.5rem 0.3rem 0.5rem 0;
 }
-.Tags a:link span, .Tags a:visited span, .Tags a:active span {
+.PublishedTags a:link span, .PublishedTags a:visited span, .PublishedTags a:active span {
     color: var(--dark-grey);
 }
-.Tags a:hover {
+.PublishedTags a:hover {
     color: var(--dark-grey);
-}
-.Tags.Tags-color a {
-    padding: 5px 10px !important;
-    margin-right: 6px;
 }
 
+
+
+
+/*Content*/
+
+.PublishedContent{
+    padding: 20px 0 0 0;
+    color: var(--text-color);
+}
 
 /*Reactions*/
 
-.Reactions {
+.PublishedReactions {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -84,15 +65,14 @@
    /*margin: 0.5rem 0 0;
    */
 }
-.Reactions .ReactionsWrapper {
+.PublishedReactions .ReactionsWrapper {
     display: flex;
-    margin: 1rem 0;
 }
 
-.Reactions .ReactionsWrapper a img {
+.PublishedReactions .ReactionsWrapper a img {
     margin-right: 12px;
 }
-.Reactions .ReactionsWrapper a {
+.PublishedReactions .ReactionsWrapper a {
     border-radius: 4px;
     text-decoration: none;
     display: flex;
@@ -103,13 +83,60 @@
     font-size: 12pt;
     padding: 6px;
 }
-.Reactions .ReactionsWrapper a:hover {
+.PublishedReactions .ReactionsWrapper a:hover {
     background-color: var(--light-grey);
     color: #000;
 }
 
-.Reactions .ReactionsWrapper svg {
+.PublishedReactions .ReactionsWrapper svg {
     margin-right: 10px;
     font-size: 16pt;
     color: var(--blue-primary)
+}
+
+/**************************************************************************************/
+
+.ReplyCard{
+    padding: 10px 2rem;
+}
+
+/***** Name and creation Date ******/
+
+.AuthorWrapper{
+    height: auto;
+    display: flex;
+    color: var(--text-color);
+}
+
+/*Author Data*/
+.AuthorData{
+    display: flex;
+    align-items: center;
+    font-size: 12pt;
+}
+
+.AuthorData img{
+    margin-right: 10px;
+}
+
+.AuthorName{
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+/*Date Data*/
+.DateData{
+    display: flex;
+    align-items: center;
+    font-size: 11pt;
+}
+
+/***** Post Comment ******/
+
+.CommentWrapper button{
+    background-color: var(--aqua);
+    color: #fff;
+    border-radius: 30px;
+    margin-top: 10px;
+    float: right;
 }
