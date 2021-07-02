@@ -27,3 +27,10 @@
 .button.blue {
   background-color: var(--blue-primary);
 }
+.button.secondary {
+  background-color: var(--blue-secondary);
+}
+
+.button.secondary:hover {
+  background-color: var(--aqua) !important;
+}

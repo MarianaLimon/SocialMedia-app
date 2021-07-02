@@ -5,6 +5,7 @@ import Header from "./components/Header";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+import Register from "./screens/Register";
 import CheckboxScreen from "./screens/CheckboxScreen";
 import ModalScreen from "./screens/ModalScreen";
 import Card from "./components/commons/AppCard";
@@ -13,8 +14,13 @@ import Test from "./screens/Test.js";
 function App() {
   return (
     <React.Fragment>
+      <Header />
+
       <Router>
         <Switch>
+          <Route exact path="/register">
+            <Register />
+          </Route>
 
           <Route exact path="/checkbox">
             <CheckboxScreen />
@@ -42,10 +48,7 @@ function App() {
         </Switch>
       </Router>
 
-      <Header />
-      <div className="App">
-        <Footer />
-      </div>
+      <Footer />
     </React.Fragment>
   );
 }

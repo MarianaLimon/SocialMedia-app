@@ -18,6 +18,12 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+h1{
+  text-align: center;
+  color: var(--blue-secondary);
+  font-weight: 700;
+}
+
 .icon-left-menu {
   color: var(--text-color);
   font-size: 30px;
@@ -29,4 +35,16 @@ body {
 
 .select {
   appearance: auto;
+}
+
+.banner-register{
+  width: 90vw;
+  display:block;
+  margin: auto;
+}
+
+@media screen and (min-width: 770px){
+  .banner-register{
+    width: 68vh;
+  }
 }
