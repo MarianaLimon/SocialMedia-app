@@ -60,3 +60,17 @@ p{
     width: 68vh;
   }
 }
+
+.avatar-edit-profile{
+  display:block;
+  margin: auto;
+  width: 18rem;
+  border-radius: 50%;
+  margin-top: 3rem;
+}
+
+.checkbox-list{
+  columns: 2;
+  max-width: 550px;
+  margin: 0 auto;
+}
