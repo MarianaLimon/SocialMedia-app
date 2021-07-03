@@ -32,7 +32,6 @@ export default function AppCardDetail(props) {
             {/* Tags */}
             <div className={`${Styles.PublishedTags} tags-color d-flex flex-wrap`}> #webdev #wordpress #frontend #tutorial </div>
 
-
             {/* Contenedor del avatar y el name */}
             <AppPostAuthorInfo estado="full-info"/>
 
@@ -74,7 +73,6 @@ export default function AppCardDetail(props) {
                             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. At, consequatur?</p>
                         </div>                        
                      </div>  {/* Fin del Comment List */}
-
 
                     {/* ************* Post Comments ************** */}
                     

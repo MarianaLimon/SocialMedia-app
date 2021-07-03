@@ -4,6 +4,8 @@ import Icons from "./icons";
 
 // import AppCheckboxFilter from "../components/commons/AppCheckboxFilter";
 import AppImage from "./AppImage";
+import AppPostAuthorInfo from "./AppPostAuthorInfo"
+
 
 import Styles from "./AppCard.module.css"
 
@@ -30,15 +32,8 @@ export default function AppCard() {
             {/* Tags */}
             <div className={`${Styles.Tags} tags-color d-flex flex-wrap`}> #webdev #wordpress #frontend #tutorial </div>
 
-            {/* Author Wrapper */}
-            <div className={`${Styles.AuthorWrapper}`}>
-                <AppImage classImage="avatar" pathImage={author} altImage="author-img"></AppImage>
-
-                <div className={`${Styles.AuthorName}`}>
-                    <div>Name</div>
-                    <div>Creation date</div>
-                </div>
-            </div>
+            {/* Contenedor del avatar y el name */}
+            <AppPostAuthorInfo estado="full-info"/>
 
             {/* Reactions */}
             <div className={`${Styles.Reactions}`}>
@@ -70,15 +65,8 @@ export default function AppCard() {
             {/* Tags */}
             <div className={`${Styles.Tags} tags-color d-flex flex-wrap`}> #webdev #wordpress #frontend #tutorial </div>
 
-            {/* Author Wrapper */}
-            <div className={`${Styles.AuthorWrapper}`}>
-                <AppImage classImage="avatar" pathImage={author} altImage="author-img"></AppImage>
-
-                <div className={`${Styles.AuthorName}`}>
-                    <div>Name</div>
-                    <div>Creation date</div>
-                </div>
-            </div>
+            {/* Contenedor del avatar y el name */}
+            <AppPostAuthorInfo estado="full-info"/>
 
             {/* Reactions */}
             <div className={`${Styles.Reactions}`}>
