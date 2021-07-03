@@ -1,12 +1,11 @@
 import React from "react";
 
-import Icons from "./icons";
-
 // import AppCheckboxFilter from "../components/commons/AppCheckboxFilter";
 import AppImage from "./AppImage";
 import AppInput from "./AppInput";
 import AppTextarea from "./AppTextarea";
 import AppPostAuthorInfo from "./AppPostAuthorInfo";
+import AppPostReactions from "./AppPostReactions";
 
 import Styles from "./AppCardDetail.module.css"
 
@@ -41,18 +40,8 @@ export default function AppCardDetail(props) {
             </div>
 
             {/* Reactions */}
-            <div className={`${Styles.PublishedReactions}`}>
-                <div className={`${Styles.ReactionsWrapper}`}>
-                    <a href="#">
-                        <Icons value="likes" />
-                        <span>10 </span><span className="react-text"> &nbsp;Likes</span>
-                    </a>
-                    <a href="#">
-                        <Icons value="comments" />
-                        <span className="react-text">6 Comments</span>
-                    </a>
-                </div>
-            </div>
+            <AppPostReactions/>
+
         </div>  {/* Fin del Card Body */}
 
 
