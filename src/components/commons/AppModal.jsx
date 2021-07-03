@@ -71,3 +71,13 @@ const AppModal = props => {
 };
 
 export default AppModal;
+
+
+{/* 
+  
+  <button onClick={() => setShow(true)}>Show Modal</button>
+  <AppModal title="Modal Title" onClose={() => setShow(false)} show={show} estado=" ">
+    <p>This is modal body</p>
+  </AppModal> 
+
+*/}

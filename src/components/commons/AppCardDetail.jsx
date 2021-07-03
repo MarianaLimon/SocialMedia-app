@@ -6,13 +6,14 @@ import Icons from "./icons";
 import AppImage from "./AppImage";
 import AppInput from "./AppInput";
 import AppTextarea from "./AppTextarea";
+import AppPostAuthorInfo from "./AppPostAuthorInfo";
 
 import Styles from "./AppCardDetail.module.css"
 
 import banner from "../../img/card/banner.jpg"
 import author from "../../img/card/author.jpg"
 
-export default function AppCardDetail() {
+export default function AppCardDetail(props) {
 
   return (
     <React.Fragment>
@@ -33,21 +34,7 @@ export default function AppCardDetail() {
 
 
             {/* Contenedor del avatar y el name */}
-            <div className={`${Styles.AuthorWrapper} py-1`}>
-
-                <div className={`${Styles.AuthorData}`}>
-                    <AppImage classImage="avatar" pathImage={author} altImage="author-img"></AppImage>
-
-                    <div className={`${Styles.AuthorName}`}>
-                        <div>Name</div>
-                    </div>
-                </div>   
-                
-                <div className={`${Styles.DateData}`} >
-                    <div>Creation date</div>                        
-                </div>
-            </div>
-
+            <AppPostAuthorInfo estado="full-info"/>
 
             {/* Content */}
             <div className={`${Styles.PublishedContent}`}>
@@ -73,27 +60,14 @@ export default function AppCardDetail() {
         {/* /////////////////  Seccion Comments  ////////////// */}
 
         <div class={`${Styles.ReplyCard}`}>
+            
             <div class="w-100">
-
                     {/* ************* Lists Comments ************** */}
 
                     <div className="CommentList my-3">
 
                         {/* Contenedor del avatar y el name */}
-                        <div className={`${Styles.AuthorWrapper} py-1 justify-content-between`}>
-
-                            <div className={`${Styles.AuthorData}`}>
-                                <AppImage classImage="avatar" pathImage={author} altImage="author-img"></AppImage>
-
-                                <div className={`${Styles.AuthorName}`}>
-                                    <div>Name</div>
-                                </div>
-                            </div>   
-                            
-                            <div className={`${Styles.DateData}`} >
-                                <div>Creation date</div>                        
-                            </div>
-                        </div>
+                        <AppPostAuthorInfo cname="justify-content-between" estado="full-info"/>
 
                         {/* Contenedor del comment publicado */}
                         <div class={`w-100 p-2 my-2 border rounded`}>
@@ -105,16 +79,8 @@ export default function AppCardDetail() {
                     {/* ************* Post Comments ************** */}
                     
                     {/* Contenedor del avatar y el name */}
-                    <div className={`${Styles.AuthorWrapper} py-1`}>
+                    <AppPostAuthorInfo estado=" "/>
 
-                        <div className={`${Styles.AuthorData}`}>
-                            <AppImage classImage="avatar" pathImage={author} altImage="author-img"></AppImage>
-
-                            <div className={`${Styles.AuthorName}`}>
-                                <div>Name</div>
-                            </div>
-                        </div>   
-                    </div>
                         
                      {/* Seccion para Publicar un Comentario    */}
                     <div className={`${Styles.CommentWrapper} w-100 my-2 `}>
