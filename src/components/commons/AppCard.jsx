@@ -5,7 +5,7 @@ import Icons from "./icons";
 // import AppCheckboxFilter from "../components/commons/AppCheckboxFilter";
 import AppImage from "./AppImage";
 import AppPostAuthorInfo from "./AppPostAuthorInfo"
-
+import AppPostReactions from "./AppPostReactions"
 
 import Styles from "./AppCard.module.css"
 
@@ -36,18 +36,8 @@ export default function AppCard() {
             <AppPostAuthorInfo estado="full-info"/>
 
             {/* Reactions */}
-            <div className={`${Styles.Reactions}`}>
-                <div className={`${Styles.ReactionsWrapper}`}>
-                    <a href="#">
-                        <Icons value="likes" />
-                        <span>10 </span><span className="react-text"> &nbsp;Likes</span>
-                    </a>
-                    <a href="#">
-                        <Icons value="comments" />
-                        <span className="react-text">6 Comments</span>
-                    </a>
-                </div>
-            </div>
+            <AppPostReactions/>
+
         </div>
     </article>
 
@@ -69,18 +59,8 @@ export default function AppCard() {
             <AppPostAuthorInfo estado="full-info"/>
 
             {/* Reactions */}
-            <div className={`${Styles.Reactions}`}>
-                <div className={`${Styles.ReactionsWrapper}`}>
-                    <a href="#">
-                        <Icons value="likes" />
-                        <span>10 </span><span className="react-text"> &nbsp;Likes</span>
-                    </a>
-                    <a href="#">
-                        <Icons value="comments" />
-                        <span className="react-text">6 Comments</span>
-                    </a>
-                </div>
-            </div>
+            <AppPostReactions/>
+
         </div>
     </article>
 

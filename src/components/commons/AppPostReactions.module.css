@@ -1,0 +1,40 @@
+/*Reactions*/
+
+.Reactions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    color: #4f4f4f;
+   /*margin: 0.5rem 0 0;
+   */
+}
+.Reactions .ReactionsWrapper {
+    display: flex;
+    margin: 1rem 0;
+}
+
+.Reactions .ReactionsWrapper a img {
+    margin-right: 12px;
+}
+.Reactions .ReactionsWrapper a {
+    border-radius: 4px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin: auto 1.5rem auto 0px;
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 12pt;
+    padding: 6px;
+}
+.Reactions .ReactionsWrapper a:hover {
+    background-color: var(--light-grey);
+    color: #000;
+}
+
+.Reactions .ReactionsWrapper svg {
+    margin-right: 10px;
+    font-size: 16pt;
+    color: var(--blue-secondary)
+}
