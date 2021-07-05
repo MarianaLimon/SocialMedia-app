@@ -15,9 +15,10 @@ import ArticlesList from "./screens/ArticlesList";
 import ArticleDetail from "./screens/ArticleDetail";
 import WebinarsList from "./screens/WebinarsList";
 import WebinarDetail from "./screens/WebinarDetail";
+import ProductDetail from "./screens/ProductDetail";
 
 // Examples and Tests
-
+import AppCardProductDetail from "./components/commons/AppCardProductDetail";
 import CheckboxScreen from "./screens/CheckboxScreen";
 import ModalScreen from "./screens/ModalScreen";
 
@@ -57,6 +58,10 @@ function App() {
 
           <Route exact path="/webinar-detail">
             <WebinarDetail/>
+          </Route>
+
+          <Route exact path="/product-detail">
+            <ProductDetail/>
           </Route>
 
           {/* ************ EXAMPLES AND TESTS ********* */}

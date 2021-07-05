@@ -9,8 +9,7 @@ import AppPostReactions from "./AppPostReactions"
 
 import Styles from "./AppCardArticle.module.css"
 
-import banner from "../../img/card/banner.jpg"
-import author from "../../img/card/author.jpg"
+import banner from "../../img/card/banner-article.jpg"
 
 export default function AppCardArticle() {
 
