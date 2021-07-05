@@ -12,10 +12,10 @@ export default function EditProfile() {
         <div className="row mb-5">
           <div className="col mb-5">
             <AppImage pathImage="https://avatars.githubusercontent.com/u/17584137?v=4" classImage="avatar-edit-profile" altImage=""/>
-            <AppButton classButton="aqua w-25 d-block mx-auto my-5" type="submit" text="Subir foto de perfil" />            
+            <AppButton classButton="aqua btn-profile-primary d-block mx-auto my-5" type="submit" text="Subir foto de perfil" />            
             <form action="" >
               <div className="d-flex flex-column justify-content-center align-items-md-center">
-                <Input placeholder="NickName" type="text" classContainerInput="w-50 " required/>
+                <Input placeholder="NickName" type="text" classContainerInput="input-nick-name" required/>
               </div>
               <div className="checkbox-list">
                 <AppCheckbox label="Sobrepeso y Obesidad" />
@@ -24,8 +24,8 @@ export default function EditProfile() {
                 <AppCheckbox label="Cardiovascular y Metabólico" />
                 <AppCheckbox label="Salud Femenina" />
               </div>
-              <AppButton classButton="aqua w-25 d-block mx-auto my-5" type="submit" text="Guardar cambios" />
-              <AppButton classButton="secondary w-25 d-block mx-auto my-5" type="submit" text="Cerrar Sesión" />
+              <AppButton classButton="aqua btn-profile-primary d-block mx-auto my-5" type="submit" text="Guardar cambios" />
+              <AppButton classButton="secondary btn-profile-secondary d-block mx-auto my-5" type="submit" text="Cerrar Sesión" />
             </form>
           </div>
         </div>
