@@ -12,7 +12,7 @@ const AppPostAuthorInfo = props => {
         return (
             <React.Fragment>
                 {/* Contenedor del avatar y el name */}
-                <div className={`${props.cname} ${Styles.AuthorWrapper} py-1`}>
+                <div className={`${props.cname} ${Styles.AuthorWrapper} py-2`}>
                     <div className={`${Styles.AuthorData}`}>
                         <AppImage classImage="avatar" pathImage={author} altImage="author-img"></AppImage>
                         <div className={`${Styles.AuthorName}`}>
@@ -30,7 +30,7 @@ const AppPostAuthorInfo = props => {
     return (
         <React.Fragment>
             {/* Contenedor del avatar y el name */}
-            <div className={`${Styles.AuthorWrapper} py-1`}>
+            <div className={`${Styles.AuthorWrapper} py-2`}>
                 <div className={`${Styles.AuthorData}`}>
                     <AppImage classImage="avatar" pathImage={author} altImage="author-img"></AppImage>
                     <div className={`${Styles.AuthorName}`}>
