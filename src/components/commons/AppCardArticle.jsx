@@ -17,52 +17,28 @@ export default function AppCardArticle() {
   return (
     <React.Fragment>
 
+        <article className="card mb-3 nav-view-post">
 
-    <article className="card mb-3 nav-view-post">
+            <AppImage classImage={`${Styles.CardImage} w-100`} pathImage={banner} altImage="banner-img"></AppImage>
 
-        <AppImage classImage={`${Styles.CardImage} w-100`} pathImage={banner} altImage="banner-img"></AppImage>
+            <div className="card-body">
 
-        <div className="card-body">
+                {/* Title */}
+                <h2 className={`${Styles.CardTitle}`}>
+                    <a href="#">Title</a>
+                </h2>
 
-            {/* Title */}
-            <h2 className={`${Styles.CardTitle}`}>
-                <a href="#">Title</a>
-            </h2>
+                {/* Tags */}
+                <div className={`${Styles.Tags} tags-color d-flex flex-wrap`}> #webdev #wordpress #frontend #tutorial </div>
 
-            {/* Tags */}
-            <div className={`${Styles.Tags} tags-color d-flex flex-wrap`}> #webdev #wordpress #frontend #tutorial </div>
+                {/* Contenedor del avatar y el name */}
+                <AppPostAuthorInfo estado="full-info"/>
 
-            {/* Contenedor del avatar y el name */}
-            <AppPostAuthorInfo estado="full-info"/>
+                {/* Reactions */}
+                <AppPostReactions/>
 
-            {/* Reactions */}
-            <AppPostReactions/>
-
-        </div>
-    </article>
-
-    <article className="card mb-3 nav-view-post">
-
-        <AppImage classImage={`${Styles.CardImage} w-100`} pathImage={banner} altImage="banner-img"></AppImage>
-
-        <div className="card-body">
-
-            {/* Title */}
-            <h2 className={`${Styles.CardTitle}`}>
-                <a href="#">Title</a>
-            </h2>
-
-            {/* Tags */}
-            <div className={`${Styles.Tags} tags-color d-flex flex-wrap`}> #webdev #wordpress #frontend #tutorial </div>
-
-            {/* Contenedor del avatar y el name */}
-            <AppPostAuthorInfo estado="full-info"/>
-
-            {/* Reactions */}
-            <AppPostReactions/>
-
-        </div>
-    </article>
+            </div>
+        </article>
 
     </React.Fragment>
   );
