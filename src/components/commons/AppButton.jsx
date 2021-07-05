@@ -37,7 +37,7 @@ export default AppButton;
 /*
 
 <AppButton
-  classButton="aqua"    //aqua blue 
+  classButton="aqua"    //aqua blue secondary
   type="anchor"         //anchor, submit, button
   text="Registrar"
   url="http://url"      // only for anchor

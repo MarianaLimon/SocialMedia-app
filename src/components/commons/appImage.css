@@ -24,7 +24,8 @@
     border-radius: 200px;
   }
   .avatar {
-    width: 50px;
-    height: 50px;
+    width: 36px;
+    height: 36px;
+    float: left;
   }
 }

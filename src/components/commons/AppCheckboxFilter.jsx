@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import AppCheckbox from "../components/commons/AppCheckbox";
+import AppCheckbox from "./AppCheckbox";
 
-const OPTIONS = ["One", "Two", "Three", "Four", "Five"];
+import Styles from "./AppCheckboxFilter.module.css"
+
+const OPTIONS = ["Category 1", "Category 2", "Category 3", "Category 4", "Category 5"];
 
 class App extends Component {
   state = {
@@ -64,14 +66,20 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="row mt-5">
-          <div className="col-sm-12">
+      <div className={`container ${Styles.CheckContainer}`}>
+        <div className="row">
+
+          <div className="col-12">
+            <h1>Categories</h1>
+          </div>
+
+          <div className={`col-sm-12 mt-2 ${Styles.CheckOptions}`}>
             <form onSubmit={this.handleFormSubmit}>
               {this.createCheckboxes()}
+            </form>
 
-              <div className="form-group mt-2">
-                <button
+            <div className="form-group d-flex justify-content-center mt-4">
+                {/* <button
                   type="button"
                   className="btn btn-outline-primary mr-2"
                   onClick={this.selectAll}
@@ -84,12 +92,12 @@ class App extends Component {
                   onClick={this.deselectAll}
                 >
                   Deselect All
-                </button>
-                <button type="submit" className="btn btn-primary">
-                  Save
+                </button> */}
+                <button type="submit" className="btn btn-primary text-center">
+                  Aplicar Filtro
                 </button>
               </div>
-            </form>
+
           </div>
         </div>
       </div>

@@ -3,10 +3,17 @@ footer{
     height: 90px;
     display:grid;
     align-items: center;
-    bottom: 0 !important;
     pointer-events: none;
     position: absolute;
     width: 100%;
+    margin-top: auto;
+    bottom: 0px;
+    position: fixed;
+}
+@media screen and (max-width: 770px){
+    footer {
+        height: 65px !important;
+    }
 }
 
 .footer-menu{
@@ -14,7 +21,7 @@ footer{
 }
 
 footer .icon{
-    font-size: 45px;
+    font-size: 40px;
     color: var(--blue-secondary);
 }
 

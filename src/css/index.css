@@ -4,17 +4,36 @@
   --blue-primary: #3c58c1;
   --blue-secondary: #5a96c4;
   --blue-ligth: #cbe8f6;
-  --hover-blue: invert(25%) sepia(43%) saturate(2122%) hue-rotate(207deg)
-    brightness(111%) contrast(91%);
-
+  --hover-blue: invert(25%) sepia(43%) saturate(2122%) hue-rotate(207deg) brightness(111%) contrast(91%);
   --background-color: #f0f2f5;
   --white: #ffffff;
+  --blue-menu: #b8dff3;
+  --light-grey: #fafafa;
+  --dark-grey: #08090a;
 }
 
 body {
   background-color: var(--background-color);
 
   font-family: "Roboto", sans-serif;
+}
+
+h1{
+  text-align: center;
+  color: var(--blue-secondary);
+  font-weight: 700;
+}
+
+.tnks{
+  color: var(--text-color);
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+p{
+  font-size: 18px;
+  color: var(--text-color);
 }
 
 .icon-left-menu {
@@ -30,3 +49,14 @@ body {
   appearance: auto;
 }
 
+.banner-register{
+  width: 90vw;
+  display:block;
+  margin: auto;
+}
+
+@media screen and (min-width: 770px){
+  .banner-register{
+    width: 68vh;
+  }
+}
