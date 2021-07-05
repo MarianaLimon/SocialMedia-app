@@ -13,11 +13,11 @@ const AppPostReactions = props => {
                 <div className={`${Styles.ReactionsWrapper}`}>
                     <a href="#">
                         <Icons value="likes" />
-                        <span>10 </span><span className="react-text"> &nbsp;Likes</span>
+                        <span>10</span><span className={`${Styles.ReactionsText}`}>Likes</span>
                     </a>
                     <a href="#">
                         <Icons value="comments" />
-                        <span className="react-text">6 Comments</span>
+                        <span>6</span><span className={`${Styles.ReactionsText}`}>Comments</span>
                     </a>
                 </div>
             </div>
