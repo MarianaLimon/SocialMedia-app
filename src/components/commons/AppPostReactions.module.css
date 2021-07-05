@@ -38,3 +38,15 @@
     font-size: 16pt;
     color: var(--blue-secondary)
 }
+
+.ReactionsText{
+    margin-left: 10px;
+    display: none;
+}
+
+@media screen and (min-width: 770px){
+    .ReactionsText{
+        display: block;
+    }
+    
+}
