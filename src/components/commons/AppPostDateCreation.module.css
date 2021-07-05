@@ -1,0 +1,14 @@
+/*Date Data*/
+.DateCreation{
+    display: flex;
+    align-items: center;
+    font-size: 12pt;
+
+}
+
+@media screen and (min-width: 992px){
+    .DateCreation{
+
+        display: block;
+    }
+}

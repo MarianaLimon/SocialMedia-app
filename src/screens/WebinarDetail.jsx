@@ -17,7 +17,6 @@ export default function WebinarDetail() {
             </div>
         </div>
         
-
     </React.Fragment>
   );
 }

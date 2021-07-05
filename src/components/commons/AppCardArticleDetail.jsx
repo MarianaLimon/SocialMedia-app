@@ -64,7 +64,7 @@ export default function AppCardArticleDetail(props) {
                     {/* ************* Post Comments ************** */}
                     
                     {/* Contenedor del avatar y el name */}
-                    <AppPostAuthorInfo estado=" "/>
+                    <AppPostAuthorInfo estado="none"/>
 
                         
                      {/* Seccion para Publicar un Comentario    */}
