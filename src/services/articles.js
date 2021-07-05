@@ -2,7 +2,12 @@ import { API_URL_ARTICLES } from "./index.js";
 
 export const getArticles = async () => {
     try {
-        const response = await fetch(API_URL_ARTICLES);
+
+        const response = await fetch(API_URL_ARTICLES, {
+            headers: {
+                "authorization": localStorage.getItem("token")
+            }
+        })
         const allArticles = await response.json();
         return await allArticles.data.articles;
     } catch (error) {
@@ -12,7 +17,11 @@ export const getArticles = async () => {
 
 export const getArticleById = async (id) => {
     try {
-        const response = await fetch(`${API_URL_ARTICLES}/${id}`);
+        const response = await fetch(`${API_URL_ARTICLES}/${id}`, {
+            headers: {
+                "authorization": localStorage.getItem("token")
+            }
+        })
         const article = await response.json();
         return article.data.article;
     } catch (error) {
@@ -25,6 +34,7 @@ export const postArticle = async (data) => {
         method: "POST",
         headers: {
             "Content-Type": "application/JSON",
+            "authorization": localStorage.getItem("token")
         },
         body: JSON.stringify(data),
     });
@@ -36,6 +46,7 @@ export const patchArticle = async (id, data) => {
         method: "PATCH",
         headers: {
             "Content-Type": "application/JSON",
+            "authorization": localStorage.getItem("token")
         },
         body: JSON.stringify(data),
     });
@@ -47,6 +58,7 @@ export const deleteArticle = async (id) => {
         method: "DELETE",
         headers: {
             "Content-Type": "application/JSON",
+            "authorization": localStorage.getItem("token")
         },
     });
     return await response.json();
