@@ -18,7 +18,7 @@ export default function Login() {
               <Input placeholder="Correo electrónico" type="email" required />
               <Input placeholder="Contraseña" type="password" required />
               <AppButton classButton="secondary w-50 d-block mx-auto mt-5" type="submit" text="INGRESAR" />
-              <p className="text-center">¿Aún no estás registrado?<AppButton classButton="aqua" type="anchor" text="Registrate aquí" /></p>
+              <p className="text-center">¿Aún no estás registrado?<AppButton classButton="aqua" type="anchor" text="Registrate aquí" url="/register" /></p>
             </form>
           </div>
         </div>
