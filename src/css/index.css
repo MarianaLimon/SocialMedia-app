@@ -55,8 +55,39 @@ p{
   margin: auto;
 }
 
+
+
+.avatar-edit-profile{
+  display:block;
+  margin: auto;
+  width: 16rem;
+  border-radius: 50%;
+  margin-top: 3rem;
+}
+
+.checkbox-list{
+  columns: 2;
+  max-width: 530px;
+  margin: 0 auto;
+  padding-left: 13px;
+  padding-right: 13px;
+}
+
+.btn-profile-primary{
+  width: 16rem;
+}
+
+.btn-profile-secondary{
+  width: 12rem;
+}
+
+
 @media screen and (min-width: 770px){
   .banner-register{
     width: 68vh;
+  }
+
+  .input-nick-name{
+    width: 35rem;
   }
 }

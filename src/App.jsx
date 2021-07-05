@@ -10,6 +10,7 @@ import Register from "./screens/Register";
 import TnksRegister from "./screens/ThanksRegister";
 import Login from "./screens/Login";
 import HomeDoctor from "./screens/HomeDoctor";
+import EditProfile from "./screens/EditProfile";
 
 import ArticlesList from "./screens/ArticlesList";
 import ArticleDetail from "./screens/ArticleDetail";
@@ -44,8 +45,16 @@ function App() {
 
           <Route exact path="/home"><HomeDoctor /></Route>
 
+
+          <Route exact path="/profile"><EditProfile /></Route>
+
+          <Route exact path="/checkbox">
+            <CheckboxScreen />
+          </Route>
+
           <Route exact path="/articles">
             <ArticlesList/>
+
           </Route>
 
           <Route exact path="/article-detail">
