@@ -5,17 +5,23 @@ import Header from "./components/Header";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+// Front Screens
 import Register from "./screens/Register";
 import TnksRegister from "./screens/ThanksRegister";
 import Login from "./screens/Login";
 import HomeDoctor from "./screens/HomeDoctor";
 
+import ArticlesList from "./screens/ArticlesList";
+import ArticleDetail from "./screens/ArticleDetail";
+import WebinarsList from "./screens/WebinarsList";
+import WebinarDetail from "./screens/WebinarDetail";
+
+// Examples and Tests
+
 import CheckboxScreen from "./screens/CheckboxScreen";
 import ModalScreen from "./screens/ModalScreen";
 
-import AppCardArticle from "./components/commons/AppCardArticle";
-import AppCardArticleDetail from "./components/commons/AppCardArticleDetail";
-import AppCardWebinar from "./components/commons/AppCardWebinar";
+
 
 import Test from "./screens/Test.js";
 
@@ -26,6 +32,9 @@ function App() {
 
       <Router>
         <Switch>
+
+          {/* ************ FRONT SCREENS ********* */}
+
           <Route exact path="/register"><Register /></Route>
 
           <Route exact path="/tnksregister"><TnksRegister /></Route>
@@ -34,6 +43,26 @@ function App() {
 
           <Route exact path="/home"><HomeDoctor /></Route>
 
+          <Route exact path="/articles">
+            <ArticlesList/>
+          </Route>
+
+          <Route exact path="/article-detail">
+              <ArticleDetail />
+          </Route>
+
+          <Route exact path="/webinars">
+            <WebinarsList/>
+          </Route>
+
+          <Route exact path="/webinar-detail">
+            <WebinarDetail/>
+          </Route>
+
+          {/* ************ EXAMPLES AND TESTS ********* */}
+
+
+
           <Route exact path="/checkbox">
             <CheckboxScreen />
           </Route>
@@ -41,43 +70,6 @@ function App() {
           <Route exact path="/modal">
             <ModalScreen />
           </Route>
-
-          <Route exact path="/card">
-            <div className="container">
-              <div className="row">
-                <div className="col-2"></div>
-                <div className="col-8">
-                  <AppCardArticle />
-                </div>
-                <div className="col-2"></div>
-              </div>
-            </div>
-          </Route>
-
-
-          <Route exact path="/card-detail">
-            <div className="container">
-              <div className="row">
-                <div className="col-2"></div>
-                <div className="col-10">
-                  <AppCardArticleDetail />
-                </div>
-              </div>
-            </div>
-          </Route>
-
-
-          <Route exact path="/card-webinar">
-            <div className="container">
-              <div className="row">
-                <div className="col-2"></div>
-                <div className="col-10">
-                  <AppCardWebinar />
-                </div>
-              </div>
-            </div>
-          </Route>
-
 
           <Route exact path="/test" component={Test} />
 

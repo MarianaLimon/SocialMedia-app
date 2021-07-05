@@ -16,11 +16,11 @@ const AppPostAuthorInfo = props => {
                     <div className={`${Styles.AuthorData}`}>
                         <AppImage classImage="avatar" pathImage={author} altImage="author-img"></AppImage>
                         <div className={`${Styles.AuthorName}`}>
-                            <div>Name</div>
+                            <div>Author Name</div>
                         </div>
                     </div>   
                     <div className={`${Styles.DateData}`} >
-                        <div>Creation date</div>                        
+                        <div>Publication date</div>                        
                     </div>
                 </div>
             </React.Fragment>
@@ -34,7 +34,7 @@ const AppPostAuthorInfo = props => {
                 <div className={`${Styles.AuthorData}`}>
                     <AppImage classImage="avatar" pathImage={author} altImage="author-img"></AppImage>
                     <div className={`${Styles.AuthorName}`}>
-                        <div>Name</div>
+                        <div>Author Name</div>
                     </div>
                 </div>
             </div>

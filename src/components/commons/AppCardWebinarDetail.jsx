@@ -1,23 +1,26 @@
 import React from "react";
 
-// import AppCheckboxFilter from "../components/commons/AppCheckboxFilter";
-import AppImage from "./AppImage";
+
 import AppTextarea from "./AppTextarea";
+import AppPostVideoBanner from "./AppPostVideoBanner";
+import AppPostVideoControls from "./AppPostVideoControls";
 import AppPostAuthorInfo from "./AppPostAuthorInfo";
 import AppPostReactions from "./AppPostReactions";
 
-import Styles from "./AppCardArticleDetail.module.css"
+import Styles from "./AppCardWebinarDetail.module.css"
 
-import banner from "../../img/card/banner.jpg"
-
-export default function AppCardArticleDetail(props) {
+export default function AppCardWebinarDetail(props) {
 
   return (
     <React.Fragment>
 
     <article className="card mb-3 nav-view-post">
 
-        <AppImage classImage="card-img-top w-100" pathImage={banner} altImage="banner-img"></AppImage>
+        {/* Banner del Webinar */}
+        <AppPostVideoBanner size="webinar-detail"/>
+
+        {/* Video Controls */}
+        <AppPostVideoControls/>
 
         <div className={`card-body ${Styles.CardBody}`}>
 
@@ -26,19 +29,18 @@ export default function AppCardArticleDetail(props) {
                 <a href="#">Title</a>
             </h2>
 
-            {/* Tags */}
-            <div className={`${Styles.PublishedTags} tags-color d-flex flex-wrap`}> #webdev #wordpress #frontend #tutorial </div>
-
             {/* Contenedor del avatar y el name */}
             <AppPostAuthorInfo estado="full-info"/>
+
+            {/* Reactions */}
+            <AppPostReactions/>
 
             {/* Content */}
             <div className={`${Styles.PublishedContent}`}>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae asperiores perferendis beatae perspiciatis facilis! Rem, mollitia nesciunt assumenda vel magni doloremque fuga iste quis sunt sequi expedita ratione quos laborum.</p>
             </div>
 
-            {/* Reactions */}
-            <AppPostReactions/>
+
 
         </div>  {/* Fin del Card Body */}
 

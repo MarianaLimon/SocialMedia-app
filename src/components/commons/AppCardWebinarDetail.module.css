@@ -1,0 +1,49 @@
+
+
+.CardBody{
+    border-bottom: 1px solid #dee2e6;
+    padding: 2rem;
+}
+
+/*Card Title*/
+
+.PublishedTitle{
+    font-size: 2.25rem;
+    margin: 6px 0;
+}
+
+.PublishedTitle a{
+    color: var(--text-color);
+    text-decoration: none;
+    
+}
+
+.PublishedTitle a:hover{
+    color: var(--blue-primary)
+}
+
+
+/*Content*/
+
+.PublishedContent{
+    padding: 20px 0 0 0;
+    color: var(--text-color);
+}
+
+
+/**************************************************************************************/
+
+.ReplyCard{
+    padding: 10px 2rem;
+}
+
+
+/***** Post Comment ******/
+
+.CommentWrapper button{
+    background-color: var(--aqua);
+    color: #fff;
+    border-radius: 30px;
+    margin-top: 10px;
+    float: right;
+}
