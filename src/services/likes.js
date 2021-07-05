@@ -1,36 +1,36 @@
-import { API_URL_ARTICLES } from "./index.js";
+import { API_URL_LIKES } from "./index.js";
 
-export const getArticles = async () => {
+export const getLikes = async () => {
     try {
 
-        const response = await fetch(API_URL_ARTICLES, {
+        const response = await fetch(API_URL_LIKES, {
             headers: {
                 "authorization": localStorage.getItem("token")
             }
         })
-        const allArticles = await response.json();
-        return await allArticles.data.articles;
+        const allLikes = await response.json();
+        return await allLikes.data.Likes;
     } catch (error) {
         console.log(error);
     }
 };
 
-export const getArticleById = async (id) => {
+export const getLikeById = async (id) => {
     try {
-        const response = await fetch(`${API_URL_ARTICLES}/${id}`, {
+        const response = await fetch(`${API_URL_LIKES}/${id}`, {
             headers: {
                 "authorization": localStorage.getItem("token")
             }
         })
-        const article = await response.json();
-        return article.data.article;
+        const Like = await response.json();
+        return Like.data.Like;
     } catch (error) {
         console.log(error);
     }
 };
 
-export const postArticle = async (data) => {
-    const response = await fetch(API_URL_ARTICLES, {
+export const postLike = async (data) => {
+    const response = await fetch(API_URL_LIKES, {
         method: "POST",
         headers: {
             "Content-Type": "application/JSON",
@@ -41,8 +41,8 @@ export const postArticle = async (data) => {
     return await response.json();
 };
 
-export const patchArticle = async (id, data) => {
-    const response = await fetch(`${API_URL_ARTICLES}/${id}`, {
+export const patchLike = async (id, data) => {
+    const response = await fetch(`${API_URL_LIKES}/${id}`, {
         method: "PATCH",
         headers: {
             "Content-Type": "application/JSON",
@@ -53,8 +53,8 @@ export const patchArticle = async (id, data) => {
     return await response.json();
 };
 
-export const deleteArticle = async (id) => {
-    const response = await fetch(`${API_URL_ARTICLES}/${id}`, {
+export const deleteLike = async (id) => {
+    const response = await fetch(`${API_URL_LIKES}/${id}`, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/JSON",

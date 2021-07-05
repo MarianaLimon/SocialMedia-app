@@ -5,16 +5,26 @@ import Header from "./components/Header";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+// Front Screens
 import Register from "./screens/Register";
 import TnksRegister from "./screens/ThanksRegister";
 import Login from "./screens/Login";
 import HomeDoctor from "./screens/HomeDoctor";
 import EditProfile from "./screens/EditProfile";
 
+import ArticlesList from "./screens/ArticlesList";
+import ArticleDetail from "./screens/ArticleDetail";
+import WebinarsList from "./screens/WebinarsList";
+import WebinarDetail from "./screens/WebinarDetail";
+import ProductDetail from "./screens/ProductDetail";
+
+// Examples and Tests
+import AppCardProductDetail from "./components/commons/AppCardProductDetail";
 import CheckboxScreen from "./screens/CheckboxScreen";
 import ModalScreen from "./screens/ModalScreen";
-import AppCard from "./components/commons/AppCard";
-import AppCardDetail from "./components/commons/AppCardDetail";
+
+
+
 import Test from "./screens/Test.js";
 
 function App() {
@@ -24,15 +34,48 @@ function App() {
 
       <Router>
         <Switch>
+
+          {/* ************ FRONT SCREENS ********* */}
+
           <Route exact path="/register"><Register /></Route>
 
           <Route exact path="/tnksregister"><TnksRegister /></Route>
 
-          <Route exact path="/login"><Login /></Route>
+          <Route exact path="/"><Login /></Route>
 
           <Route exact path="/home"><HomeDoctor /></Route>
 
+
           <Route exact path="/profile"><EditProfile /></Route>
+
+          <Route exact path="/checkbox">
+            <CheckboxScreen />
+          </Route>
+
+          <Route exact path="/articles">
+            <ArticlesList/>
+
+          </Route>
+
+          <Route exact path="/article-detail">
+              <ArticleDetail />
+          </Route>
+
+          <Route exact path="/webinars">
+            <WebinarsList/>
+          </Route>
+
+          <Route exact path="/webinar-detail">
+            <WebinarDetail/>
+          </Route>
+
+          <Route exact path="/product-detail">
+            <ProductDetail/>
+          </Route>
+
+          {/* ************ EXAMPLES AND TESTS ********* */}
+
+
 
           <Route exact path="/checkbox">
             <CheckboxScreen />
@@ -41,31 +84,6 @@ function App() {
           <Route exact path="/modal">
             <ModalScreen />
           </Route>
-
-          <Route exact path="/card">
-            <div className="container">
-              <div className="row">
-                <div className="col-2"></div>
-                <div className="col-8">
-                  <AppCard />
-                </div>
-                <div className="col-2"></div>
-              </div>
-            </div>
-          </Route>
-
-
-          <Route exact path="/card-detail">
-            <div className="container">
-              <div className="row">
-                <div className="col-2"></div>
-                <div className="col-10">
-                  <AppCardDetail />
-                </div>
-              </div>
-            </div>
-          </Route>
-
 
           <Route exact path="/test" component={Test} />
 
