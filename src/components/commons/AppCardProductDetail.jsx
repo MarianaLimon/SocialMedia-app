@@ -6,11 +6,11 @@ import AppTextarea from "./AppTextarea";
 import AppPostAuthorInfo from "./AppPostAuthorInfo";
 import AppPostReactions from "./AppPostReactions";
 
-import Styles from "./AppCardArticleDetail.module.css"
+import Styles from "./AppCardProductDetail.module.css"
 
-import banner from "../../img/card/banner-article.jpg"
+import banner from "../../img/card/banner-product.jpg"
 
-export default function AppCardArticleDetail(props) {
+export default function AppCardProductDetail() {
 
   return (
     <React.Fragment>
@@ -29,16 +29,25 @@ export default function AppCardArticleDetail(props) {
             {/* Tags */}
             <div className={`${Styles.PublishedTags} tags-color d-flex flex-wrap`}> #webdev #wordpress #frontend #tutorial </div>
 
-            {/* Contenedor del avatar y el name */}
-            <AppPostAuthorInfo estado="full-info"/>
+
+
 
             {/* Content */}
             <div className={`${Styles.PublishedContent}`}>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae asperiores perferendis beatae perspiciatis facilis! Rem, mollitia nesciunt assumenda vel magni doloremque fuga iste quis sunt sequi expedita ratione quos laborum.</p>
             </div>
 
-            {/* Reactions */}
-            <AppPostReactions/>
+
+            <div className={`${Styles.ElementsWrapper} py-2 d-flex justify-content-between align-items-center`}>
+
+                {/* Reactions */}
+                <AppPostReactions/>
+
+                {/* Creation Date */}
+                <div className={`${Styles.DateData}`} >
+                    <div>Publication date</div>                        
+                </div>
+            </div>
 
         </div>  {/* Fin del Card Body */}
 

@@ -5,7 +5,7 @@ import Styles from './AppPostVideoBanner.module.css'
 import AppImage from "./AppImage";
 
 
-import banner from "../../img/card/banner.jpg"
+import banner from "../../img/card/banner-webinar.jpg"
 import play from "../../img/card/play.png"
 
 
