@@ -2,16 +2,16 @@
 
 .AuthorWrapper{
     height: auto;
-    display: flex;
+    display: block;
     color: var(--text-color);
 }
 
-.AuthorWrapperBetween{
-    height: auto;
-    display: flex;
-    justify-content: space-between;
-    color: var(--text-color);
+@media screen and (min-width: 770px){
+    .AuthorWrapper{
+        display: flex;
+    }
 }
+
 
 /*Author Data*/
 .AuthorData{
@@ -25,13 +25,28 @@
 }
 
 .AuthorName{
-    margin-right: 20px;
+    display: block;
     font-weight: bold;
 }
 
-/*Date Data*/
-.DateData{
-    display: flex;
-    align-items: center;
-    font-size: 12pt;
+@media screen and (min-width: 770px){
+    .AuthorName{
+        display: flex;
+    }
+    
 }
+
+/* Para darle estilo al Componente de Publication Date */
+.AuthorName div:nth-child(2){
+    margin-left: 0px;
+    font-weight: normal;
+}
+
+
+@media screen and (min-width: 770px){
+    .AuthorName div:nth-child(2){
+        margin-left: 20px;
+
+    } 
+}
+

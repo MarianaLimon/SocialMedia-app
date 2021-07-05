@@ -4,6 +4,7 @@ import React from "react";
 import AppImage from "./AppImage";
 import AppTextarea from "./AppTextarea";
 import AppPostAuthorInfo from "./AppPostAuthorInfo";
+import AppPostDateCreation from "./AppPostDateCreation";
 import AppPostReactions from "./AppPostReactions";
 
 import Styles from "./AppCardProductDetail.module.css"
@@ -30,23 +31,25 @@ export default function AppCardProductDetail() {
             <div className={`${Styles.PublishedTags} tags-color d-flex flex-wrap`}> #webdev #wordpress #frontend #tutorial </div>
 
 
-
-
             {/* Content */}
             <div className={`${Styles.PublishedContent}`}>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae asperiores perferendis beatae perspiciatis facilis! Rem, mollitia nesciunt assumenda vel magni doloremque fuga iste quis sunt sequi expedita ratione quos laborum.</p>
             </div>
 
+            {/* Reactions and Creation Date */}
+            <div className={`py-2`}>
 
-            <div className={`${Styles.ElementsWrapper} py-2 d-flex justify-content-between align-items-center`}>
-
-                {/* Reactions */}
-                <AppPostReactions/>
-
-                {/* Creation Date */}
-                <div className={`${Styles.DateData}`} >
-                    <div>Publication date</div>                        
+                <div className="row d-flex align-items-center">
+                    <div className="col-12 col-lg-9">
+                        {/* Reactions */}
+                        <AppPostReactions/>
+                    </div>
+                    <div className="col-12 col-lg-3">
+                        {/* Creation Date */}
+                        <AppPostDateCreation cname="text-end"/>
+                    </div>
                 </div>
+
             </div>
 
         </div>  {/* Fin del Card Body */}
@@ -62,7 +65,7 @@ export default function AppCardProductDetail() {
                     <div className="CommentList my-3">
 
                         {/* Contenedor del avatar y el name */}
-                        <AppPostAuthorInfo cname="justify-content-between" estado="full-info"/>
+                        <AppPostAuthorInfo  cname="justify-content-between" estado="full-info"/>
 
                         {/* Contenedor del comment publicado */}
                         <div class={`w-100 p-2 my-2 border rounded`}>
