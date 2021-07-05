@@ -7,12 +7,12 @@ import AppImage from "./AppImage";
 import AppPostAuthorInfo from "./AppPostAuthorInfo"
 import AppPostReactions from "./AppPostReactions"
 
-import Styles from "./AppCard.module.css"
+import Styles from "./AppCardArticle.module.css"
 
 import banner from "../../img/card/banner.jpg"
 import author from "../../img/card/author.jpg"
 
-export default function AppCard() {
+export default function AppCardArticle() {
 
   return (
     <React.Fragment>

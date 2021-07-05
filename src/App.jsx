@@ -12,8 +12,11 @@ import HomeDoctor from "./screens/HomeDoctor";
 
 import CheckboxScreen from "./screens/CheckboxScreen";
 import ModalScreen from "./screens/ModalScreen";
-import AppCard from "./components/commons/AppCard";
-import AppCardDetail from "./components/commons/AppCardDetail";
+
+import AppCardArticle from "./components/commons/AppCardArticle";
+import AppCardArticleDetail from "./components/commons/AppCardArticleDetail";
+import AppCardWebinar from "./components/commons/AppCardWebinar";
+
 import Test from "./screens/Test.js";
 
 function App() {
@@ -44,7 +47,7 @@ function App() {
               <div className="row">
                 <div className="col-2"></div>
                 <div className="col-8">
-                  <AppCard />
+                  <AppCardArticle />
                 </div>
                 <div className="col-2"></div>
               </div>
@@ -57,7 +60,19 @@ function App() {
               <div className="row">
                 <div className="col-2"></div>
                 <div className="col-10">
-                  <AppCardDetail />
+                  <AppCardArticleDetail />
+                </div>
+              </div>
+            </div>
+          </Route>
+
+
+          <Route exact path="/card-webinar">
+            <div className="container">
+              <div className="row">
+                <div className="col-2"></div>
+                <div className="col-10">
+                  <AppCardWebinar />
                 </div>
               </div>
             </div>
