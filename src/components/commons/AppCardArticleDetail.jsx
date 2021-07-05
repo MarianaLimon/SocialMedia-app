@@ -2,17 +2,16 @@ import React from "react";
 
 // import AppCheckboxFilter from "../components/commons/AppCheckboxFilter";
 import AppImage from "./AppImage";
-import AppInput from "./AppInput";
 import AppTextarea from "./AppTextarea";
 import AppPostAuthorInfo from "./AppPostAuthorInfo";
 import AppPostReactions from "./AppPostReactions";
 
-import Styles from "./AppCardDetail.module.css"
+import Styles from "./AppCardArticleDetail.module.css"
 
 import banner from "../../img/card/banner.jpg"
 import author from "../../img/card/author.jpg"
 
-export default function AppCardDetail(props) {
+export default function AppCardArticleDetail(props) {
 
   return (
     <React.Fragment>
