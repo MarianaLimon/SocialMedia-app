@@ -4,6 +4,8 @@ import Input from "../../../components/commons/AppInput";
 import AppCheckbox from "../../../components/commons/AppCheckbox";
 import AppButton from "../../../components/commons/AppButton";
 
+import "./index.css"
+
 export default function Register() {
 
   const termins = () => {

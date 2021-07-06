@@ -1,0 +1,14 @@
+.banner-register{
+    width: 100%;
+    display:block;
+    margin: auto;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+  
+@media screen and (min-width: 770px){
+    .banner-register{
+        height: auto;
+    }
+}
