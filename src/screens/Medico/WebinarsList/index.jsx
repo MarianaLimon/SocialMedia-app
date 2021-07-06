@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AppCardWebinar from "../components/commons/AppCardWebinar"
+import AppCardWebinar from "../../../components/commons/AppCardWebinar"
 
 
 export default function WebinarsList() {

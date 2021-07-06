@@ -5,24 +5,23 @@ import Header from "./components/Header";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Register from "./screens/Register";
-import TnksRegister from "./screens/ThanksRegister";
-import Login from "./screens/Login";
-import HomeDoctor from "./screens/HomeDoctor";
-import EditProfile from "./screens/EditProfile";
-import HomeAdmin from "./screens/Admin/Home/HomeAdmin";
+import Register from "./screens/Medico/Register";
+import TnksRegister from "./screens/Medico/ThanksRegister";
+import Login from "./screens/Medico/Login";
+import HomeMedico from "./screens/Medico/HomeMedico";
+import EditProfile from "./screens/Medico/EditProfile"
+import HomeAdmin from "./screens/Admin/HomeAdmin";
 
 
-import ArticlesList from "./screens/ArticlesList";
-import ArticleDetail from "./screens/ArticleDetail";
-import WebinarsList from "./screens/WebinarsList";
-import WebinarDetail from "./screens/WebinarDetail";
-import ProductsList from "./screens/ProductsList";
-import ProductDetail from "./screens/ProductDetail";
+import ArticlesList from "./screens/Medico/ArticlesList";
+import ArticleDetail from "./screens/Medico/ArticleDetail";
+import WebinarsList from "./screens/Medico/WebinarsList";
+import WebinarDetail from "./screens/Medico/WebinarDetail";
+import ProductsList from "./screens/Medico/ProductsList";
+import ProductDetail from "./screens/Medico/ProductDetail";
 
 // Examples and Tests
 //import AppCardProductDetail from "./components/commons/AppCardProductDetail";
-import CheckboxScreen from "./screens/CheckboxScreen";
 import ModalScreen from "./screens/ModalScreen";
 import Test from "./screens/Test.js";
 
@@ -65,15 +64,11 @@ function App() {
 
           {/* ************ EXAMPLES AND TESTS ********* */}
 
-         <Route exact path="/home"><HomeDoctor /></Route>
+         <Route exact path="/home"><HomeMedico /></Route>
 
           <Route exact path="/profile"><EditProfile /></Route>
 
           <Route exact path="/homeadmin"><HomeAdmin /></Route>
-
-          <Route exact path="/checkbox">
-            <CheckboxScreen />
-          </Route>
 
           <Route exact path="/modal">
             <ModalScreen />

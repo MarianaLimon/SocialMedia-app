@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import AppImage from "../components/commons/AppImage";
-import Input from "../components/commons/AppInput";
-import AppCheckbox from "../components/commons/AppCheckbox";
-import AppButton from "../components/commons/AppButton";
+import AppImage from "../../../components/commons/AppImage";
+import Input from "../../../components/commons/AppInput";
+import AppCheckbox from "../../../components/commons/AppCheckbox";
+import AppButton from "../../../components/commons/AppButton";
 
 export default function EditProfile() {
 

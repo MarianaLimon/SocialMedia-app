@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import banner from "../img/home-banner.png"
-import Icons from "../components/commons/icons";
+import banner from "../../../img/home-banner.png"
+import Icons from "../../../components/commons/icons";
 
 export default function HomeDoctor() {
 

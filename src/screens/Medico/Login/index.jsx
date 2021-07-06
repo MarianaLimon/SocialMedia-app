@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import banner from "../img/doctora-banner.png"
-import Input from "../components/commons/AppInput";
-import AppButton from "../components/commons/AppButton";
+import banner from "../../../img/doctora-banner.png"
+import Input from "../../../components/commons/AppInput";
+import AppButton from "../../../components/commons/AppButton";
 
 export default function Login() {
 

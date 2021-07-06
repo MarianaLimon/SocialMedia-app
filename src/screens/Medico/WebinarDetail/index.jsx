@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AppCardWebinarDetail from "../components/commons/AppCardWebinarDetail"
+import AppCardWebinarDetail from "../../../components/commons/AppCardWebinarDetail"
 
 
 export default function WebinarDetail() {

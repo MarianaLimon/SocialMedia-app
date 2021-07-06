@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import banner from "../img/doctor-banner.png"
-import Input from "../components/commons/AppInput";
-import AppCheckbox from "../components/commons/AppCheckbox";
-import AppButton from "../components/commons/AppButton";
+import banner from "../../../img/doctor-banner.png"
+import Input from "../../../components/commons/AppInput";
+import AppCheckbox from "../../../components/commons/AppCheckbox";
+import AppButton from "../../../components/commons/AppButton";
 
 export default function Register() {
 
@@ -15,7 +15,7 @@ export default function Register() {
   return (
     <React.Fragment>
       <div className="register-container container">
-        <div className="row fill">
+        <div className="row">
           <div className="col-md-6 my-4">
             <img src={banner} alt="" className="banner-register" />
           </div>

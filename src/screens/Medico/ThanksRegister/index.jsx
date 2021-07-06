@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import banner from "../img/doctor-banner.png"
-import AppButton from "../components/commons/AppButton";
+import banner from "../../../img/doctor-banner.png"
+import AppButton from "../../../components/commons/AppButton";
 
 export default function TnksRegister() {
 
