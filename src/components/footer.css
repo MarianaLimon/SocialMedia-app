@@ -4,14 +4,14 @@ footer{
     display:grid;
     align-items: center;
     pointer-events: none;
+    position: absolute;
     width: 100%;
     margin-top: auto;
     bottom: 0px;
-    position: absolute;
+    position: fixed;
 }
 @media screen and (max-width: 770px){
     footer {
-        position: fixed;
         height: 65px !important;
     }
 }

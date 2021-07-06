@@ -14,8 +14,8 @@ export default function Register() {
 
   return (
     <React.Fragment>
-      <div className="container">
-        <div className="row">
+      <div className="register-container container">
+        <div className="row fill">
           <div className="col-md-6 my-4">
             <img src={banner} alt="" className="banner-register" />
           </div>
@@ -38,6 +38,7 @@ export default function Register() {
           </div>
         </div>
       </div>
+
     </React.Fragment>
   );
 }
