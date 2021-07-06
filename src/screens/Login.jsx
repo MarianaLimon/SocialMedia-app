@@ -7,13 +7,13 @@ export default function Login() {
 
   return (
     <React.Fragment>
-      <div className="container my-4">
+      <div className="container">
         <div className="row">
-          <div className="col-md-6 my-3">
+          <div className="col-md-6 my-4">
             <img src={banner} alt="" className="banner-register" />
           </div>
-          <div className="col-md-6 my-4">
-            <h1 className="my-5">INICIAR SESIÓN</h1>
+          <div className="col-md-6 my-0 my-md-4">
+            <h1 className="my-4">INICIAR SESIÓN</h1>
             <form action="" className="mx-5">
               <Input placeholder="Correo electrónico" type="email" required />
               <Input placeholder="Contraseña" type="password" required />
