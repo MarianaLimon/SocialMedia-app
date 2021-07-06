@@ -31,7 +31,7 @@ function Icons(props) {
     case "doctor":
       return <Icon icon={doctorIcon} className="icon" />;
     case "delete":
-      return <Icon icon={trashIcon} className="icon" />;
+      return <Icon icon={trashIcon} className="icon deleteIcon" />;
     case "menu":
       return <Icon icon={hamburger} className="icon hamburger" />;
     default:

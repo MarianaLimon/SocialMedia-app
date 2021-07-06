@@ -4,7 +4,7 @@
   --blue-primary: #3c58c1;
   --blue-secondary: #5a96c4;
   --blue-ligth: #cbe8f6;
-  --hover-blue: invert(25%) sepia(43%) saturate(2122%) hue-rotate(207deg) brightness(111%) contrast(91%);
+  --hover-blue: invert(33%) sepia(69%) saturate(602%) hue-rotate(188deg) brightness(97%) contrast(98%);
   --background-color: #f0f2f5;
   --white: #ffffff;
   --blue-menu: #b8dff3;
@@ -21,7 +21,6 @@ body {
 }
 
 h1{
-  text-align: center;
   color: var(--blue-secondary);
   font-weight: 700;
 }
@@ -31,26 +30,16 @@ p{
   color: var(--text-color);
 }
 
-.icon-left-menu {
-  color: var(--text-color);
-  font-size: 30px;
-}
-.icon-left-menu:hover {
-  filter: var(--hover-blue);
-  cursor: pointer;
-}
-
 .select {
   appearance: auto;
 }
 
 .form-wrapper{
-    margin: 0 0 2rem 0;
- }
+  margin: 0 0 2rem 0;
+}
 
 @media screen and (min-width: 770px){
-.form-wrapper{
-    margin: 0;
- }
-
+  .form-wrapper{
+      margin: 0;
+  }
 } 
