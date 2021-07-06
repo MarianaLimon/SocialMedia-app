@@ -1,21 +1,23 @@
 import React, { useState } from "react";
 import AppCardWebinar from "../../../components/Cards/AppCardWebinar"
-
+import AppImage from "../../../components/commons/AppImage"
+import filter from "../../../img/clarity_filter-solid.png"
+import Styles from "./index.module.css"
 
 export default function WebinarsList() {
 
   return (
     <React.Fragment>
 
-      <div className="container">
+      <div className="col-12 container">
+
+      <AppImage classImage={`${Styles.FilterImage}`} pathImage={filter} altImage="filter-img"></AppImage>
+      <h1 className={`${Styles.TitleSection}`}>Webinars</h1>
+      
         <div className="row">
-          <div className="col-2"></div>
-          <div className="col-8">
               <AppCardWebinar/>
               <AppCardWebinar/>
               <AppCardWebinar/>
-          </div>
-          <div className="col-2"></div>
         </div>
       </div>
 

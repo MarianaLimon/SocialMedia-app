@@ -13,13 +13,15 @@ export default function AppCardProduct() {
   return (
     <React.Fragment>
 
-      <article className="col-12 col-lg-6 mb-4">
+      <article className="col-6 col-lg-6 mb-4">
 
 
           <div className={`${Styles.CardProduct} card`}>
-              <AppImage classImage={`${Styles.CardImage} card-img-top w-100`} pathImage={banner} altImage="banner-img"></AppImage>
 
-              <div className="card-body">
+
+              <AppImage classImage={`${Styles.CardImage} card-img-top`} pathImage={banner} altImage="banner-img"></AppImage>
+
+              <div className={`${Styles.CardBody} card-body`}>
                   {/* Title */}
                   <h2 className={`${Styles.CardTitle}`}>
                       <a href="#">Title</a>
@@ -38,7 +40,11 @@ export default function AppCardProduct() {
               </div>
           </div>
 
-     
+          {/* Title Mobile */}
+          <h2 className={`${Styles.CardTitleMobile}`}>
+              <a href="#">Title</a>
+          </h2>
+
       </article>
 
     </React.Fragment>

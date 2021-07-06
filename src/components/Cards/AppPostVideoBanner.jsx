@@ -14,7 +14,7 @@ export default function AppPostVideoBanner(props) {
 
     if(props.size === "webinar-detail") {
         return (
-                <div className={`${Styles.Banner}`}>
+                <div className={`${Styles.Banner} ${props.dstate} card-img-top mt-0 mt-md-4`}>
                     <AppImage classImage={`${Styles.CardIconPlay}`} pathImage={play} altImage="play-icon"></AppImage>
                     <AppImage classImage={`${Styles.CardImageHigher} w-100`} pathImage={banner} altImage="banner-img"></AppImage>                
                 </div>        
@@ -23,7 +23,7 @@ export default function AppPostVideoBanner(props) {
 
     return (
         <React.Fragment>
-            <div className={`${Styles.Banner}`}>
+            <div className={`${Styles.Banner} ${props.dstate} card-img-top mt-0 mt-md-4`}>
                 <AppImage classImage={`${Styles.CardIconPlay}`} pathImage={play} altImage="play-icon"></AppImage>
                 <AppImage classImage={`${Styles.CardImage} w-100`} pathImage={banner} altImage="banner-img"></AppImage>                
             </div>     
