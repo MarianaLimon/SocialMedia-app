@@ -9,8 +9,8 @@ export default function ProductsList() {
 
       <div className="container">
         <div className="row">
-          <div className="col-2"></div>
-          <div className="col-8">
+          <div className="col-12 col-md-2"></div>
+          <div className="col-12 col-md-8">
             <div className="row ">
                 <AppCardProduct/>
                 <AppCardProduct/>
@@ -18,7 +18,7 @@ export default function ProductsList() {
             </div>
 
           </div>
-          <div className="col-2"></div>
+          <div className="col-12 col-md-2"></div>
         </div>
       </div>
 
