@@ -9,13 +9,13 @@ export default function ArticlesList() {
 
       <div className="container">
         <div className="row">
-          <div className="col-2"></div>
-          <div className="col-8">
+          <div className="col-12 col-md-2"></div>
+          <div className="col-12 col-md-8">
               <AppCardArticle/>
               <AppCardArticle/>
               <AppCardArticle/>
           </div>
-          <div className="col-2"></div>
+          <div className="col-12 col-md-2"></div>
         </div>
       </div>
 

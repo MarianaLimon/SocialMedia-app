@@ -1,19 +1,13 @@
 footer{
     background-color: var(--blue-ligth);
-    height: 90px;
+    height: 70px;
     display:grid;
     align-items: center;
     pointer-events: none;
-    position: absolute;
     width: 100%;
     margin-top: auto;
     bottom: 0px;
     position: fixed;
-}
-@media screen and (max-width: 770px){
-    footer {
-        height: 65px !important;
-    }
 }
 
 .footer-menu{
@@ -28,4 +22,11 @@ footer .icon{
 
 footer .active{
     color: var(--blue-primary) !important;
+}
+
+@media screen and (min-width: 770px){
+    footer {
+        height: 65px ;
+        position: inherit;
+    }
 }
