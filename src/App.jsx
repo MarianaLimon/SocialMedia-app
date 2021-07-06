@@ -1,6 +1,6 @@
 import React from "react";
 
-import Footer from "./components/footer";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -73,8 +73,6 @@ function App() {
           <Route exact path="/modal">
             <ModalScreen />
           </Route>
-
-
 
           <Route exact path="/test" component={Test} />
 

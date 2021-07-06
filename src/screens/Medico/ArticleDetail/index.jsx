@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AppCardArticleDetail from "../../../components/commons/AppCardArticleDetail"
+import AppCardArticleDetail from "../../../components/Cards/AppCardArticleDetail"
 
 
 export default function ArticleDetail() {

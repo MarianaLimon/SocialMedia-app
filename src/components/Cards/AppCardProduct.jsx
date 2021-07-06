@@ -1,9 +1,7 @@
 import React from "react";
 
-import Icons from "./icons";
-
 // import AppCheckboxFilter from "../components/commons/AppCheckboxFilter";
-import AppImage from "./AppImage";
+import AppImage from "../commons/AppImage";
 import AppPostDateCreation from "./AppPostDateCreation"
 
 import Styles from "./AppCardProduct.module.css"

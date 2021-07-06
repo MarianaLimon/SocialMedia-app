@@ -1,22 +1,21 @@
 import React from "react";
 
 // import AppCheckboxFilter from "../components/commons/AppCheckboxFilter";
-import AppImage from "./AppImage";
-import AppTextarea from "./AppTextarea";
+import AppImage from "../commons/AppImage";
+import AppTextarea from "../commons/AppTextarea";
 import AppPostAuthorInfo from "./AppPostAuthorInfo";
-import AppPostDateCreation from "./AppPostDateCreation";
 import AppPostReactions from "./AppPostReactions";
 
-import Styles from "./AppCardProductDetail.module.css"
+import Styles from "./AppCardArticleDetail.module.css"
 
-import banner from "../../img/card/banner-product.jpg"
+import banner from "../../img/card/banner-article.jpg"
 
-export default function AppCardProductDetail() {
+export default function AppCardArticleDetail(props) {
 
   return (
     <React.Fragment>
 
-    <article className="card mb-3">
+    <article className="card mb-3 nav-view-post">
 
         <AppImage classImage="card-img-top w-100" pathImage={banner} altImage="banner-img"></AppImage>
 
@@ -30,27 +29,16 @@ export default function AppCardProductDetail() {
             {/* Tags */}
             <div className={`${Styles.PublishedTags} tags-color d-flex flex-wrap`}> #webdev #wordpress #frontend #tutorial </div>
 
+            {/* Contenedor del avatar y el name */}
+            <AppPostAuthorInfo estado="full-info"/>
 
             {/* Content */}
             <div className={`${Styles.PublishedContent}`}>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae asperiores perferendis beatae perspiciatis facilis! Rem, mollitia nesciunt assumenda vel magni doloremque fuga iste quis sunt sequi expedita ratione quos laborum.</p>
             </div>
 
-            {/* Reactions and Creation Date */}
-            <div className={`py-2`}>
-
-                <div className="row d-flex align-items-center">
-                    <div className="col-12 col-lg-9">
-                        {/* Reactions */}
-                        <AppPostReactions/>
-                    </div>
-                    <div className="col-12 col-lg-3">
-                        {/* Creation Date */}
-                        <AppPostDateCreation cname="text-end"/>
-                    </div>
-                </div>
-
-            </div>
+            {/* Reactions */}
+            <AppPostReactions/>
 
         </div>  {/* Fin del Card Body */}
 
@@ -65,7 +53,7 @@ export default function AppCardProductDetail() {
                     <div className="CommentList my-3">
 
                         {/* Contenedor del avatar y el name */}
-                        <AppPostAuthorInfo  cname="justify-content-between" estado="full-info"/>
+                        <AppPostAuthorInfo cname="justify-content-between" estado="full-info"/>
 
                         {/* Contenedor del comment publicado */}
                         <div class={`w-100 p-2 my-2 border rounded`}>
@@ -76,7 +64,7 @@ export default function AppCardProductDetail() {
                     {/* ************* Post Comments ************** */}
                     
                     {/* Contenedor del avatar y el name */}
-                    <AppPostAuthorInfo estado=" "/>
+                    <AppPostAuthorInfo estado="none"/>
 
                         
                      {/* Seccion para Publicar un Comentario    */}

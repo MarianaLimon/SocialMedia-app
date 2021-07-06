@@ -2,7 +2,7 @@ import React from "react";
 
 import Styles from './AppPostVideoControls.module.css'
 
-import AppImage from "./AppImage";
+import AppImage from "../commons/AppImage";
 
 
 import fastbackward from "../../img/card/bx_bxs-fast-forward-circle.png"

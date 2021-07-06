@@ -1,6 +1,6 @@
 import React from "react";
 
-import Icons from "./icons";
+import Icons from "../commons/icons";
 
 import Styles from "./AppPostReactions.module.css";
 

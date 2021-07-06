@@ -1,7 +1,7 @@
 import React from "react";
 
 
-import AppTextarea from "./AppTextarea";
+import AppTextarea from "../commons/AppTextarea";
 import AppPostVideoBanner from "./AppPostVideoBanner";
 import AppPostVideoControls from "./AppPostVideoControls";
 import AppPostAuthorInfo from "./AppPostAuthorInfo";

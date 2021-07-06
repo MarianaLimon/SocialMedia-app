@@ -1,9 +1,7 @@
 import React from "react";
 
-import Icons from "./icons";
-
 // import AppCheckboxFilter from "../components/commons/AppCheckboxFilter";
-import AppImage from "./AppImage";
+import AppImage from "../commons/AppImage";
 import AppPostAuthorInfo from "./AppPostAuthorInfo"
 import AppPostReactions from "./AppPostReactions"
 

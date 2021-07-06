@@ -2,7 +2,7 @@ import React from "react";
 
 import Styles from './AppPostVideoBanner.module.css'
 
-import AppImage from "./AppImage";
+import AppImage from "../commons/AppImage";
 
 
 import banner from "../../img/card/banner-webinar.jpg"

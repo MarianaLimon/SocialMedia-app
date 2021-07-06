@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AppCardProductDetail from "../../../components/commons/AppCardProductDetail"
+import AppCardProductDetail from "../../../components/Cards/AppCardProductDetail"
 
 
 export default function ProductDetail() {

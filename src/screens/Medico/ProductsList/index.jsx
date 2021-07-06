@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AppCardProduct from "../../../components/commons/AppCardProduct"
+import AppCardProduct from "../../../components/Cards/AppCardProduct"
 
 
 export default function ProductsList() {

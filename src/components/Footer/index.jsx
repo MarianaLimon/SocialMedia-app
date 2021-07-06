@@ -1,6 +1,6 @@
 import React from "react";
-import Icons from "./commons/icons";
-import "./footer.css"
+import Icons from "../commons/icons";
+import "./index.css"
 
 class Footer extends React.Component {
   render() {
