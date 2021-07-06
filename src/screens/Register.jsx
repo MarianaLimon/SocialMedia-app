@@ -19,7 +19,7 @@ export default function Register() {
           <div className="col-md-6 my-4">
             <img src={banner} alt="" className="banner-register" />
           </div>
-          <div className="col-md-6 my-4">
+          <div className="form-wrapper col-md-6">
             <h1 className="my-4">REGISTRO</h1>
             <form action="">
               <Input placeholder="Nombre" type="text" required />
