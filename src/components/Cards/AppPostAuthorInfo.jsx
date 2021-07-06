@@ -13,7 +13,7 @@ const AppPostAuthorInfo = props => {
         return (
             <React.Fragment>
                 {/* Contenedor del avatar y el name */}
-                <div className={`${Styles.AuthorWrapper} py-2`}>
+                <div className={`${Styles.AuthorWrapper} ${props.dstate} py-2`}>
                     <div className={`${Styles.AuthorData} w-100`}>
                         <AppImage classImage="avatar" pathImage={author} altImage="author-img"></AppImage>
                         <div className={`${Styles.AuthorName} w-100  ${props.cname}`}>
@@ -51,6 +51,6 @@ export default AppPostAuthorInfo;
     el estado: "full-info" es apra mostrar la info del autor y la fecha de creacion
     si dehajmos el estado en blanco solo mostrara la info del autor 
 
-    <AppPostAuthorInfo cname="justify-content-between" estado="full-info"/> 
+    <AppPostAuthorInfo dstate="d-none or d-block" cname="justify-content-between" estado="full-info"/> 
 
 */}
