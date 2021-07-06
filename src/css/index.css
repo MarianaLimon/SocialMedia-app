@@ -4,13 +4,15 @@
   --blue-primary: #3c58c1;
   --blue-secondary: #5a96c4;
   --blue-ligth: #cbe8f6;
-  --hover-blue: invert(25%) sepia(43%) saturate(2122%) hue-rotate(207deg) brightness(111%) contrast(91%);
+  --hover-blue: invert(33%) sepia(69%) saturate(602%) hue-rotate(188deg) brightness(97%) contrast(98%);
   --background-color: #f0f2f5;
   --white: #ffffff;
   --blue-menu: #b8dff3;
   --light-grey: #fafafa;
   --dark-grey: #08090a;
 }
+
+html,body{height:100%;}
 
 body {
   background-color: var(--background-color);
@@ -19,16 +21,8 @@ body {
 }
 
 h1{
-  text-align: center;
   color: var(--blue-secondary);
   font-weight: 700;
-}
-
-.tnks{
-  color: var(--text-color);
-  font-size: 30px;
-  font-weight: bold;
-  text-align: center;
 }
 
 p{
@@ -36,58 +30,16 @@ p{
   color: var(--text-color);
 }
 
-.icon-left-menu {
-  color: var(--text-color);
-  font-size: 30px;
-}
-.icon-left-menu:hover {
-  filter: var(--hover-blue);
-  cursor: pointer;
-}
-
 .select {
   appearance: auto;
 }
 
-.banner-register{
-  width: 90vw;
-  display:block;
-  margin: auto;
+.form-wrapper{
+  margin: 0 0 2rem 0;
 }
-
-
-
-.avatar-edit-profile{
-  display:block;
-  margin: auto;
-  width: 16rem;
-  border-radius: 50%;
-  margin-top: 3rem;
-}
-
-.checkbox-list{
-  columns: 2;
-  max-width: 530px;
-  margin: 0 auto;
-  padding-left: 13px;
-  padding-right: 13px;
-}
-
-.btn-profile-primary{
-  width: 16rem;
-}
-
-.btn-profile-secondary{
-  width: 12rem;
-}
-
 
 @media screen and (min-width: 770px){
-  .banner-register{
-    width: 68vh;
+  .form-wrapper{
+      margin: 0;
   }
-
-  .input-nick-name{
-    width: 35rem;
-  }
-}
+} 
