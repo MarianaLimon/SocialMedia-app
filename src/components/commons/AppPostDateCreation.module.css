@@ -3,6 +3,7 @@
     display: flex;
     align-items: center;
     font-size: 12pt;
+    color: var(--text-color);
 
 }
 

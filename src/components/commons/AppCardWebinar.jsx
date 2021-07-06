@@ -12,7 +12,7 @@ export default function AppCardArticle() {
     <React.Fragment>
 
 
-    <article className="card mb-3 nav-view-post">
+    <article className={`${Styles.CardWebinar} card mb-3`}>
 
 
         <div className="card-body">
