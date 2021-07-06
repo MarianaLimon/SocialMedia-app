@@ -29,7 +29,7 @@ export default function LeftMenu() {
         </a>
       </li>
       <li>
-        <a href="" className="active" active>
+        <a href="">
           <Icons value={'doctor'}/> &nbsp;<span>Usuarios</span>
         </a>
       </li>
