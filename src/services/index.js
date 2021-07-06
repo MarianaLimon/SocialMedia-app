@@ -1,5 +1,5 @@
-
-const API_URL = "https://socialmedicapi-accountable-quoll-rk.mybluemix.net";
+//const API_URL = "https://socialmedicapi-accountable-quoll-rk.mybluemix.net";
+const API_URL = "http://localhost:8080";
 
 // Endpoints
 export const API_URL_USERS = `${API_URL}/users`;
