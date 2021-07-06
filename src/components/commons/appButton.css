@@ -18,10 +18,13 @@
 }
 
 .button:hover {
-  color: var(--text-color);
+  color: white;
 }
 .button.aqua {
   background-color: var(--aqua);
+}
+.button.aqua:hover {
+  background-color: var(--blue-secondary) !important;
 }
 
 .button.blue {
