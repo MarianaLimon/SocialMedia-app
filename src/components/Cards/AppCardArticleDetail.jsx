@@ -15,7 +15,7 @@ export default function AppCardArticleDetail(props) {
   return (
     <React.Fragment>
 
-    <article className="card mb-3 nav-view-post">
+    <article className="card mb-3">
 
         <AppImage classImage="card-img-top w-100" pathImage={banner} altImage="banner-img"></AppImage>
 

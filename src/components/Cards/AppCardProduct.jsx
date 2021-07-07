@@ -15,7 +15,6 @@ export default function AppCardProduct() {
 
       <article className="col-6 col-lg-6 mb-4">
 
-
           <div className={`${Styles.CardProduct} card`}>
 
 

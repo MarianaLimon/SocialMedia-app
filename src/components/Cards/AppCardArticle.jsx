@@ -14,9 +14,12 @@ export default function AppCardArticle() {
   return (
     <React.Fragment>
 
-        <article className={`${Styles.CardArticles} card mb-3`}>
 
-            <AppImage classImage={`${Styles.CardImage} w-100`} pathImage={banner} altImage="banner-img"></AppImage>
+        <article className="col-12 mb-4">
+
+          <div className={`${Styles.CardArticles} card`}>
+
+            <AppImage classImage={`${Styles.CardImage} card-img-top`} pathImage={banner} altImage="banner-img"></AppImage>
 
             <div className="card-body">
 
@@ -35,6 +38,7 @@ export default function AppCardArticle() {
                 <AppPostReactions/>
 
             </div>
+          </div>
         </article>
 
     </React.Fragment>
