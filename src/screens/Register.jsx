@@ -8,6 +8,16 @@ import AppCheckbox from "../components/commons/AppCheckbox";
 import AppButton from "../components/commons/AppButton";
 import AppSelect from "../components/commons/AppSelect";
 
+//
+import AppImage from "../components/commons/AppImage";
+import Uppy from "@uppy/core";
+import Tus from "@uppy/tus";
+import { DragDrop } from "@uppy/react";
+import Transloadit from "@uppy/transloadit";
+import "@uppy/drag-drop/dist/style.css";
+
+//
+
 export default function Register() {
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
@@ -59,6 +69,66 @@ export default function Register() {
   /*const termins = () => {
     return <AppButton type="anchor" text="Términos y Condiciones" />;
   };*/
+
+  //
+  const uppy = new Uppy({
+    meta: { type: "avatar" },
+    restrictions: { maxNumberOfFiles: 1 },
+    autoProceed: true,
+  });
+
+  /*uppy.use(Tus, {
+    endpoint: "https://api2-rajpur.transloadit.com/resumable/files/", // use your tus endpoint here
+    resume: true,
+    retryDelays: [0, 1000, 3000, 5000],
+  });*/
+
+  uppy.use(Transloadit, {
+    params: {
+      auth: {
+        key: "a67a160389ce4dfea1f8bb6c4d24a5bd",
+      },
+      template_id: "bca5c038a4f745ccbadaf9d83f924964",
+    },
+    waitForEncoding: true,
+  });
+
+  uppy.on("complete", (result) => {
+    const url = result.successful[0].uploadURL;
+    console.log(url);
+    setProfessionalLicenseUrl(url);
+    /*store.dispatch({
+      type: "SET_USER_AVATAR_URL",
+      payload: { url: url },
+    });*/
+  });
+
+  const uploadLicense = () => {
+    console.log(professional_license_url);
+    if (professional_license_url) {
+      return (
+        <AppImage
+          pathImage={professional_license_url}
+          altImage="Professional License"
+        />
+      );
+    }
+    return (
+      <DragDrop
+        uppy={uppy}
+        locale={{
+          strings: {
+            // Text to show on the droppable area.
+            // `%{browse}` is replaced with a link that opens the system file selection dialog.
+            dropHereOr: "Arrastra la foto de cédula aqui ó %{browse}",
+            // Used as the label for the link that opens the system file selection dialog.
+            browse: "selecciona el archivo",
+          },
+        }}
+      />
+    );
+  };
+  //
 
   return (
     <React.Fragment>
@@ -148,6 +218,25 @@ export default function Register() {
                 }
                 required
               />
+              <div>
+                {uploadLicense()}
+                {/*<AppImage
+                  pathImage={professional_license_url}
+                  altImage="Professional License"
+                />
+                <DragDrop
+                  uppy={uppy}
+                  locale={{
+                    strings: {
+                      // Text to show on the droppable area.
+                      // `%{browse}` is replaced with a link that opens the system file selection dialog.
+                      dropHereOr: "Arrastra la foto de cédula aqui ó %{browse}",
+                      // Used as the label for the link that opens the system file selection dialog.
+                      browse: "selecciona el archivo",
+                    },
+                  }}
+                />*/}
+              </div>
               {/* <AppCheckbox label={termins()}/> */}
               <AppCheckbox
                 id="name"
@@ -167,3 +256,47 @@ export default function Register() {
     </React.Fragment>
   );
 }
+
+/*************************** */
+/*
+import React from "react";
+import Uppy from "@uppy/core";
+import Tus from "@uppy/tus";
+import { DragDrop } from "@uppy/react";
+
+const uppy = new Uppy({
+  meta: { type: "avatar" },
+  restrictions: { maxNumberOfFiles: 1 },
+  autoProceed: true,
+});
+
+uppy.use(Tus, { endpoint: "/upload" });
+
+uppy.on("complete", (result) => {
+  const url = result.successful[0].uploadURL;
+  store.dispatch({
+    type: "SET_USER_AVATAR_URL",
+    payload: { url: url },
+  });
+});
+
+const AvatarPicker = ({ currentAvatar }) => {
+  return (
+    <div>
+      <img src={currentAvatar} alt="Current Avatar" />
+      <DragDrop
+        uppy={uppy}
+        locale={{
+          strings: {
+            // Text to show on the droppable area.
+            // `%{browse}` is replaced with a link that opens the system file selection dialog.
+            dropHereOr: "Drop here or %{browse}",
+            // Used as the label for the link that opens the system file selection dialog.
+            browse: "browse",
+          },
+        }}
+      />
+    </div>
+  );
+};
+*/
