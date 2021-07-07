@@ -16,9 +16,11 @@
 
 
   .FilterImage{
-      float: right;
-      cursor: pointer;
-      display: block;
+    cursor: pointer;
+    position: absolute;
+    right: 22px;
+    top: 80px;
+    display: block;
   }
 
   @media screen and (min-width: 770px){
