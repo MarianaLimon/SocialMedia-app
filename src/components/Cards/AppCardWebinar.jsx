@@ -3,6 +3,7 @@ import React from "react";
 import AppPostAuthorInfo from "./AppPostAuthorInfo"
 import AppPostVideoBanner from "./AppPostVideoBanner"
 import AppPostVideoControls from "./AppPostVideoControls"
+import AppPostReactions from "./AppPostReactions";
 
 import Styles from "./AppCardWebinar.module.css"
 
@@ -12,10 +13,14 @@ export default function AppCardArticle() {
     <React.Fragment>
 
 
-    <article className={`${Styles.CardWebinar} card mb-3`}>
+    <article className="col-12 mb-4">
 
+      <div className={`${Styles.CardWebinar} card`}>
 
-        <div className="card-body">
+          {/* Contenedor Banner ---- MOBILE*/}
+          <AppPostVideoBanner dstate="d-flex d-md-none"/>
+
+        <div className="card-body ">
 
             {/* Title */}
             <h2 className={`${Styles.CardTitle}`}>
@@ -23,13 +28,21 @@ export default function AppCardArticle() {
             </h2>
 
             {/* Contenedor del avatar y el name */}
-            <AppPostAuthorInfo estado="full-info"/>
+            <AppPostAuthorInfo dstate="d-none d-md-block" estado="full-info"/>
 
             {/* Contenedor Banner */}
-            <AppPostVideoBanner/>
+            <AppPostVideoBanner dstate="d-none d-md-flex"/>
 
             {/* Contenedor Controls */}
             <AppPostVideoControls/>
+            
+            {/* Title ---- Mobile */}
+            <h2 className={`${Styles.CardTitleMobile}`}>
+                <a href="#">Title</a>
+            </h2>
+
+            {/* Contenedor del avatar y el name ---- MOBILE */}
+            <AppPostAuthorInfo className={``} dstate="d-flex d-md-none" cname={`d-flex ${Styles.WebinarAuthorInfo}`} estado="full-info"/>
 
 
             {/* Content */}
@@ -37,6 +50,10 @@ export default function AppCardArticle() {
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae asperiores perferendis beatae perspiciatis facilis! Rem, mollitia nesciunt assumenda vel magni doloremque fuga iste quis sunt sequi expedita ratione quos laborum.</p>
             </div>
 
+            {/* Reactions */}
+            <AppPostReactions/>
+
+          </div>
         </div>
     </article>
 

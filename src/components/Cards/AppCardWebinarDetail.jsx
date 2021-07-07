@@ -14,7 +14,7 @@ export default function AppCardWebinarDetail(props) {
   return (
     <React.Fragment>
 
-    <article className="card mb-3 nav-view-post">
+    <article className="card mb-3">
 
         {/* Banner del Webinar */}
         <AppPostVideoBanner size="webinar-detail"/>
@@ -39,8 +39,6 @@ export default function AppCardWebinarDetail(props) {
             <div className={`${Styles.PublishedContent}`}>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae asperiores perferendis beatae perspiciatis facilis! Rem, mollitia nesciunt assumenda vel magni doloremque fuga iste quis sunt sequi expedita ratione quos laborum.</p>
             </div>
-
-
 
         </div>  {/* Fin del Card Body */}
 

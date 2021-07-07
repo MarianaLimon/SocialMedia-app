@@ -1,11 +1,38 @@
 
 .CardProduct{
-    box-shadow: 1px 2px 5px #666;
+    box-shadow: none;
 }
 
+@media screen and (min-width: 770px){
+    .CardProduct{
+        box-shadow: 1px 2px 5px #666;
+    }
+}
+
+
 .CardImage{
-    height: 230px;
+    height: 200px;
+    min-height: 100%;
+    width: 150px;
+    min-width: 100%;
     object-fit: cover;
+}
+
+
+@media screen and (min-width: 770px){
+    .CardImage{
+        height: 230px;
+    }  
+}
+
+.CardBody{
+    display: none;
+}
+
+@media screen and (min-width: 770px){
+    .CardBody{
+        display: block;
+    }    
 }
 
 
@@ -14,17 +41,41 @@
 .CardTitle{
     font-size: 2.25rem;
     margin: 6px 0;
+    font-weight: bold;
 }
 
 .CardTitle a{
     color: var(--text-color);
     text-decoration: none;
-    
 }
 
 .CardTitle a:hover{
     color: var(--blue-primary)
 }
+
+/* Titulo que se muestra en mobile */
+
+.CardTitleMobile{
+    font-size: 1.8rem;
+    text-align: center;
+    margin: 10px 0;
+    display: block;
+}
+
+.CardTitleMobile a{
+    color: var(--blue-secondary);
+}
+
+.CardTitleMobile a:hover{
+    color: var(--blue-primary);
+}
+
+@media screen and (min-width: 770px){
+    .CardTitleMobile{
+        display: none;
+    }
+}
+
 
 /*Tags*/
 
@@ -51,4 +102,3 @@
     padding: 5px 10px !important;
     margin-right: 6px;
 }
-

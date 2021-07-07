@@ -41,12 +41,10 @@
 
 .ReactionsText{
     margin-left: 10px;
-    display: none;
+    /*display: none;*/
 }
 
 @media screen and (min-width: 770px){
-    .ReactionsText{
-        display: block;
-    }
+
     
 }
