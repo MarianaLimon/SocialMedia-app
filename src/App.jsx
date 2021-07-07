@@ -12,6 +12,7 @@ import HomeMedico from "./screens/Medico/HomeMedico";
 import EditProfile from "./screens/Medico/EditProfile"
 import HomeAdmin from "./screens/Admin/HomeAdmin";
 import UsersList from "./screens/Admin/UsersList";
+import ArticlesListAdmin from "./screens/Admin/ArticlesList";
 
 import ArticlesList from "./screens/Medico/ArticlesList";
 import ArticleDetail from "./screens/Medico/ArticleDetail";
@@ -32,6 +33,7 @@ function App() {
 
       <Router>
         <Switch>
+          <Route exact path="/articlesadmin"><ArticlesListAdmin /></Route>
           <Route exact path="/users"><UsersList /></Route>
 
           <Route exact path="/register"><Register /></Route>
@@ -40,9 +42,7 @@ function App() {
 
           <Route exact path="/login"><Login /></Route>
 
-          <Route exact path="/articles">
-            <ArticlesList/>
-          </Route>
+          <Route exact path="/articles"><ArticlesList/></Route>
 
           <Route exact path="/article-detail">
               <ArticleDetail />
