@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Icons from "../../../components/commons/icons";
 import LeftMenu from "../../../components/LeftMenu";
+import AppCheckbox from "../../../components/commons/AppCheckbox";
 
 export default function UsersList() {
 
@@ -21,30 +22,30 @@ export default function UsersList() {
             <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col"></th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Email</th>
+      <th scope="col">Estatus</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
+      <th scope="row"><AppCheckbox /></th>
       <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <td>Otto@mdo</td>
+      <td>Pendiente</td>
     </tr>
     <tr>
-      <th scope="row">2</th>
+      <th scope="row"><AppCheckbox /></th>
       <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
+      <td>Thornton@mdo</td>
+      <td>Suscrito</td>
     </tr>
     <tr>
-      <th scope="row">3</th>
+      <th scope="row"><AppCheckbox /></th>
       <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
+      <td>theBird@mdo</td>
+      <td>Suscrito</td>
     </tr>
   </tbody>
 </table>
