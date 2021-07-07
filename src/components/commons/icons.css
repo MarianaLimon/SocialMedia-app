@@ -38,3 +38,13 @@ a{
   height: 24px;
   color: var(--blue-ligth);
 }
+
+.deleteIcon{
+  color: var(--blue-secondary);
+  font-size: 25px;
+  margin-left: 10px;
+}
+
+.deleteIcon:hover{
+  color: var(--aqua);
+}

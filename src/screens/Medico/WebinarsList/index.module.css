@@ -1,0 +1,29 @@
+.TitleSection{
+    margin: 50px 0;
+    color: var(--text-color);
+    text-align: center;
+    font-size: 2.25rem;
+}
+
+
+@media screen and (min-width: 770px){
+    .TitleSection{
+        margin: 20px 0;
+        color: var(--blue-secondary);
+        text-align: inherit;
+    }
+  }
+
+
+  .FilterImage{
+      float: right;
+      cursor: pointer;
+      display: block;
+  }
+
+  @media screen and (min-width: 770px){
+    .FilterImage{
+        display: none;
+    }
+  }
+  

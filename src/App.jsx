@@ -1,29 +1,28 @@
 import React from "react";
 
-import Footer from "./components/footer";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-// Front Screens
-import Register from "./screens/Register";
-import TnksRegister from "./screens/ThanksRegister";
-import Login from "./screens/Login";
-import HomeDoctor from "./screens/HomeDoctor";
+import Register from "./screens/Medico/Register";
+import TnksRegister from "./screens/Medico/ThanksRegister";
+import Login from "./screens/Medico/Login";
+import HomeMedico from "./screens/Medico/HomeMedico";
+import EditProfile from "./screens/Medico/EditProfile"
+import HomeAdmin from "./screens/Admin/HomeAdmin";
+import UsersList from "./screens/Admin/UsersList";
 
-import ArticlesList from "./screens/ArticlesList";
-import ArticleDetail from "./screens/ArticleDetail";
-import WebinarsList from "./screens/WebinarsList";
-import WebinarDetail from "./screens/WebinarDetail";
-import ProductDetail from "./screens/ProductDetail";
+import ArticlesList from "./screens/Medico/ArticlesList";
+import ArticleDetail from "./screens/Medico/ArticleDetail";
+import WebinarsList from "./screens/Medico/WebinarsList";
+import WebinarDetail from "./screens/Medico/WebinarDetail";
+import ProductsList from "./screens/Medico/ProductsList";
+import ProductDetail from "./screens/Medico/ProductDetail";
 
 // Examples and Tests
-import AppCardProductDetail from "./components/commons/AppCardProductDetail";
-import CheckboxScreen from "./screens/CheckboxScreen";
+//import AppCardProductDetail from "./components/commons/AppCardProductDetail";
 import ModalScreen from "./screens/ModalScreen";
-
-
-
 import Test from "./screens/Test.js";
 
 function App() {
@@ -33,16 +32,13 @@ function App() {
 
       <Router>
         <Switch>
-
-          {/* ************ FRONT SCREENS ********* */}
+          <Route exact path="/users"><UsersList /></Route>
 
           <Route exact path="/register"><Register /></Route>
 
           <Route exact path="/tnksregister"><TnksRegister /></Route>
 
-          <Route exact path="/"><Login /></Route>
-
-          <Route exact path="/home"><HomeDoctor /></Route>
+          <Route exact path="/login"><Login /></Route>
 
           <Route exact path="/articles">
             <ArticlesList/>
@@ -60,17 +56,21 @@ function App() {
             <WebinarDetail/>
           </Route>
 
+          <Route exact path="/products">
+            <ProductsList/>
+          </Route>
+
           <Route exact path="/product-detail">
             <ProductDetail/>
           </Route>
 
           {/* ************ EXAMPLES AND TESTS ********* */}
 
+         <Route exact path="/home"><HomeMedico /></Route>
 
+          <Route exact path="/profile"><EditProfile /></Route>
 
-          <Route exact path="/checkbox">
-            <CheckboxScreen />
-          </Route>
+          <Route exact path="/homeadmin"><HomeAdmin /></Route>
 
           <Route exact path="/modal">
             <ModalScreen />
