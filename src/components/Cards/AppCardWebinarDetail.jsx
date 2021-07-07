@@ -40,8 +40,6 @@ export default function AppCardWebinarDetail(props) {
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae asperiores perferendis beatae perspiciatis facilis! Rem, mollitia nesciunt assumenda vel magni doloremque fuga iste quis sunt sequi expedita ratione quos laborum.</p>
             </div>
 
-
-
         </div>  {/* Fin del Card Body */}
 
 
