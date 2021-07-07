@@ -14,6 +14,7 @@ import HomeAdmin from "./screens/Admin/HomeAdmin";
 import UsersList from "./screens/Admin/UsersList";
 import ArticlesListAdmin from "./screens/Admin/ArticlesList";
 import WebinarsListAdmin from "./screens/Admin/WebinarsList";
+import ProductsListAdmin from "./screens/Admin/ProductsList";
 import ArticlesList from "./screens/Medico/ArticlesList";
 import ArticleDetail from "./screens/Medico/ArticleDetail";
 import WebinarsList from "./screens/Medico/WebinarsList";
@@ -33,7 +34,8 @@ function App() {
 
       <Router>
         <Switch>
-        <Route exact path="/webinars-admin"><WebinarsListAdmin /></Route>
+          <Route exact path="/products-admin"><ProductsListAdmin /></Route>
+          <Route exact path="/webinars-admin"><WebinarsListAdmin /></Route>
           <Route exact path="/articles-admin"><ArticlesListAdmin /></Route>
           <Route exact path="/users"><UsersList /></Route>
 
