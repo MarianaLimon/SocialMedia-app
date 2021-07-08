@@ -29,7 +29,21 @@ export default function Register() {
   const [professional_license, setProfessionalLicense] = useState("");
   const [professional_license_url, setProfessionalLicenseUrl] = useState("");
   const [options, setOptions] = useState([]);
+  const [checked, setChecked] = useState(false);
+  const [firstnameError, setFirstnameError] = useState(false);
+  const [lastnameError, setLastnameError] = useState(false);
+  const [mother_lastnameError, setMotherLastnameError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
+  const [passwordError, setPasswordError] = useState(false);
+  const [password_confirmError, setPasswordConfirmError] = useState(false);
+  const [specialty_idError, setSpecialtyIdError] = useState(false);
+  const [professional_licenseError, setProfessionalLicenseError] =
+    useState(false);
+  const [professional_license_urlError, setProfessionalLicenseUrlError] =
+    useState(false);
+  const [termsError, setTermsError] = useState(false);
 
+  let validForm = true;
   useEffect(() => {
     const request = async () => {
       const json = await getSpecialties();
@@ -45,8 +59,107 @@ export default function Register() {
 
   const history = useHistory();
 
+  const printError = (feddback) => {
+    return (
+      <small
+        className="text-danger"
+        style={{ position: "absolute", marginTop: "-20px" }}
+      >
+        {feddback}
+      </small>
+    );
+  };
+
+  const handleValidation = () => {
+    //console.log("validation");
+    if (!isName(firstname) || firstname.length < 3) {
+      validForm = false;
+      setFirstnameError(true);
+    } else {
+      setFirstnameError(false);
+    }
+    if (!isName(lastname) || lastname.length < 3) {
+      validForm = false;
+      setLastnameError(true);
+    } else {
+      setLastnameError(false);
+    }
+    if (!isName(mother_lastname) || mother_lastname.length < 3) {
+      validForm = false;
+      setMotherLastnameError(true);
+    } else {
+      setMotherLastnameError(false);
+    }
+    if (!isEmail(email)) {
+      validForm = false;
+      setEmailError(true);
+    } else {
+      setEmailError(false);
+    }
+    if (password.length < 6) {
+      validForm = false;
+      setPasswordError(true);
+    } else {
+      setPasswordError(false);
+    }
+    if (password_confirm.length < 6 || password != password_confirm) {
+      validForm = false;
+      setPasswordConfirmError(true);
+    } else {
+      setPasswordConfirmError(false);
+    }
+    if (professional_license.length < 4) {
+      validForm = false;
+      setProfessionalLicenseError(true);
+    } else {
+      setProfessionalLicenseError(false);
+    }
+    if (specialty_id === "") {
+      validForm = false;
+      setSpecialtyIdError(true);
+    } else {
+      setSpecialtyIdError(false);
+    }
+    if (professional_license_url.length === "") {
+      validForm = false;
+      setProfessionalLicenseUrlError(true);
+    } else {
+      setProfessionalLicenseUrlError(false);
+    }
+    if (!checked) {
+      validForm = false;
+      setTermsError(true);
+    } else {
+      setTermsError(false);
+    }
+    return validForm;
+  };
+
+  function isEmail(email) {
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return regex.test(email);
+  }
+
+  function isName(name) {
+    var regex = /^[a-zA-ZáéíóúÁÉÍÓÚÑñ\s]*$/;
+    return regex.test(name);
+  }
+
+  function isPhone(phone) {
+    var regex = /^[0-9]*$/;
+    return regex.test(phone);
+  }
+
+  function isSpace(campo) {
+    var regex = /^\s+|\s/;
+    return regex.test(campo);
+  }
+
   const handleSubmit = async (event) => {
     event.preventDefault();
+    if (!handleValidation()) {
+      return false;
+    }
     try {
       const newUser = {
         firstname,
@@ -94,13 +207,15 @@ export default function Register() {
   });
 
   const uploadLicense = () => {
-    console.log(professional_license_url);
+    //console.log(professional_license_url);
     if (professional_license_url) {
       return (
-        <AppImage
-          pathImage={professional_license_url}
-          altImage="Professional License"
-        />
+        <div>
+          <AppImage
+            pathImage={professional_license_url}
+            altImage="Professional License"
+          />
+        </div>
       );
     }
     return (
@@ -120,6 +235,24 @@ export default function Register() {
   };
   //
 
+  const checkLetters = (event) => {
+    if (/[0-9+*%@#$&?=+_]/g.test(event.currentTarget.value)) {
+      event.currentTarget.value = event.currentTarget.value.replace(
+        /[0-9+*%@#$&?=+_]/g,
+        ""
+      );
+    }
+  };
+
+  const checkNumbers = (event) => {
+    if (/^\d{10}$/.test(event.currentTarget.value)) {
+      event.currentTarget.value = event.currentTarget.value.replace(
+        /^\d{10}$/,
+        ""
+      );
+    }
+  };
+
   return (
     <React.Fragment>
       <div className="register-container container">
@@ -129,31 +262,52 @@ export default function Register() {
           </div>
           <div className="form-wrapper col-md-6">
             <h1 className="my-4">REGISTRO</h1>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="needs-validation">
               <Input
                 id="firstname"
                 placeholder="Nombre"
                 type="text"
                 value={firstname}
-                onChange={(event) => setFirstname(event.target.value)}
+                /*onChange={(event) => setFirstname(event.target.value)}*/
                 required
+                onChange={(event) => {
+                  if (/[0-9+*%@#$&?=+_]/g.test(event.currentTarget.value)) {
+                    event.currentTarget.value =
+                      event.currentTarget.value.replace(
+                        /[0-9+*%@#$&?=+_]/g,
+                        ""
+                      );
+                  }
+                  setFirstname(event.target.value);
+                }}
               />
+              {firstnameError ? printError("Escriba su nombre") : null}
               <Input
                 id="lastname"
                 placeholder="Apellido Paterno"
                 type="text"
                 value={lastname}
-                onChange={(event) => setLastname(event.target.value)}
+                onChange={(event) => {
+                  checkLetters(event);
+                  setLastname(event.target.value);
+                }}
                 required
               />
+              {lastnameError ? printError("Escriba su apellido paterno") : null}
               <Input
                 id="mother_lastname"
                 placeholder="Apellido Materno"
                 type="text"
                 value={mother_lastname}
-                onChange={(event) => setMotherLastname(event.target.value)}
+                onChange={(event) => {
+                  checkLetters(event);
+                  setMotherLastname(event.target.value);
+                }}
                 required
               />
+              {mother_lastnameError
+                ? printError("Escriba su apellido materno")
+                : null}
               <Input
                 id="email"
                 placeholder="Correo electrónico"
@@ -162,6 +316,7 @@ export default function Register() {
                 onChange={(event) => setEmail(event.target.value)}
                 required
               />
+              {emailError ? printError("Escriba un email valido") : null}
               <Input
                 id="password"
                 placeholder="Contraseña"
@@ -170,6 +325,9 @@ export default function Register() {
                 onChange={(event) => setPassword(event.target.value)}
                 required
               />
+              {passwordError
+                ? printError("Escriba un password de por lo menos 6 caracteres")
+                : null}
               <Input
                 id="password_confirm"
                 placeholder="Confirme su contraseña"
@@ -178,16 +336,25 @@ export default function Register() {
                 onChange={(event) => setPasswordConfirm(event.target.value)}
                 required
               />
+              {password_confirmError
+                ? printError("Confirme su password, debe ser identico")
+                : null}
               <Input
                 id="professional_license"
                 placeholder="Cédula Profesional"
                 type="text"
                 value={professional_license}
-                onChange={(event) => setProfessionalLicense(event.target.value)}
+                onChange={(event) => {
+                  setProfessionalLicense(event.target.value);
+                }}
                 required
               />
+              {professional_licenseError
+                ? printError("Escriba su cédula profesional correctamente")
+                : null}
               <AppSelect
-                classSelect="col-12"
+                classSelect="AppInput_InputComponent__1j-T8"
+                classLabel="col-12"
                 idSelect="especialidad"
                 placeholder="Especialidad"
                 classContainerInput=""
@@ -197,25 +364,45 @@ export default function Register() {
                 value={specialty_id}
                 onChange={(event) => setSpecialtyId(event.target.value)}
               />
-
+              {specialty_idError
+                ? printError("Selecione su especialidad")
+                : null}
               <Input
                 id="professional_license_url"
                 placeholder="Upload Foto Cédula"
-                type="text"
+                type="hidden"
                 value={professional_license_url}
                 onChange={(event) =>
                   setProfessionalLicenseUrl(event.target.value)
                 }
                 required
               />
-              <div>{uploadLicense()}</div>
+              {uploadLicense()}
               {/* <AppCheckbox label={termins()}/> */}
-              <AppCheckbox
+              {/*<AppCheckbox
                 id="name"
+                defaultChecked={checked}
+                onCheckboxChange={() => setChecked(!checked)}
+                isSelected={checked}
+                value={checked}
                 label={`Acepto los ${(
                   <AppButton type="anchor" text="Términos y Condiciones" />
                 )}`}
-              />
+                />*/}
+              <label>
+                <input
+                  type="checkbox"
+                  onChange={() => setChecked(!checked)}
+                  defaultChecked={checked}
+                />{" "}
+                Acepto los{" "}
+                <AppButton type="anchor" text="Términos y Condiciones" />
+              </label>
+              <div>
+                {termsError
+                  ? printError("Acepte los terminos y condiciones")
+                  : null}
+              </div>
               <AppButton
                 classButton="secondary w-50 d-block mx-auto my-5"
                 type="submit"
