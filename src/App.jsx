@@ -72,6 +72,8 @@ function App() {
 
           <Route exact path="/homeadmin"><HomeAdmin /></Route>
 
+          <Route exact path="/validated"><UserValidate /></Route>
+
           <Route exact path="/modal">
             <ModalScreen />
           </Route>

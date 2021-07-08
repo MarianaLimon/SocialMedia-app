@@ -12,3 +12,22 @@
         height: auto;
     }
 }
+
+.AppInput_InputComponent{
+    border-radius: 4px;
+    color: var(--text-color);
+    border: 0px;
+    padding: 10px 24px;
+    width: 100%;
+    margin-bottom: 20px;
+    outline: none;
+}
+
+::placeholder{
+    color: var(--text-color);
+    opacity: 1;
+}
+
+.uppy-DragDrop-inner{
+    padding: 34px 20px;
+}
