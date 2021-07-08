@@ -11,6 +11,8 @@ import filterIcon from "@iconify/icons-vaadin/filter";
 import doctorIcon from "@iconify/icons-vaadin/doctor";
 import trashIcon from "@iconify/icons-vaadin/trash";
 import hamburger from "@iconify/icons-bx/bx-menu";
+import pencilIcon from '@iconify/icons-vaadin/pencil';
+import shieldIcon from '@iconify/icons-vaadin/shield';
 
 function Icons(props) {
   switch (props.value) {
@@ -31,9 +33,13 @@ function Icons(props) {
     case "doctor":
       return <Icon icon={doctorIcon} className={`icon ${props.className}`} />;
     case "delete":
-      return <Icon icon={trashIcon} className="icon deleteIcon" />;
+      return <Icon icon={trashIcon} className={`icon hamburger deleteIcon ${props.className}`} />;
     case "menu":
       return <Icon icon={hamburger} className={`icon hamburger ${props.className}`} />;
+    case "edit":
+      return <Icon icon={pencilIcon} className={`icon ${props.className}`} />;
+    case "validate":
+      return <Icon icon={shieldIcon} className={`icon ${props.className}`} />;
     default:
       return "sin icono";
   }
