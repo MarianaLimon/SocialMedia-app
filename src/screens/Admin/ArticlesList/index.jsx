@@ -3,11 +3,14 @@ import Icons from "../../../components/commons/icons";
 import LeftMenu from "../../../components/LeftMenu";
 import AppCheckbox from "../../../components/commons/AppCheckbox";
 import AppButton from "../../../components/commons/AppButton";
+import Footer from "../../../components/Footer";
+import Header from "../../../components/Header";
 
 export default function ArticlesListAdmin() {
 
   return (
     <React.Fragment>
+      <Header />
       <div className="container my-4">
         <div className="row">
           <div className="col-lg-2">
@@ -65,6 +68,7 @@ export default function ArticlesListAdmin() {
           </div>
         </div>   
       </div>
+      <Footer />
     </React.Fragment>
   );
 }

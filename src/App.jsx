@@ -1,17 +1,15 @@
 import React from "react";
 
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Register from "./screens/Medico/Register";
-import TnksRegister from "./screens/Medico/ThanksRegister";
-import Login from "./screens/Medico/Login";
+import Register from "./screens/Register";
+import TnksRegister from "./screens/ThanksRegister";
+import Login from "./screens/Login";
 import HomeMedico from "./screens/Medico/HomeMedico";
 import EditProfile from "./screens/Medico/EditProfile"
 import HomeAdmin from "./screens/Admin/HomeAdmin";
 import UsersList from "./screens/Admin/UsersList";
+import UserValidate from "./screens/Admin/UserValidate"
 import ArticlesListAdmin from "./screens/Admin/ArticlesList";
 import WebinarsListAdmin from "./screens/Admin/WebinarsList";
 import ProductsListAdmin from "./screens/Admin/ProductsList";
@@ -30,13 +28,12 @@ import Test from "./screens/Test.js";
 function App() {
   return (
     <React.Fragment>
-      <Header />
-
       <Router>
         <Switch>
           <Route exact path="/products-admin"><ProductsListAdmin /></Route>
           <Route exact path="/webinars-admin"><WebinarsListAdmin /></Route>
           <Route exact path="/articles-admin"><ArticlesListAdmin /></Route>
+          <Route exact path="/user-validate"><UserValidate /></Route>
           <Route exact path="/users"><UsersList /></Route>
 
           <Route exact path="/register"><Register /></Route>
@@ -83,8 +80,6 @@ function App() {
 
         </Switch>
       </Router>
-
-      <Footer />
     </React.Fragment>
   );
 }

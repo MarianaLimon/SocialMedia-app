@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router";
-import { getSpecialties } from "../../../services/specialties";
-import { postUser } from "../../../services/users";
-import banner from "../../../img/doctor-banner.png";
-import Input from "../../../components/commons/AppInput";
-import AppCheckbox from "../../../components/commons/AppCheckbox";
-import AppButton from "../../../components/commons/AppButton";
-import AppSelect from "../../../components/commons/AppSelect";
+import { getSpecialties } from "../../services/specialties";
+import { postUser } from "../../services/users";
+import banner from "../../img/doctor-banner.png";
+import Input from "../../components/commons/AppInput";
+import AppCheckbox from "../../components/commons/AppCheckbox";
+import AppButton from "../../components/commons/AppButton";
+import AppSelect from "../../components/commons/AppSelect";
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
 import "./index.css";
 //
-import AppImage from "../../../components/commons/AppImage";
+import AppImage from "../../components/commons/AppImage";
 import Uppy from "@uppy/core";
 import Tus from "@uppy/tus";
 import { DragDrop } from "@uppy/react";
@@ -122,6 +124,7 @@ export default function Register() {
 
   return (
     <React.Fragment>
+      <Header />
       <div className="register-container container">
         <div className="row">
           <div className="col-md-6 my-4">
@@ -225,6 +228,7 @@ export default function Register() {
           </div>
         </div>
       </div>
+      <Footer />
     </React.Fragment>
   );
 }
