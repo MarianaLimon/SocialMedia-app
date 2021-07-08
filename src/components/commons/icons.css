@@ -41,8 +41,7 @@ a{
 
 .deleteIcon{
   color: var(--blue-secondary);
-  font-size: 25px;
-  margin-left: 10px;
+  font-size: 20px;
 }
 
 .deleteIcon:hover{
