@@ -2,7 +2,6 @@ import React from "react";
 
 import AppPostAuthorInfo from "./AppPostAuthorInfo"
 import AppPostVideoBanner from "./AppPostVideoBanner"
-import AppPostVideoControls from "./AppPostVideoControls"
 import AppPostReactions from "./AppPostReactions";
 
 import Styles from "./AppCardWebinar.module.css"
@@ -32,9 +31,6 @@ export default function AppCardArticle() {
 
             {/* Contenedor Banner */}
             <AppPostVideoBanner dstate="d-none d-md-flex"/>
-
-            {/* Contenedor Controls */}
-            <AppPostVideoControls/>
             
             {/* Title ---- Mobile */}
             <h2 className={`${Styles.CardTitleMobile}`}>

@@ -3,7 +3,6 @@ import React from "react";
 
 import AppTextarea from "../commons/AppTextarea";
 import AppPostVideoBanner from "./AppPostVideoBanner";
-import AppPostVideoControls from "./AppPostVideoControls";
 import AppPostAuthorInfo from "./AppPostAuthorInfo";
 import AppPostReactions from "./AppPostReactions";
 
@@ -18,9 +17,6 @@ export default function AppCardWebinarDetail(props) {
 
         {/* Banner del Webinar */}
         <AppPostVideoBanner size="webinar-detail"/>
-
-        {/* Video Controls */}
-        <AppPostVideoControls/>
 
         <div className={`card-body ${Styles.CardBody}`}>
 
