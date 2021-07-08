@@ -9,7 +9,7 @@ import { useHistory, useLocation } from "react-router";
 
 import "./index.css";
 
-export default function Header(props) {
+export default function Header() {
   const [login, setLogin] = useState(false)
   const [menuAdmin, setMenuAdmin] = useState(false)
   const [urlHome, setUrlHome] = useState("/")
@@ -18,6 +18,8 @@ export default function Header(props) {
   const history = useHistory();
   const location = useLocation();
 
+  const routesAdmin = ["/homeadmin", "products", "product-detail"]
+  const routesMedico = [""]
   const redirect = () => {
     if (location.pathname !== "/") {
       setUrlHome("/")
@@ -52,8 +54,6 @@ export default function Header(props) {
       } else {
         redirect()
       }
-    } else {
-      redirect()
     }
 
   }, [])
