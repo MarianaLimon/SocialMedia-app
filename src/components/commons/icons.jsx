@@ -15,25 +15,25 @@ import hamburger from "@iconify/icons-bx/bx-menu";
 function Icons(props) {
   switch (props.value) {
     case "home":
-      return <Icon icon={homeIcon} className="icon" />;
+      return <Icon icon={homeIcon} className={`icon ${props.className}`} />;
     case "webinars":
-      return <Icon icon={movieIcon} className="icon" />;
+      return <Icon icon={movieIcon} className={`icon ${props.className}`} />;
     case "articles":
-      return <Icon icon={newspaperIcon} className="icon" />;
+      return <Icon icon={newspaperIcon} className={`icon ${props.className}`} />;
     case "products":
-      return <Icon icon={pillsIcon} className="icon" />;
+      return <Icon icon={pillsIcon} className={`icon ${props.className}`} />;
     case "likes":
-      return <Icon icon={thumbsUp} className="icon" />;
+      return <Icon icon={thumbsUp} className={`icon ${props.className}`} />;
     case "comments":
-      return <Icon icon={commentsIcon} className="icon commentsIcon" />;
+      return <Icon icon={commentsIcon} className={`icon commentsIcon ${props.className}`}/>;
     case "filter":
-      return <Icon icon={filterIcon} className="icon" />;
+      return <Icon icon={filterIcon} className={`icon ${props.className}`} />;
     case "doctor":
-      return <Icon icon={doctorIcon} className="icon" />;
+      return <Icon icon={doctorIcon} className={`icon ${props.className}`} />;
     case "delete":
       return <Icon icon={trashIcon} className="icon deleteIcon" />;
     case "menu":
-      return <Icon icon={hamburger} className="icon hamburger" />;
+      return <Icon icon={hamburger} className={`icon hamburger ${props.className}`} />;
     default:
       return "sin icono";
   }
