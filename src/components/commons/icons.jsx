@@ -33,13 +33,13 @@ function Icons(props) {
     case "doctor":
       return <Icon icon={doctorIcon} className={`icon ${props.className}`} />;
     case "delete":
-      return <Icon icon={trashIcon} className={`icon hamburger deleteIcon ${props.className}`} />;
+      return <Icon icon={trashIcon} className={`icon deleteIcon ${props.className}`} />;
     case "menu":
       return <Icon icon={hamburger} className={`icon hamburger ${props.className}`} />;
     case "edit":
       return <Icon icon={pencilIcon} className={`icon ${props.className}`} />;
     case "validate":
-      return <Icon icon={shieldIcon} className={`icon ${props.className}`} />;
+      return <Icon icon={shieldIcon} className={`icon validate ${props.className}`} />;
     default:
       return "sin icono";
   }

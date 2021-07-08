@@ -25,27 +25,31 @@ export default function UsersList() {
                   <th scope="col"><Icons value={'delete'}/></th>
                   <th scope="col">Nombre</th>
                   <th scope="col">Email</th>
-                  <th scope="col">Estatus</th>
+                  <th scope="col" className="d-lg-block d-none">Estatus</th>
+                  <th scope="col"> </th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <th scope="row"><AppCheckbox /></th>
                   <td>Mark</td>
-                  <td>Otto@mdo</td>
+                  <td className="d-lg-block d-none">Otto@mdo</td>
                   <td>Pendiente</td>
+                  <th scope="col"><button className="btn-validate"><Icons value={'validate'}/></button></th>
                 </tr>
                 <tr>
                   <th scope="row"><AppCheckbox /></th>
                   <td>Jacob</td>
-                  <td>Thornton@mdo</td>
+                  <td className="d-lg-block d-none">Thornton@mdo</td>
                   <td>Suscrito</td>
+                  <th scope="col"><button className="btn-validate"><Icons value={'validate'}/></button></th>
                 </tr>
                 <tr>
                   <th scope="row"><AppCheckbox /></th>
                   <td>Larry</td>
-                  <td>theBird@mdo</td>
+                  <td className="d-lg-block d-none">theBird@mdo</td>
                   <td>Suscrito</td>
+                  <th scope="col"><button className="btn-validate"><Icons value={'validate'}/></button></th>
                 </tr>
               </tbody>
             </table>
