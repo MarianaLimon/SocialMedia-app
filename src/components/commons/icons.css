@@ -40,10 +40,21 @@ a{
 }
 
 .deleteIcon{
-  color: var(--blue-secondary);
+  color: var(--text-color);
   font-size: 20px;
 }
 
-.deleteIcon:hover{
+.deleteIcon:hover, .validate:hover{
   color: var(--aqua);
+}
+
+.validate{
+  color: var(--blue-secondary);
+  font-size: 18px;
+}
+
+.btn-validate{
+  background-color: transparent;
+  border: none;
+  padding: 0px;
 }
