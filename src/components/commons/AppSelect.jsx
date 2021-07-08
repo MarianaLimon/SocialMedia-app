@@ -3,6 +3,7 @@ import React from "react";
 const AppSelect = ({
   label,
   classSelect = "",
+  classLabel = "",
   ariaDescribedBy,
   idSelect,
   isDisabled = false,
@@ -36,7 +37,7 @@ const AppSelect = ({
     <div className={`field ${classContainerInput}`}>
       <label
         id={`${idSelect}Label`}
-        className={`label ${classSelect}`}
+        className={`label ${classLabel}`}
         htmlFor={idSelect}
       >
         {label}
