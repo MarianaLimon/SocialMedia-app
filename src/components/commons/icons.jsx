@@ -1,6 +1,6 @@
 import React from "react";
 import "./icons.css";
-import { Icon } from "@iconify/react";
+import { Icon, InlineIcon } from "@iconify/react";
 import homeIcon from "@iconify/icons-vaadin/home";
 import movieIcon from "@iconify/icons-vaadin/movie";
 import newspaperIcon from "@iconify/icons-vaadin/newspaper";
@@ -25,13 +25,13 @@ function Icons(props) {
     case "likes":
       return <Icon icon={thumbsUp} className="icon" />;
     case "comments":
-      return <Icon icon={commentsIcon} className="icon" />;
+      return <Icon icon={commentsIcon} className="icon commentsIcon" />;
     case "filter":
       return <Icon icon={filterIcon} className="icon" />;
     case "doctor":
       return <Icon icon={doctorIcon} className="icon" />;
     case "delete":
-      return <Icon icon={trashIcon} className="icon" />;
+      return <Icon icon={trashIcon} className="icon deleteIcon" />;
     case "menu":
       return <Icon icon={hamburger} className="icon hamburger" />;
     default:

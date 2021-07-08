@@ -1,19 +1,9 @@
 .textarea {
   color: var(--text-color);
-  position: absolute;
-  width: 292.28px;
-  left: 37.89px;
-  height: 52.03px;
-  border: 3px solid var(--background-color);
+  border: 1px solid  #dee2e6;
   box-sizing: border-box;
   border-radius: 6px;
   outline-color: var(--background-color);
+  padding: 10px;
 }
 
-@media only screen and (min-width: 1024px) {
-  .textarea {
-    width: 858px;
-    left: 378px;
-    height: 96px;
-  }
-}

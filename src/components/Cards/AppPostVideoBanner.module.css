@@ -1,0 +1,26 @@
+.Banner{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.CardIconPlay{
+    position: absolute;
+    z-index: 2;
+}
+
+.CardImage{
+    height: 230px;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+.CardImageHigher{
+    height: 320px;
+    object-fit: cover;
+    opacity: 0.8;
+}

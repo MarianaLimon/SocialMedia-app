@@ -18,12 +18,27 @@
 }
 
 .button:hover {
-  color: var(--text-color);
+  color: white;
 }
 .button.aqua {
   background-color: var(--aqua);
 }
+.button.aqua:hover {
+  background-color: var(--blue-secondary) !important;
+}
 
 .button.blue {
   background-color: var(--blue-primary);
+}
+.button.secondary {
+  background-color: var(--blue-secondary);
+}
+
+.button.secondary:hover {
+  background-color: var(--aqua) !important;
+}
+
+.button.secondary.newArticle{
+  margin-right: 0px !important;
+  margin-left: 0px !important;
 }

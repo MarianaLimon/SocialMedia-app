@@ -1,0 +1,14 @@
+.CheckOptions form{
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0;
+}
+
+
+.CheckOptions button{
+    background: var(--blue-primary);
+    color: var(--white);
+    padding: 8px 18px;
+    border-radius: 30px;
+}
+

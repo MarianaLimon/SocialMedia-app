@@ -5,6 +5,7 @@
     padding: 10px 24px;
     width: 100%;
     margin-bottom: 20px;
+    outline: none;
 }
 
 ::placeholder{
