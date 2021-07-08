@@ -37,3 +37,8 @@
 .button.secondary:hover {
   background-color: var(--aqua) !important;
 }
+
+.button.secondary.newArticle{
+  margin-right: 0px !important;
+  margin-left: 0px !important;
+}

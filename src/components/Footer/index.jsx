@@ -7,7 +7,7 @@ class Footer extends React.Component {
     return (
       <footer>
         <div className="footer-menu d-md-none d-flex mx-3">
-          <Icons value={'home'}/>
+          <Icons value={'home'} className="esto"/>
           <Icons value={'webinars'}/>
           <Icons value={'articles'}/>
           <Icons value={'products'}/>

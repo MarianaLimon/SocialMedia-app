@@ -11,29 +11,35 @@ import filterIcon from "@iconify/icons-vaadin/filter";
 import doctorIcon from "@iconify/icons-vaadin/doctor";
 import trashIcon from "@iconify/icons-vaadin/trash";
 import hamburger from "@iconify/icons-bx/bx-menu";
+import pencilIcon from '@iconify/icons-vaadin/pencil';
+import shieldIcon from '@iconify/icons-vaadin/shield';
 
 function Icons(props) {
   switch (props.value) {
     case "home":
-      return <Icon icon={homeIcon} className="icon" />;
+      return <Icon icon={homeIcon} className={`icon ${props.className}`} />;
     case "webinars":
-      return <Icon icon={movieIcon} className="icon" />;
+      return <Icon icon={movieIcon} className={`icon ${props.className}`} />;
     case "articles":
-      return <Icon icon={newspaperIcon} className="icon" />;
+      return <Icon icon={newspaperIcon} className={`icon ${props.className}`} />;
     case "products":
-      return <Icon icon={pillsIcon} className="icon" />;
+      return <Icon icon={pillsIcon} className={`icon ${props.className}`} />;
     case "likes":
-      return <Icon icon={thumbsUp} className="icon" />;
+      return <Icon icon={thumbsUp} className={`icon ${props.className}`} />;
     case "comments":
-      return <Icon icon={commentsIcon} className="icon commentsIcon" />;
+      return <Icon icon={commentsIcon} className={`icon commentsIcon ${props.className}`}/>;
     case "filter":
-      return <Icon icon={filterIcon} className="icon" />;
+      return <Icon icon={filterIcon} className={`icon ${props.className}`} />;
     case "doctor":
-      return <Icon icon={doctorIcon} className="icon" />;
+      return <Icon icon={doctorIcon} className={`icon ${props.className}`} />;
     case "delete":
-      return <Icon icon={trashIcon} className="icon deleteIcon" />;
+      return <Icon icon={trashIcon} className={`icon deleteIcon ${props.className}`} />;
     case "menu":
-      return <Icon icon={hamburger} className="icon hamburger" />;
+      return <Icon icon={hamburger} className={`icon hamburger ${props.className}`} />;
+    case "edit":
+      return <Icon icon={pencilIcon} className={`icon edit ${props.className}`} />;
+    case "validate":
+      return <Icon icon={shieldIcon} className={`icon validate ${props.className}`} />;
     default:
       return "sin icono";
   }

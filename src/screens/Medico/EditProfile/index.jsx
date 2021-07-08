@@ -3,6 +3,8 @@ import AppImage from "../../../components/commons/AppImage";
 import Input from "../../../components/commons/AppInput";
 import AppCheckbox from "../../../components/commons/AppCheckbox";
 import AppButton from "../../../components/commons/AppButton";
+import Footer from "../../../components/Footer";
+import Header from "../../../components/Header";
 
 import "./index.css"
 
@@ -10,6 +12,7 @@ export default function EditProfile() {
 
   return (
     <React.Fragment>
+      <Header />
       <div className="container mb-5">
         <div className="row mb-5">
           <div className="col mb-5">
@@ -32,6 +35,7 @@ export default function EditProfile() {
           </div>
         </div>
       </div>
+      <Footer />
     </React.Fragment>
   );
 }

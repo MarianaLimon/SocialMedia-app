@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import banner from "../../../img/home-banner.png"
 import Icons from "../../../components/commons/icons";
+import Footer from "../../../components/Footer";
+import Header from "../../../components/Header";
 
 export default function HomeAdmin() {
 
   return (
     <React.Fragment>
+      <Header />
       <div className="container my-4">
         <div className="row">
           <div className="col-12">
@@ -40,6 +43,7 @@ export default function HomeAdmin() {
           </div>
         </div>
       </div>
+      <Footer />
     </React.Fragment>
   );
 }

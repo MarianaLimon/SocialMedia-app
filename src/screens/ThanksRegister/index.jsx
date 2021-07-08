@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-import banner from "../../../img/doctor-banner.png"
-import AppButton from "../../../components/commons/AppButton";
+import banner from "../../img/doctor-banner.png"
+import AppButton from "../../components/commons/AppButton";
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
 
 export default function TnksRegister() {
 
   return (
     <React.Fragment>
+      <Header />
       <div className="container">
         <div className="row">
           <div className="col-md-6 my-4">
@@ -19,6 +22,7 @@ export default function TnksRegister() {
           </div>
         </div>
       </div>
+      <Footer />
     </React.Fragment>
   );
 }

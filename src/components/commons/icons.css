@@ -41,10 +41,20 @@ a{
 
 .deleteIcon{
   color: var(--blue-secondary);
-  font-size: 25px;
-  margin-left: 10px;
+  font-size: 20px;
 }
 
-.deleteIcon:hover{
+.deleteIcon:hover, .validate:hover, .edit:hover{
   color: var(--aqua);
+}
+
+.validate, .edit{
+  color: var(--blue-secondary);
+  font-size: 18px;
+}
+
+.btn-validate, .btn-edit{
+  background-color: transparent;
+  border: none;
+  padding: 0px;
 }

@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router";
 
-import banner from "../../../img/doctora-banner.png"
-import Input from "../../../components/commons/AppInput";
-import AppButton from "../../../components/commons/AppButton";
-import { getUserById, postLogin } from "../../../services/users"
+import banner from "../../img/doctora-banner.png"
+import Input from "../../components/commons/AppInput";
+import AppButton from "../../components/commons/AppButton";
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
+import { getUserById, postLogin } from "../../services/users"
 import jwt_decode from "jwt-decode";
 
 
@@ -62,6 +64,7 @@ if (typeof decoded.nbf !== 'undefined' && decoded.nbf > now) {
 
   return (
     <React.Fragment>
+      <Header />
       <div className="container">
         <div className="row">
           <div className="col-md-6 my-4">
@@ -88,6 +91,7 @@ if (typeof decoded.nbf !== 'undefined' && decoded.nbf > now) {
           </div>
         </div>
       </div>
+      <Footer />
     </React.Fragment>
   );
 }

@@ -25,7 +25,7 @@
     }  
 }
 
-.CardBody{
+/* .CardBody{
     display: none;
 }
 
@@ -34,7 +34,7 @@
         display: block;
     }    
 }
-
+ */
 
 /*Card Title*/
 
@@ -59,7 +59,6 @@
     font-size: 1.8rem;
     text-align: center;
     margin: 10px 0;
-    display: block;
 }
 
 .CardTitleMobile a{
@@ -69,13 +68,6 @@
 .CardTitleMobile a:hover{
     color: var(--blue-primary);
 }
-
-@media screen and (min-width: 770px){
-    .CardTitleMobile{
-        display: none;
-    }
-}
-
 
 /*Tags*/
 
@@ -101,4 +93,38 @@
 .Tags.Tags-color a {
     padding: 5px 10px !important;
     margin-right: 6px;
+}
+
+
+
+
+.Square {
+    float: left;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* = width for a 1:1 aspect ratio */
+    /*margin: 1.66%;*/
+    background-color: #1E1E1E;
+    overflow: hidden;
+}
+
+.Content {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 0%;
+    margin-left: 0px;
+}
+
+.Content .Rs{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.Bg{
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size:cover; /* you change this to "contain" if you don't want the images to be cropped */
+    color:#fff;
 }
