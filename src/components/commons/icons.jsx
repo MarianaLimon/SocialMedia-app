@@ -15,7 +15,7 @@ import hamburger from "@iconify/icons-bx/bx-menu";
 function Icons(props) {
   switch (props.value) {
     case "home":
-      return <Icon icon={homeIcon} className="icon" />;
+      return <Icon icon={homeIcon} className={`icon ${props.className}`} />;
     case "webinars":
       return <Icon icon={movieIcon} className="icon" />;
     case "articles":
