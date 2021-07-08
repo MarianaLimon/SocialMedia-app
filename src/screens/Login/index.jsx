@@ -21,9 +21,6 @@ export default function Login() {
 
   }, [])
 
-  const verifyExpirationToken = (token) => {
-    const decoded = jwt_decode(token);
-  }
 
   const handleSubmit = async (event) => {
     event.preventDefault();
