@@ -23,16 +23,6 @@ export default function Login() {
 
   const verifyExpirationToken = (token) => {
     const decoded = jwt_decode(token);
-    /*
-    const now = Date.now().valueOf() / 1000
-
-if (typeof decoded.exp !== 'undefined' && decoded.exp < now) {
-    throw new Error(`token expired: ${JSON.stringify(decoded)}`)
-}
-if (typeof decoded.nbf !== 'undefined' && decoded.nbf > now) {
-    throw new Error(`token expired: ${JSON.stringify(decoded)}`)
-}
-    */
   }
 
   const handleSubmit = async (event) => {
