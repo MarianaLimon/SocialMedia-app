@@ -18,11 +18,11 @@ export default function ProductsListAdmin() {
             <LeftMenu />
           </div>
           <div className="col-lg-10">
-            <div className="d-flex flex-column flex-md-row justify-content-between align-items-center w-auto pb-3">
+            <div className="d-flex flex-column flex-md-row justify-content-between align-items-center w-auto pb-0 pb-lg-3 mb-lg-4">
               <h1 className="mt-3 title-sections">
                 <b>Productos</b> 
               </h1>
-              <AppButton classButton="secondary newArticle mt-1 mt-lg-3"  type="submit" text="+ Nuevo Webinar" />
+              <AppButton classButton="aqua newArticle mt-1 mt-lg-3 mb-1"  type="submit" text="+ Nuevo Webinar" />
             </div>
             <table class="table table-striped">
               <thead>
