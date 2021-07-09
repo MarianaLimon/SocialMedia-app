@@ -12,7 +12,6 @@ import "./index.css";
 import { isName, isEmail, allowLetters } from "../../utils/validations";
 import AppFeedback from "../../components/commons/AppFeedback";
 import AppDragDrop from "../../components/commons/AppDragDrop";
-import defaultAvatar from "../../img/avatar-default.png";
 
 export default function Register() {
   const [firstname, setFirstname] = useState("");
@@ -52,8 +51,10 @@ export default function Register() {
     };
 
     request();
-    //console.log("avatar", defaultAvatar);
-    setAvatarUrl(defaultAvatar.src);
+
+    setAvatarUrl(
+      "https://socialmedic-bucket.s3.us-east-2.amazonaws.com/avatar-default.png"
+    );
   }, []);
 
   const history = useHistory();
@@ -138,6 +139,7 @@ export default function Register() {
         specialty_id,
         professional_license,
         professional_license_url,
+        avatar_url,
       };
       await postUser(newUser);
       history.push("/tnksregister");
@@ -281,14 +283,6 @@ export default function Register() {
                   feedback="Selecione su especialidad"
                 />
               ) : null}
-              <Input
-                id="avatarurl"
-                placeholder="avatar"
-                type="text"
-                value={avatar_url}
-                onChange={(event) => setAvatarUrl(event.target.value)}
-                required
-              />
               <Input
                 id="professional_license_url"
                 type="hidden"
