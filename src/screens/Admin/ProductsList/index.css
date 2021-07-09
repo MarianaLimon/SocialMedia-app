@@ -1,0 +1,33 @@
+.title-sections{
+    color: #6c6a6a;
+    font-weight: 700;
+    text-align: center;
+}
+
+.table-show{
+  display: none;
+}
+
+.newArticle{
+  width: 200px;
+}
+
+tbody, td, tfoot, th, thead, tr {
+  border-style: none;
+  color: var(--text-color);
+}
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+  background-color:var(--blue-ligth);
+}
+
+@media screen and (min-width: 770px){
+  .title-sections{
+    color: var(--blue-secondary);
+    font-weight: 700;
+    text-align: left;
+  }
+  .table-show{
+    display: table-cell;
+  }
+} 

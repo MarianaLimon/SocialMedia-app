@@ -37,7 +37,7 @@ function Icons(props) {
     case "menu":
       return <Icon icon={hamburger} className={`icon hamburger ${props.className}`} />;
     case "edit":
-      return <Icon icon={pencilIcon} className={`icon ${props.className}`} />;
+      return <Icon icon={pencilIcon} className={`icon edit ${props.className}`} />;
     case "validate":
       return <Icon icon={shieldIcon} className={`icon validate ${props.className}`} />;
     default:

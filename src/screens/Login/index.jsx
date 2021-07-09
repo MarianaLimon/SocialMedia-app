@@ -6,7 +6,7 @@ import Input from "../../components/commons/AppInput";
 import AppButton from "../../components/commons/AppButton";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import { getUserById, postLogin } from "../../services/users"
+import { postLogin } from "../../services/users"
 import jwt_decode from "jwt-decode";
 
 
@@ -14,6 +14,7 @@ import jwt_decode from "jwt-decode";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [home, setHome] = useState("")
 
   const history = useHistory();
 
@@ -21,19 +22,6 @@ export default function Login() {
 
   }, [])
 
-  const verifyExpirationToken = (token) => {
-    const decoded = jwt_decode(token);
-    /*
-    const now = Date.now().valueOf() / 1000
-
-if (typeof decoded.exp !== 'undefined' && decoded.exp < now) {
-    throw new Error(`token expired: ${JSON.stringify(decoded)}`)
-}
-if (typeof decoded.nbf !== 'undefined' && decoded.nbf > now) {
-    throw new Error(`token expired: ${JSON.stringify(decoded)}`)
-}
-    */
-  }
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -54,7 +42,8 @@ if (typeof decoded.nbf !== 'undefined' && decoded.nbf > now) {
 
         localStorage.setItem("token", token);
 
-        dataUser.role[0] === "medico" ? history.push("/home") : history.push("/homeadmin")
+        dataUser.role[0] === "medico" ? setHome("/home") : setHome("/homeadmin")
+        history.push(home)
       }
     } catch (error) {
       console.log(error);
@@ -79,11 +68,11 @@ if (typeof decoded.nbf !== 'undefined' && decoded.nbf > now) {
                 required
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
-                callback={setEmail} />
+              />
               <Input placeholder="Contraseña" type="password" required
                 value={password}
                 onChange={(event) => setPassword(event.target.value)}
-                callback={setPassword}
+
               />
               <AppButton classButton="secondary w-50 d-block mx-auto mt-5" type="submit" text="INGRESAR" />
               <p className="text-center">¿Aún no estás registrado?<AppButton classButton="aqua" type="anchor" text="Registrate aquí" url="/register" /></p>
