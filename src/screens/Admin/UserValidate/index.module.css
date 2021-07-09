@@ -17,13 +17,13 @@
 
 .UservalidateContainer p{
     margin: 0;
-    font-size: 11pt;
+    font-size: 12pt;
 }
 
 @media screen and (min-width: 770px){
     .UservalidateContainer p{
         margin: 0;
-        font-size: inherit;
+        font-size: 18px;
     }
 }
 
@@ -34,13 +34,13 @@
 
 
 
-h5{
+.UservalidateContainer h5{
     font-size: 12pt;
 }
 
 @media screen and (min-width: 770px){
-    h5{
-        font-size: inherit;
+    .UservalidateContainer h5{
+        font-size: 1.25rem;
     }
 }
 
