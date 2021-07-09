@@ -27,5 +27,6 @@ footer .active{
 @media screen and (min-width: 770px){
     footer {
         height: 65px ;
+        position: inherit;
     }
 }
