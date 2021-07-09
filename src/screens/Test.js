@@ -8,10 +8,15 @@ import {
     patchArticle,
     deleteArticle
 } from "../services/articles";
-
+import { getProfessionalLicense } from "../services/sep"
 export default function Test() {
 
     useEffect(() => {
+        async function professionalLicense() {
+            const json = await getProfessionalLicense("getProfessionalLicense");
+            console.log(json)
+        }
+        professionalLicense()
         const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZTI4YTU3ZmFkYWU3NWY0Yzg1MjIzNiIsImlhdCI6MTYyNTQ1OTM1NSwiZXhwIjoxNjI1NTQ1NzU1fQ.IMPeZzG09c2pG4IJ7mtADXXRvvlfPrfOEEjGbbi1j6g"
         localStorage.setItem("token", token);
         async function articleById() {
@@ -66,7 +71,7 @@ export default function Test() {
             const json = await deleteArticle(id);
             console.log(json)
         }
-        deletedArticles()
+        //deletedArticles()
 
 
 
