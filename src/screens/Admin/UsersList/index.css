@@ -1,0 +1,14 @@
+.title-sections{
+    color: #6c6a6a;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  @media screen and (min-width: 770px){
+    .title-sections{
+      color: var(--blue-secondary);
+      font-weight: 700;
+      text-align: left;
+    }
+    
+  } 
