@@ -43,9 +43,7 @@ function App() {
           <Route exact path="/users"><UsersList /></Route>
 
           <Route exact path="/register"><Register /></Route>
-
           <Route exact path="/tnksregister"><TnksRegister /></Route>
-
           <Route exact path="/"><Login /></Route>
 
           <Route exact path="/articles"><ArticlesList /></Route>
