@@ -23,6 +23,7 @@ export default function Register() {
   const [specialty_id, setSpecialtyId] = useState("");
   const [professional_license, setProfessionalLicense] = useState("");
   const [professional_license_url, setProfessionalLicenseUrl] = useState("");
+  const [avatar_url, setAvatarUrl] = useState("");
   const [options, setOptions] = useState([]);
   const [checked, setChecked] = useState(false);
   const [firstnameError, setFirstnameError] = useState(false);
@@ -50,6 +51,10 @@ export default function Register() {
     };
 
     request();
+
+    setAvatarUrl(
+      "https://socialmedic-bucket.s3.us-east-2.amazonaws.com/avatar-default.png"
+    );
   }, []);
 
   const history = useHistory();
@@ -134,6 +139,7 @@ export default function Register() {
         specialty_id,
         professional_license,
         professional_license_url,
+        avatar_url,
       };
       await postUser(newUser);
       history.push("/tnksregister");
@@ -279,8 +285,8 @@ export default function Register() {
               ) : null}
               <Input
                 id="professional_license_url"
-                placeholder="Upload Foto Cédula"
                 type="hidden"
+                placeholder="Url Cédula Profesional"
                 value={professional_license_url}
                 onChange={(event) =>
                   setProfessionalLicenseUrl(event.target.value)
@@ -307,6 +313,7 @@ export default function Register() {
                   <AppFeedback feedback="Acepte los terminos y condiciones" />
                 ) : null}
               </div>
+
               <AppButton
                 classButton="secondary w-50 d-block mx-auto mb-5"
                 type="submit"
