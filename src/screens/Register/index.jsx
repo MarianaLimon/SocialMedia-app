@@ -4,22 +4,14 @@ import { getSpecialties } from "../../services/specialties";
 import { postUser } from "../../services/users";
 import banner from "../../img/doctor-banner.png";
 import Input from "../../components/commons/AppInput";
-import AppCheckbox from "../../components/commons/AppCheckbox";
 import AppButton from "../../components/commons/AppButton";
 import AppSelect from "../../components/commons/AppSelect";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import "./index.css";
-//
-import AppImage from "../../components/commons/AppImage";
-import Uppy from "@uppy/core";
-import Tus from "@uppy/tus";
-import { DragDrop } from "@uppy/react";
-import Transloadit from "@uppy/transloadit";
-import "@uppy/drag-drop/dist/style.css";
 import { isName, isEmail, allowLetters } from "../../utils/validations";
 import AppFeedback from "../../components/commons/AppFeedback";
-//
+import AppDragDrop from "../../components/commons/AppDragDrop";
 
 export default function Register() {
   const [firstname, setFirstname] = useState("");
@@ -61,8 +53,6 @@ export default function Register() {
   }, []);
 
   const history = useHistory();
-
-  const printError = (feddback) => {};
 
   const handleValidation = () => {
     if (!isName(firstname) || firstname.length < 3) {
@@ -152,56 +142,6 @@ export default function Register() {
     }
   };
 
-  const uppy = new Uppy({
-    meta: { type: "avatar" },
-    restrictions: { maxNumberOfFiles: 1 },
-    autoProceed: true,
-  });
-
-  uppy.use(Transloadit, {
-    params: {
-      auth: {
-        key: "a67a160389ce4dfea1f8bb6c4d24a5bd",
-      },
-      template_id: "bca5c038a4f745ccbadaf9d83f924964",
-    },
-    waitForEncoding: true,
-  });
-
-  uppy.on("complete", (result) => {
-    const url = result.successful[0].uploadURL;
-    console.log(url);
-    setProfessionalLicenseUrl(url);
-  });
-
-  const uploadLicense = () => {
-    if (professional_license_url) {
-      return (
-        <div>
-          <AppImage
-            pathImage={professional_license_url}
-            altImage="Professional License"
-          />
-        </div>
-      );
-    }
-    return (
-      <DragDrop
-        uppy={uppy}
-        locale={{
-          strings: {
-            // Text to show on the droppable area.
-            // `%{browse}` is replaced with a link that opens the system file selection dialog.
-            dropHereOr: "Arrastra la foto de cédula aqui ó %{browse}",
-            // Used as the label for the link that opens the system file selection dialog.
-            browse: "selecciona el archivo",
-          },
-        }}
-      />
-    );
-  };
-  //
-
   return (
     <React.Fragment>
       <Header />
@@ -211,7 +151,7 @@ export default function Register() {
             <img src={banner} alt="" className="banner-register" />
           </div>
           <div className="form-wrapper col-md-6">
-            <h1 className="my-4">REGISTRO</h1>
+            <h1 className="mt-4">REGISTRO</h1>
             <form onSubmit={handleSubmit} className="needs-validation">
               <Input
                 id="firstname"
@@ -225,10 +165,7 @@ export default function Register() {
                 }}
               />
               {firstnameError ? (
-                <AppFeedback
-                  className="afterInput"
-                  feedback="Escriba su nombre"
-                />
+                <AppFeedback className="moveup" feedback="Escriba su nombre" />
               ) : null}
               <Input
                 id="lastname"
@@ -243,7 +180,7 @@ export default function Register() {
               />
               {lastnameError ? (
                 <AppFeedback
-                  className="afterInput"
+                  className="moveup"
                   feedback="Escriba su apellido paterno"
                 />
               ) : null}
@@ -260,7 +197,7 @@ export default function Register() {
               />
               {mother_lastnameError ? (
                 <AppFeedback
-                  className="afterInput"
+                  className="moveup"
                   feedback="Escriba su apellido materno"
                 />
               ) : null}
@@ -274,7 +211,7 @@ export default function Register() {
               />
               {emailError ? (
                 <AppFeedback
-                  className="afterInput"
+                  className="moveup"
                   feedback="Escriba un email valido"
                 />
               ) : null}
@@ -288,7 +225,7 @@ export default function Register() {
               />
               {passwordError ? (
                 <AppFeedback
-                  className="afterInput"
+                  className="moveup"
                   feedback="Escriba un password de por lo menos 6 caracteres"
                 />
               ) : null}
@@ -302,7 +239,7 @@ export default function Register() {
               />
               {password_confirmError ? (
                 <AppFeedback
-                  className="afterInput"
+                  className="moveup"
                   feedback="Confirme su password, debe ser identico"
                 />
               ) : null}
@@ -318,7 +255,7 @@ export default function Register() {
               />
               {professional_licenseError ? (
                 <AppFeedback
-                  className="afterInput"
+                  className="moveup"
                   feedback="Escriba su cédula profesional correctamente"
                 />
               ) : null}
@@ -336,7 +273,7 @@ export default function Register() {
               />
               {specialty_idError ? (
                 <AppFeedback
-                  className="afterInput"
+                  className="moveup"
                   feedback="Selecione su especialidad"
                 />
               ) : null}
@@ -350,8 +287,10 @@ export default function Register() {
                 }
                 required
               />
-              {uploadLicense()}
-
+              <AppDragDrop
+                stateUrl={professional_license_url}
+                callbackSetState={setProfessionalLicenseUrl}
+              />
               <label>
                 <input
                   type="checkbox"
@@ -367,7 +306,7 @@ export default function Register() {
                 ) : null}
               </div>
               <AppButton
-                classButton="secondary w-50 d-block mx-auto my-5"
+                classButton="secondary w-50 d-block mx-auto mb-5"
                 type="submit"
                 text="Registrar"
               />
