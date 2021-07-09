@@ -5,7 +5,13 @@ import { DragDrop } from "@uppy/react";
 import Transloadit from "@uppy/transloadit";
 import "./appDragDrop.css";
 
-function AppDragDrop({ stateUrl, callbackSetState, text, className, props }) {
+function AppDragDrop({
+  stateUrl,
+  callbackSetState,
+  textDragDrop,
+  textBrowse,
+  props,
+}) {
   const uppy = new Uppy({
     meta: { type: "avatar" },
     restrictions: { maxNumberOfFiles: 1 },
@@ -46,9 +52,11 @@ function AppDragDrop({ stateUrl, callbackSetState, text, className, props }) {
         strings: {
           // Text to show on the droppable area.
           // `%{browse}` is replaced with a link that opens the system file selection dialog.
-          dropHereOr: "Arrastra el archivo ó %{browse}",
+          dropHereOr: `${
+            textDragDrop ? textDragDrop : "Arraste aqui su imagen"
+          } ó %{browse}`,
           // Used as the label for the link that opens the system file selection dialog.
-          browse: "selecciona desde aqui",
+          browse: `${textBrowse ? textBrowse : "seleccione el archivo"}`,
         },
       }}
     />

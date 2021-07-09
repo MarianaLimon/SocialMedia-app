@@ -290,6 +290,8 @@ export default function Register() {
               <AppDragDrop
                 stateUrl={professional_license_url}
                 callbackSetState={setProfessionalLicenseUrl}
+                textDragDrop="Arrastre la foto de su Cedula Profesional"
+                textBrowse="seleccione el archivo"
               />
               <label>
                 <input
