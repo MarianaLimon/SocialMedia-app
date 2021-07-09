@@ -12,6 +12,7 @@
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   max-width: 100%;
   height: 150px !important;
+  margin-bottom: 1.4rem;
 }
 .uppy-DragDrop-container:focus {
   outline: none;

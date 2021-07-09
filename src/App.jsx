@@ -20,6 +20,8 @@ import WebinarDetail from "./screens/Medico/WebinarDetail";
 import ProductsList from "./screens/Medico/ProductsList";
 import ProductDetail from "./screens/Medico/ProductDetail";
 import AddArticle from "./screens/Admin/AddArticle";
+import AddProduct from "./screens/Admin/AddProduct";
+import AddWebinar from "./screens/Admin/AddWebinar";
 
 // Examples and Tests
 //import AppCardProductDetail from "./components/commons/AppCardProductDetail";
@@ -32,7 +34,9 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/products-admin"><ProductsListAdmin /></Route>
+          <Route exact path="/add-product"><AddProduct /></Route>
           <Route exact path="/webinars-admin"><WebinarsListAdmin /></Route>
+          <Route exact path="/add-webinar"><AddWebinar /></Route>
           <Route exact path="/articles-admin"><ArticlesListAdmin /></Route>
           <Route exact path="/add-article"><AddArticle /></Route>
           <Route exact path="/user-validate"><UserValidate /></Route>
