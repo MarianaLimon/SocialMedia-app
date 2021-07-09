@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AppImage from '../components/commons/AppImage'
 import MenuHamburger from "../components/Header/MenuHamburger";
 import {
@@ -10,10 +10,11 @@ import {
 } from "../services/articles";
 import { getProfessionalLicense } from "../services/sep"
 export default function Test() {
-
+    const [institucion, setInstitucion] = useState()
     useEffect(() => {
         async function professionalLicense() {
-            const json = await getProfessionalLicense("getProfessionalLicense");
+            const json = await getProfessionalLicense("0083346");
+            setInstitucion(json.items[0].desins)
             console.log(json)
         }
         professionalLicense()
@@ -82,7 +83,7 @@ export default function Test() {
     return (
         <React.Fragment>
             <MenuHamburger />
-
+            {institucion}
         </React.Fragment>
     )
 }

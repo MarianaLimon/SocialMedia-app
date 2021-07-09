@@ -14,6 +14,7 @@ export default function Footer() {
       const decoded = jwt_decode(localStorage.getItem("token"));
       decoded.role[0] === "medico" ? setMenuDoctor(true) : setMenuDoctor(false)
       location.pathname === "/home" ? setUrl(true) : setUrl(false)
+
     }
   })
 
