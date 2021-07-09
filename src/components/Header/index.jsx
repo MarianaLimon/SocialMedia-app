@@ -10,69 +10,110 @@ import { useHistory, useLocation } from "react-router";
 import "./index.css";
 
 export default function Header() {
-  const [login, setLogin] = useState(false)
-  const [menuAdmin, setMenuAdmin] = useState(false)
-  const [urlHome, setUrlHome] = useState("/")
-
-  const [avatar, setAvatar] = useState("")
-  const history = useHistory();
-  const location = useLocation();
-
-  const routesAdmin = ["/homeadmin", "products", "product-detail"]
-  const routesMedico = [""]
-  const redirect = () => {
-    if (location.pathname !== "/") {
-      setUrlHome("/")
-      history.push("/")
-    }
-  }
-
-  const verifyExpirationToken = (decoded) => {
-    const now = Date.now().valueOf() / 1000
-
-    if ((typeof decoded.exp !== 'undefined' && decoded.exp < now)) {
-      redirect()
-    } else {
-      return true
-    }
-  }
+    const [login, setLogin] = useState(false)
+    const [menuAdmin, setMenuAdmin] = useState(false)
+    const [urlHome, setUrlHome] = useState("")
+    const [roleDoctor, setRoleDoctor] = useState(false)
+    const [roleAdmin, setRoleAdmin] = useState(false)
 
 
-  useEffect(async () => {
+    const [avatar, setAvatar] = useState("")
+    const history = useHistory();
+    const location = useLocation();
 
-    if (localStorage.getItem("token")) {
-      const decoded = jwt_decode(localStorage.getItem("token"));
-      const logged = await verifyExpirationToken(decoded)
+    const routesAdmin = ["/homeadmin", "/articles-admin", "/webinars-admin", "/products-admin", "/users", "/user-validate", "/product-detail"]
+    const routesMedico = ["/home", "/profile", "/products", "/product-detail", "/webinars", "/webinar-detail", "/articles", "/article-detail"]
+    const routesFree = ["/register", "/tnksregister", "/"]
 
-      if (logged) {
-        setLogin(true)
-        decoded.role[0] === "medico" ? setUrlHome("/home") : setUrlHome("/homeadmin")
-        decoded.role[0] === "admin" ? setMenuAdmin(true) : setMenuAdmin(false)
 
-        const user = await getUserById(decoded.id)
-        setAvatar(user.avatar_url)
-      } else {
-        redirect()
-      }
+
+    const verifyExpirationToken = (decoded) => {
+        const now = Date.now().valueOf() / 1000
+
+        if ((typeof decoded.exp !== 'undefined' && decoded.exp < now)) {//expiro la fecha
+            setMenuAdmin(false)
+            roleDoctor(false)
+            roleAdmin(false)
+            setLogin(false)
+            localStorage.removeItem("token")
+            history.push("/")
+
+        } else {
+            return true
+        }
     }
 
-  }, [])
 
-  return (
-    <nav className="header d-flex justify-content-between align-items-center">
-      <div className={`${menuAdmin ? "d-block" : "d-none"}`}>
-        <Hamburger />
-      </div>
-      <div className="logo-search d-flex justify-content-center align-items-center">
-        <Logo url={urlHome} />
-      </div>
-      <div className="auth d-flex justify-content-center align-items-center">
-        <AppImage
-          pathImage={avatar}
-          classImage={`avatar ${login ? "d-block" : "d-none"}`}
-          altImage="User Name"
-        />
-      </div>
-    </nav>
-  )
+    useEffect(async () => {
+
+
+        if (localStorage.getItem("token")) {
+            const decoded = jwt_decode(localStorage.getItem("token"));
+            const logged = await verifyExpirationToken(decoded)
+
+            if (logged) {
+
+                setLogin(true)
+
+
+                if (decoded.role[0] === "medico") {
+                    setRoleDoctor(true)
+                    setRoleAdmin(false)
+                    setMenuAdmin(false)
+                    setUrlHome("/home")
+                    const found = routesMedico.find(path => path === location.pathname)
+                    if (!found) {
+                        history.push(urlHome)
+                    }
+                }
+                if (decoded.role[0] === "admin") {
+                    setRoleDoctor(false)
+                    setRoleAdmin(true)
+                    setMenuAdmin(true)
+                    setUrlHome("/homeadmin")
+                    const found = routesAdmin.find(path => path === location.pathname)
+                    if (!found) {
+                        history.push(urlHome)
+                    }
+                }
+
+
+                const user = await getUserById(decoded.id)
+
+                setAvatar(user.avatar_url)
+
+                const foundRouteLogin = routesFree.find(path => path === location.pathname)
+                if (foundRouteLogin) {
+                    decoded.role[0] === "admin" ? history.push("/homeadmin") : history.push("/home")
+                }
+
+            }
+        } else {
+            const foundRoute = routesFree.find(path => path === location.pathname)
+            if (!foundRoute) {
+                history.push("/")
+            }
+        }
+
+    }, [])
+
+
+
+    return (
+        <nav className="header d-flex justify-content-between align-items-center">
+            <div className={`${menuAdmin ? "d-block" : "d-none"}`}>
+                <Hamburger />
+            </div>
+            <div className="logo-search d-flex justify-content-center align-items-center">
+                <Logo url={urlHome} />
+            </div>
+            <div className="auth d-flex justify-content-center align-items-center">
+                <AppImage
+                    pathImage={avatar}
+                    classImage={`avatar ${login ? "d-block" : "d-none"}`}
+                    altImage="User Name"
+                />
+            </div>
+        </nav>
+    )
 }
