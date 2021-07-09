@@ -25,6 +25,13 @@ h1{
   font-weight: 700;
 }
 
+
+@media screen and (min-width: 770px){
+  h1{
+    color: var(--text-color);
+  }
+}
+
 h5{
   color: var(--text-color);
   font-weight: bold;
