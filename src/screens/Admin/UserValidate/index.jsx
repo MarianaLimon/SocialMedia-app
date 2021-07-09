@@ -55,7 +55,7 @@ export default function UserValidate() {
           </div>
 
           {/* Columna del Contenido */}
-          <div className="col-lg-10 container">
+          <div className={`${Styles.UservalidateContainer} col-lg-10 container`}>
 
             <div className="row">
               <div className="col-12 col-md-2"></div>
@@ -69,7 +69,7 @@ export default function UserValidate() {
                   <AppImage pathImage="https://avatars.githubusercontent.com/u/17584137?v=4" classImage="w-25" altImage=""/>
                 </div>
 
-                <div className="col-12 my-5 d-flex justify-content-between">
+                <div className="col-12 my-3 d-flex justify-content-between">
                   <div className="col-6 text-center">
                     <h5>Número de cédula</h5>
                     <p>0092743</p>
@@ -87,7 +87,7 @@ export default function UserValidate() {
                     : null}
                   <AppSelect
                     classSelect="AppInput_InputComponent"
-                    classLabel="col-12"
+                    classLabel="col-12 mb-0"
                     idSelect="especialidad"
                     placeholder="Especialidad"
                     classContainerInput=""
@@ -101,53 +101,53 @@ export default function UserValidate() {
 
                 <hr></hr>
 
-                <h5 className="m-5 text-center">Informacion de la SEP</h5>
+                <h5 className="my-3 text-center">Informacion de la SEP</h5>
 
                 <div className="col-12 mb-4 d-flex justify-content-between">
                   
-                  <div className="col-6 text-center">
+                  <div className="col-6 text-md-center">
                     <h5>Número de cédula</h5>
                     <p>0092743</p>
                   </div>
-                  <div className="col-6 text-center">
+                  <div className="col-6 text-md-center">
                     <h5>Nombre</h5>
                     <p>Usuario 1</p>
                   </div>                
                 </div>
 
                 <div className="col-12 my-4 d-flex justify-content-between">
-                  <div className="col-6 text-center">
+                  <div className="col-6 text-md-center">
                     <h5>Profesión</h5>
                     <p>Medico General</p>
                   </div>
-                  <div className="col-6 text-center">
+                  <div className="col-6 text-md-center">
                     <h5>Tipo de Cédula</h5>
                     <p>A1</p>
                   </div>          
                 </div>
 
                 <div className="col-12 mt-4 d-flex justify-content-between">
-                  <div className="col-6 text-center">
+                  <div className="col-6 text-md-center">
                     <h5>Institución</h5>
                     <p>Universidad Autónoma de México</p>
                   </div>
-                  <div className="col-6 text-center">
+                  <div className="col-6 text-md-center">
                     <h5>Año de Expedición</h5>
                     <p>2001</p>
                   </div>
                 </div>
 
                 <div className="col-12 d-flex justify-content-between">
-                  <div className="col-6 text-center">
+                  <div className="col-6 text-md-center">
                       <AppButton
-                      classButton="secondary w-50 d-block mx-auto my-5"
+                      classButton={`${Styles.Button} w-50 d-block mx-auto my-5`}
                       type="submit"
                       text="VALIDAR"
                     />
                   </div>
-                  <div className="col-6 text-center">
+                  <div className="col-6 text-md-center">
                       <AppButton
-                      classButton="secondary w-50 d-block mx-auto my-5"
+                      classButton={`${Styles.Button} w-50 d-block mx-auto my-5`}
                       type="submit"
                       text="RECHAZAR"
                     />

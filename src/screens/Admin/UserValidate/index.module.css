@@ -13,6 +13,39 @@
     opacity: 1;
 }
 
-p{
+
+
+.UservalidateContainer p{
     margin: 0;
+    font-size: 11pt;
+}
+
+@media screen and (min-width: 770px){
+    .UservalidateContainer p{
+        margin: 0;
+        font-size: inherit;
+    }
+}
+
+
+.UservalidateContainer .label{
+    margin: 0;
+}
+
+
+
+h5{
+    font-size: 12pt;
+}
+
+@media screen and (min-width: 770px){
+    h5{
+        font-size: inherit;
+    }
+}
+
+
+.UservalidateContainer .Button{
+    background-color: var(--aqua);
+    margin: 20px auto !important;
 }
