@@ -28,5 +28,6 @@ footer .active{
     footer {
         height: 65px ;
         position: inherit;
+        bottom: 0px !important;
     }
 }
