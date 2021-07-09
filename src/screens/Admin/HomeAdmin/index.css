@@ -1,0 +1,40 @@
+.btn-menu{
+    padding: 1.5rem 1.5rem .5rem 1.3rem;
+    border: solid 4px var(--blue-secondary);
+    border-radius: 15px;
+    box-shadow: 5px 10px 8px #888888;
+    display:block;
+    margin:auto;
+    margin-bottom: 2rem;
+}
+.icons-home .icon{
+    font-size: 5rem;
+    color: var(--blue-secondary);
+    display:block;
+    margin:auto;
+}
+
+.icon-label{
+    font-size: 22px;
+    text-align: center;
+    color: var(--blue-secondary);
+    padding-top: 20px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    font-weight: bold;
+}
+
+@media screen and (min-width: 770px){
+    .icons-home .icon{
+        font-size: 9rem;
+        color: var(--blue-secondary);
+        display:block;
+        margin:auto;
+    }
+    .btn-menu{
+        padding: 2rem 2.5rem 1.5rem 3rem;
+        border: solid 4px var(--blue-secondary);
+        border-radius: 15px;
+        box-shadow: 5px 10px 8px #888888;
+    }
+} 

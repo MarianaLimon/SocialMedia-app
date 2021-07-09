@@ -4,6 +4,8 @@ import Icons from "../../../components/commons/icons";
 import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
 
+import "./index.css"
+
 export default function HomeAdmin() {
 
   return (
@@ -17,29 +19,29 @@ export default function HomeAdmin() {
           </div>
         </div>
         <div className="row icons-home mt-4">
-        <div className="col-md-3">
-            <a href="">
+          <div className="col-6 col-lg-3">
+            <button class="btn-menu">
               <Icons value={'doctor'}/>
-              <p className="icon-label pb-4 pb-lg-0">Usuarios</p>
-            </a>
+              <p className="icon-label pb-lg-0">Usuarios</p>
+            </button>
           </div>
-          <div className="col-md-3">
-            <a href="">
+          <div className="col-6 col-lg-3">
+            <button class="btn-menu">
               <Icons value={'products'}/>
-              <p className="icon-label pb-4 pb-lg-0">Productos</p>
-            </a>
+              <p className="icon-label pb-lg-0">Productos</p>
+            </button>
           </div>
-          <div className="col-md-3">
-            <a href="">
+          <div className="col-6 col-lg-3">
+            <button class="btn-menu">
               <Icons value={'articles'}/>
               <p className="icon-label">Artículos</p>
-            </a>
+            </button>
           </div>
-          <div className="col-md-3">
-            <a href="">
+          <div className="col-6 col-lg-3">
+            <button class="btn-menu">
               <Icons value={'webinars'}/>
               <p className="icon-label">Webinars</p>
-            </a>
+            </button>
           </div>
         </div>
       </div>
