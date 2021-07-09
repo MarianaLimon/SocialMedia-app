@@ -12,6 +12,7 @@ import "./index.css";
 import { isName, isEmail, allowLetters } from "../../utils/validations";
 import AppFeedback from "../../components/commons/AppFeedback";
 import AppDragDrop from "../../components/commons/AppDragDrop";
+import defaultAvatar from "../../img/avatar-default.png";
 
 export default function Register() {
   const [firstname, setFirstname] = useState("");
@@ -23,6 +24,7 @@ export default function Register() {
   const [specialty_id, setSpecialtyId] = useState("");
   const [professional_license, setProfessionalLicense] = useState("");
   const [professional_license_url, setProfessionalLicenseUrl] = useState("");
+  const [avatar_url, setAvatarUrl] = useState("");
   const [options, setOptions] = useState([]);
   const [checked, setChecked] = useState(false);
   const [firstnameError, setFirstnameError] = useState(false);
@@ -50,6 +52,8 @@ export default function Register() {
     };
 
     request();
+    //console.log("avatar", defaultAvatar);
+    setAvatarUrl(defaultAvatar.src);
   }, []);
 
   const history = useHistory();
@@ -278,9 +282,17 @@ export default function Register() {
                 />
               ) : null}
               <Input
+                id="avatarurl"
+                placeholder="avatar"
+                type="text"
+                value={avatar_url}
+                onChange={(event) => setAvatarUrl(event.target.value)}
+                required
+              />
+              <Input
                 id="professional_license_url"
-                placeholder="Upload Foto Cédula"
                 type="hidden"
+                placeholder="Url Cédula Profesional"
                 value={professional_license_url}
                 onChange={(event) =>
                   setProfessionalLicenseUrl(event.target.value)
@@ -307,6 +319,7 @@ export default function Register() {
                   <AppFeedback feedback="Acepte los terminos y condiciones" />
                 ) : null}
               </div>
+
               <AppButton
                 classButton="secondary w-50 d-block mx-auto mb-5"
                 type="submit"
