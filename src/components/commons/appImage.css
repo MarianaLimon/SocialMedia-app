@@ -17,6 +17,16 @@
   border-radius: 71px;
 }
 
+.cedula {
+  width: 100%;
+  max-height: 250px;
+  display: block;
+  margin: auto;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
 @media only screen and (min-width: 1024px) {
   .avatar-profile {
     width: 310px;
