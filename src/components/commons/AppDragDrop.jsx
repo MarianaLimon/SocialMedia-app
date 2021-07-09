@@ -5,7 +5,7 @@ import { DragDrop } from "@uppy/react";
 import Transloadit from "@uppy/transloadit";
 import "./appDragDrop.css";
 
-function AppDragDrop({ stateUrl, callbackSetState, className, props }) {
+function AppDragDrop({ stateUrl, callbackSetState, text, className, props }) {
   const uppy = new Uppy({
     meta: { type: "avatar" },
     restrictions: { maxNumberOfFiles: 1 },
