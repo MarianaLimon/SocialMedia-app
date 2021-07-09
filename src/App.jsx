@@ -40,37 +40,39 @@ function App() {
 
           <Route exact path="/tnksregister"><TnksRegister /></Route>
 
-          <Route exact path="/login"><Login /></Route>
+          <Route exact path="/"><Login /></Route>
 
-          <Route exact path="/articles"><ArticlesList/></Route>
+          <Route exact path="/articles"><ArticlesList /></Route>
 
           <Route exact path="/article-detail">
-              <ArticleDetail />
+            <ArticleDetail />
           </Route>
 
           <Route exact path="/webinars">
-            <WebinarsList/>
+            <WebinarsList />
           </Route>
 
           <Route exact path="/webinar-detail">
-            <WebinarDetail/>
+            <WebinarDetail />
           </Route>
 
           <Route exact path="/products">
-            <ProductsList/>
+            <ProductsList />
           </Route>
 
           <Route exact path="/product-detail">
-            <ProductDetail/>
+            <ProductDetail />
           </Route>
 
           {/* ************ EXAMPLES AND TESTS ********* */}
 
-         <Route exact path="/home"><HomeMedico /></Route>
+          <Route exact path="/home"><HomeMedico /></Route>
 
           <Route exact path="/profile"><EditProfile /></Route>
 
           <Route exact path="/homeadmin"><HomeAdmin /></Route>
+
+          <Route exact path="/validated"><UserValidate /></Route>
 
           <Route exact path="/modal">
             <ModalScreen />

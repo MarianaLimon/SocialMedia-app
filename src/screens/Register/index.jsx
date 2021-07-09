@@ -356,7 +356,7 @@ export default function Register() {
                 ? printError("Escriba su cédula profesional correctamente")
                 : null}
               <AppSelect
-                classSelect="AppInput_InputComponent__1j-T8"
+                classSelect="AppInput_InputComponent"
                 classLabel="col-12"
                 idSelect="especialidad"
                 placeholder="Especialidad"
