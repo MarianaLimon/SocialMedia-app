@@ -17,47 +17,51 @@ export default function WebinarsListAdmin() {
             <LeftMenu />
           </div>
           <div className="col-lg-10">
-            <div className="d-flex justify-content-between w-auto">
-              <h1 className="my-4">
+            <div className="d-flex flex-column flex-md-row justify-content-between align-items-center w-auto pb-0 pb-lg-3 mb-lg-4">
+              <h1 className="mt-3 title-sections">
                 <b>Webinars</b> 
               </h1>
-              <AppButton classButton="secondary newArticle" type="submit" text="+ Nuevo Webinar" />
+              <AppButton classButton="aqua newArticle mt-1 mt-lg-3 mb-1"  type="submit" text="+ Nuevo Webinars" />
             </div>
             <table class="table table-striped">
               <thead>
                 <tr>
                   <th scope="col"><Icons value={'delete'}/></th>
-                  <th scope="col">Titulo</th>
-                  <th scope="col">Categorias</th>
-                  <th scope="col">Duración</th>
-                  <th scope="col">Fecha</th>
-                  <th scope="col">Actualizado</th>
+                  <th scope="col"><span className="table-show">Título</span></th>
+                  <th scope="col" className="table-show">Categorias</th>
+                  <th scope="col" className="table-show">Duración</th>
+                  <th scope="col" className="table-show">Publicación</th>
+                  <th scope="col" className="table-show">Actualizacion</th>
+                  <th scope="col"> </th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <th scope="row"><AppCheckbox /></th>
-                  <td>Mark</td>
-                  <td>Otto@mdo</td>
-                  <td>00/00/00</td>
-                  <td>00/00/00</td>
-                  <td>00/00/00</td>
+                  <td>Webinar 1</td>
+                  <td className="table-show">Categoria 1</td>
+                  <td className="table-show">Publicado</td>
+                  <td className="table-show">00/00/00</td>
+                  <td className="table-show">00/00/00</td>
+                  <th scope="col"><button className="btn-edit"><Icons value={'edit'}/></button></th>
                 </tr>
                 <tr>
                   <th scope="row"><AppCheckbox /></th>
-                  <td>Jacob</td>
-                  <td>Thornton@mdo</td>
-                  <td>00/00/00</td>
-                  <td>00/00/00</td>
-                  <td>00/00/00</td>
+                  <td>Webinar 2</td>
+                  <td className="table-show">Categoria 2</td>
+                  <td className="table-show">Pendiente</td>
+                  <td className="table-show">00/00/00</td>
+                  <td className="table-show">00/00/00</td>
+                  <th scope="col"><button className="btn-edit"><Icons value={'edit'}/></button></th>
                 </tr>
                 <tr>
                   <th scope="row"><AppCheckbox /></th>
-                  <td>Larry</td>
-                  <td>theBird@mdo</td>
-                  <td>00/00/00</td>
-                  <td>00/00/00</td>
-                  <td>00/00/00</td>
+                  <td>Webinar 3</td>
+                  <td className="table-show">Categoria 3</td>
+                  <td className="table-show">Publicado</td>
+                  <td className="table-show">00/00/00</td>
+                  <td className="table-show">00/00/00</td>
+                  <th scope="col"><button className="btn-edit"><Icons value={'edit'}/></button></th>
                 </tr>
               </tbody>
             </table>
