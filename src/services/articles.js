@@ -9,7 +9,7 @@ export const getArticles = async () => {
             }
         })
         const allArticles = await response.json();
-        return await allArticles.data.articles;
+        return allArticles.data.articles;
     } catch (error) {
         console.log(error);
     }
