@@ -28,6 +28,20 @@ export const getRepliesByDocumentId = async (type, id) => {
   }
 };
 
+export const getCountRepliesByDocument = async (type, id) => {
+  try {
+    const response = await fetch(`${API_URL_REPLIES}/count/${type}/${id}`, {
+      headers: {
+        "authorization": localStorage.getItem("token")
+      }
+    });
+    const RepliesByDocument = await response.json();
+    return await RepliesByDocument.data.replies;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const getReplyById = async (id) => {
   try {
     const response = await fetch(`${API_URL_REPLIES}/${id}`, {

@@ -29,6 +29,20 @@ export const getLikeById = async (id) => {
     }
 };
 
+export const getCountLikesByDocument = async (document,id) => {
+    try {
+        const response = await fetch(`${API_URL_LIKES}/${document}/${id}`, {
+            headers: {
+                "authorization": localStorage.getItem("token")
+            }
+        })
+        const Like = await response.json();
+        return Like.data.likes;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
 export const postLike = async (data) => {
     const response = await fetch(API_URL_LIKES, {
         method: "POST",
