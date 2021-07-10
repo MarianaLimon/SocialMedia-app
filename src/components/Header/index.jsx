@@ -101,7 +101,7 @@ export default function Header() {
 
     return (
         <nav className="header d-flex justify-content-between align-items-center">
-            <div className={`${menuAdmin ? "d-block" : "d-none"}`}>
+            <div className={`aqui ${menuAdmin ? "d-block d-lg-none" : "d-none"}`}>
                 <Hamburger />
             </div>
             <div className="logo-search d-flex justify-content-center align-items-center">
