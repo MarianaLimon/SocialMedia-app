@@ -21,7 +21,7 @@ export default function Header() {
     const history = useHistory();
     const location = useLocation();
 
-    const routesAdmin = ["/homeadmin", "/articles-admin", "/webinars-admin", "/products-admin", "/users", "/user-validate", "/product-detail", "/add-article", "/test"]
+    const routesAdmin = ["/homeadmin", "/articles-admin", "/webinars-admin", "/products-admin", "/users", "/user-validate", "/product-detail", "/add-article", "/add-product", "/add-webinar", "/test"]
     const routesMedico = ["/home", "/profile", "/products", "/product-detail", "/webinars", "/webinar-detail", "/articles", "/article-detail", "/test"]
     const routesFree = ["/register", "/tnksregister", "/"]
 
@@ -101,7 +101,7 @@ export default function Header() {
 
     return (
         <nav className="header d-flex justify-content-between align-items-center">
-            <div className={`${menuAdmin ? "d-block" : "d-none"}`}>
+            <div className={`aqui ${menuAdmin ? "d-block d-lg-none" : "d-none"}`}>
                 <Hamburger />
             </div>
             <div className="logo-search d-flex justify-content-center align-items-center">
