@@ -1,28 +1,52 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+
+import { getCountLikesByDocument } from "../../services/likes";
+import { getCountRepliesByDocument } from "../../services/replies";
 
 import Icons from "../commons/icons";
 
 import Styles from "./AppPostReactions.module.css";
 
-const AppPostReactions = props => {
+const AppPostReactions = (props) => {
+  const [likes, setLikes] = useState("0");
+  const [replies, setReplies] = useState("0");
 
-    return (
-        <React.Fragment>
-            {/* Reactions */}
-            <div className={`${Styles.Reactions}`}>
-                <div className={`${Styles.ReactionsWrapper}`}>
-                    <a href="#">
-                        <Icons value="likes" />
-                        <span>10</span><span className={`${Styles.ReactionsText}`}>Likes</span>
-                    </a>
-                    <a href="#">
-                        <Icons value="comments" />
-                        <span>6</span><span className={`${Styles.ReactionsText}`}>Comments</span>
-                    </a>
-                </div>
-            </div>
-        </React.Fragment>
-    );        
-}
+  useEffect(() => {
+    if (props.idDocument && props.typeDomument) {
+      requestLikes(props.typeDomument, props.idDocument);
+      requestReplies(props.typeDomument, props.idDocument);
+    }
+  }, []);
+
+  const requestLikes = async (type, id) => {
+    const json = await getCountLikesByDocument(type, id);
+    setLikes(json);
+  };
+
+  const requestReplies = async (type, id) => {
+    const json = await getCountRepliesByDocument(type, id);
+    setReplies(json);
+  };
+
+  return (
+    <React.Fragment>
+      {/* Reactions */}
+      <div className={`${Styles.Reactions}`}>
+        <div className={`${Styles.ReactionsWrapper}`}>
+          <a href="#">
+            <Icons value="likes" />
+            <span>{likes}</span>
+            <span className={`${Styles.ReactionsText}`}>Likes</span>
+          </a>
+          <a href="#">
+            <Icons value="comments" />
+            <span>{replies}</span>
+            <span className={`${Styles.ReactionsText}`}>Comments</span>
+          </a>
+        </div>
+      </div>
+    </React.Fragment>
+  );
+};
 
 export default AppPostReactions;
