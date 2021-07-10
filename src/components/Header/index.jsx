@@ -21,8 +21,8 @@ export default function Header() {
     const history = useHistory();
     const location = useLocation();
 
-    const routesAdmin = ["/homeadmin", "/articles-admin", "/webinars-admin", "/products-admin", "/users", "/user-validate", "/product-detail", "/add-article", "/add-product", "/add-webinar", "/test"]
-    const routesMedico = ["/home", "/profile", "/products", "/product-detail", "/webinars", "/webinar-detail", "/articles", "/article-detail", "/test"]
+    const routesAdmin = ["homeadmin", "articles-admin", "webinars-admin", "products-admin", "users", "user-validate", "product-detail", "add-article", "add-product", "add-webinar", "test"]
+    const routesMedico = ["home", "profile", "products", "product-detail", "webinars", "webinar-detail", "articles", "article-detail", "test"]
     const routesFree = ["/register", "/tnksregister", "/"]
 
 
@@ -32,8 +32,8 @@ export default function Header() {
 
         if ((typeof decoded.exp !== 'undefined' && decoded.exp < now)) {//expiro la fecha
             setMenuAdmin(false)
-            roleDoctor(false)
-            roleAdmin(false)
+            setRoleDoctor(false)
+            setRoleAdmin(false)
             setLogin(false)
             localStorage.removeItem("token")
             history.push("/")
@@ -61,7 +61,7 @@ export default function Header() {
                     setRoleAdmin(false)
                     setMenuAdmin(false)
                     setUrlHome("/home")
-                    const found = routesMedico.find(path => path === location.pathname)
+                    const found = routesMedico.find(path => path === location.pathname.split("/")[1])
                     if (!found) {
                         history.push(urlHome)
                     }
@@ -71,7 +71,7 @@ export default function Header() {
                     setRoleAdmin(true)
                     setMenuAdmin(true)
                     setUrlHome("/homeadmin")
-                    const found = routesAdmin.find(path => path === location.pathname)
+                    const found = routesAdmin.find(path => path === location.pathname.split("/")[1])
                     if (!found) {
                         history.push(urlHome)
                     }
