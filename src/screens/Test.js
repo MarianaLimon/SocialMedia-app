@@ -13,6 +13,7 @@ export default function Test() {
     const [institucion, setInstitucion] = useState()
     useEffect(() => {
         async function professionalLicense() {
+            console.log("probando")
             const json = await getProfessionalLicense("0083346");
             setInstitucion(json.items[0].desins)
             console.log(json)
