@@ -21,8 +21,8 @@ export default function Header() {
     const history = useHistory();
     const location = useLocation();
 
-    const routesAdmin = ["homeadmin", "articles-admin", "webinars-admin", "products-admin", "users", "user-validate", "product-detail", "add-article", "add-product", "add-webinar", "test"]
-    const routesMedico = ["home", "profile", "products", "product-detail", "webinars", "webinar-detail", "articles", "article-detail", "test"]
+    const routesAdmin = ["homeadmin", "articles-admin", "webinars-admin", "products-admin", "users", "user-validate", "product-detail", "add-article", "add-product", "add-webinar", "test", "modal"]
+    const routesMedico = ["home", "profile", "products", "product-detail", "webinars", "webinar-detail", "articles", "article-detail", "test", "modal"]
     const routesFree = ["/register", "/tnksregister", "/"]
 
 

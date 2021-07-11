@@ -41,7 +41,7 @@ export default function UsersList() {
           <td>{`${firstName} ${lastName}`}</td>
           <td className="d-lg-block d-none">{email}</td>
           <td>{status}</td>
-          <th scope="col"><button className="btn-validate" onClick={() => { history.push(`/user-validate/${idUser}`) }}><Icons value={'validate'} /></button></th>
+          <th scope="col"><button className={`btn-validate`} onClick={() => { history.push(`/user-validate/${idUser}`) }}><Icons value={'validate'} /></button></th>
         </tr>
       </React.Fragment>
 
