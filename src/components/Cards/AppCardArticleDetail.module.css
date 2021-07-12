@@ -69,3 +69,9 @@
     margin-top: 10px;
     float: right;
 }
+
+.CommentWrapper button:disabled,
+.CommentWrapper button[disabled]{
+  background-color: var(--background-color) ;
+  color: var(--text-color);
+}

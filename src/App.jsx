@@ -48,7 +48,7 @@ function App() {
 
           <Route exact path="/articles"><ArticlesList /></Route>
 
-          <Route exact path="/article-detail">
+          <Route exact path="/article-detail/:id">
             <ArticleDetail />
           </Route>
 

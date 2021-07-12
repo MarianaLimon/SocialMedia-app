@@ -13,6 +13,10 @@ export default function AppTextarea(props) {
     placeholder,
   } = props;
 
+  const onChange = (event) => {
+    if (props.onChange) props.onChange(event)
+  }
+
   return (
     <textarea
       id={idInput}
@@ -21,7 +25,7 @@ export default function AppTextarea(props) {
       placeholder={placeholder}
       disabled={isDisabled}
       required={isRequired}
-      onChange={(event) => props.callback(event.target.value)}
+      onChange={onChange}
       value={value}
       row={row}
     />
