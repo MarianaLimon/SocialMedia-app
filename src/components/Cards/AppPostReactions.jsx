@@ -16,7 +16,7 @@ const AppPostReactions = (props) => {
       requestLikes(props.typeDomument, props.idDocument);
       requestReplies(props.typeDomument, props.idDocument);
     }
-  }, []);
+  }, [props]);
 
   const requestLikes = async (type, id) => {
     const json = await getCountLikesByDocument(type, id);
@@ -33,12 +33,12 @@ const AppPostReactions = (props) => {
       {/* Reactions */}
       <div className={`${Styles.Reactions}`}>
         <div className={`${Styles.ReactionsWrapper}`}>
-          <a href="#">
+          <a href={props.linkLike?props.linkLike:"#"}>
             <Icons value="likes" />
             <span>{likes}</span>
             <span className={`${Styles.ReactionsText}`}>Likes</span>
           </a>
-          <a href="#">
+          <a href={props.linkReply?props.linkReply:"#"}>
             <Icons value="comments" />
             <span>{replies}</span>
             <span className={`${Styles.ReactionsText}`}>Comments</span>

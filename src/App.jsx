@@ -48,7 +48,7 @@ function App() {
 
           <Route exact path="/articles"><ArticlesList /></Route>
 
-          <Route exact path="/article-detail">
+          <Route exact path="/article-detail/:id">
             <ArticleDetail />
           </Route>
 
@@ -56,7 +56,7 @@ function App() {
             <WebinarsList />
           </Route>
 
-          <Route exact path="/webinar-detail">
+          <Route exact path="/webinar-detail/:id">
             <WebinarDetail />
           </Route>
 
@@ -64,7 +64,7 @@ function App() {
             <ProductsList />
           </Route>
 
-          <Route exact path="/product-detail">
+          <Route exact path="/product-detail/:id">
             <ProductDetail />
           </Route>
 
