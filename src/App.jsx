@@ -39,7 +39,7 @@ function App() {
           <Route exact path="/add-webinar"><AddWebinar /></Route>
           <Route exact path="/articles-admin"><ArticlesListAdmin /></Route>
           <Route exact path="/add-article"><AddArticle /></Route>
-          <Route exact path="/user-validate"><UserValidate /></Route>
+          <Route exact path="/user-validate/:id"><UserValidate /></Route>
           <Route exact path="/users"><UsersList /></Route>
 
           <Route exact path="/register"><Register /></Route>
