@@ -1,32 +1,33 @@
-.banner-register{
-    width: 100%;
-    display:block;
-    margin: auto;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 20px;
-}
-  
-@media screen and (min-width: 770px){
-    .banner-register{
-        height: auto;
-    }
+.banner-register {
+  width: 100%;
+  display: block;
+  margin: auto;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
 }
 
-.AppInput_InputComponent{
-    border-radius: 4px;
-    color: var(--text-color);
-    border: 0px;
-    padding: 10px 24px;
-    width: 100%;
-    outline: none;
+@media screen and (min-width: 770px) {
+  .banner-register {
+    height: auto;
+  }
 }
 
-::placeholder{
-    color: var(--text-color);
-    opacity: 1;
+.AppInput_InputComponent {
+  border-radius: 4px;
+  color: var(--text-color);
+  border: 0px;
+  padding: 10px 24px;
+  width: 100%;
+  outline: none;
+  margin-bottom: 20px;
 }
 
-.uppy-DragDrop-inner{
-    padding: 34px 20px;
+::placeholder {
+  color: var(--text-color);
+  opacity: 1;
+}
+
+.uppy-DragDrop-inner {
+  padding: 34px 20px;
 }
