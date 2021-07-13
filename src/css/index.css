@@ -43,6 +43,10 @@ p{
   color: var(--text-color);
 }
 
+.content-row{
+  height: calc(100vh - 114px)
+}
+
 .select {
   appearance: auto;
 }
