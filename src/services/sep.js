@@ -12,8 +12,11 @@ export const getProfessionalLicense = async (data) => {
             idCedula: data,
 
         }
+
         const response = await fetch(`${URL_CORS}?url=${API_SEP}?json=${JSON.stringify(json)}&wt=json&callback=&charset=ISO-8859-1`)
-        return await response.json();
+        const response2 = await response.json()
+
+        return response2
     } catch (error) {
         console.log(error);
     }

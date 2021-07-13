@@ -14,6 +14,7 @@ import { useParams, useHistory } from "react-router";
 
 import Styles from "./index.module.css"
 import data from "@iconify/icons-vaadin/home";
+import userEvent from "@testing-library/user-event";
 
 
 
@@ -27,6 +28,7 @@ export default function UserValidate() {
   const [show, setShow] = useState(false)
   const { id } = useParams()
   const history = useHistory()
+
   const printError = (feddback) => {
     return (
       <small
@@ -50,32 +52,40 @@ export default function UserValidate() {
         setOptions(arrayOptions);
 
         const jsonUser = await getUserById(id)
-        //console.log(jsonUser.specialty_id)
+
         setDataUser(jsonUser)
         setSpecialty(jsonUser.specialty_id)
 
-        const jsonLicense = await getProfessionalLicense(dataUser.professional_license)
 
-        if (jsonLicense.items) {
-          setDataProfessionalLicense(jsonLicense.items[0])
-        }
+
       } catch (error) {
         console.log(error);
       }
     }
+    if (id) request()
 
-    request()
+  }, [id])
 
-  }, [])
+  useEffect(() => {
+    const request = async () => {
+      const jsonLicense = await getProfessionalLicense(dataUser.professional_license)
+
+      if (jsonLicense.items) {
+        setDataProfessionalLicense(jsonLicense.items[0])
+      }
+    }
+
+    if (dataUser.professional_license) request()
+  }, [dataUser])
 
   const validateUSer = async (status) => {
     try {
       const user = {
         status
       }
-      //await patchUser(id, user);
+      await patchUser(id, user);
       setShow(true)
-      console.log(status)
+
       //history.push("/");
     } catch (error) {
       console.log(error);
