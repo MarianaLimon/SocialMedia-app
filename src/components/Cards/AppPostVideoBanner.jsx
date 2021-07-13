@@ -14,7 +14,7 @@ export default function AppPostVideoBanner(props) {
         return (
                 <div className={`${Styles.Banner} ${props.dstate} card-img-top`}>
                     <AppImage classImage={`${Styles.CardIconPlay}`} pathImage={play} altImage="play-icon"></AppImage>
-                    <AppImage classImage={`${Styles.CardImageHigher} w-100`} pathImage={banner} altImage="banner-img"></AppImage>                
+                    <AppImage classImage={`${Styles.CardImageHigher} w-100`} pathImage={props.pathImage? props.pathImage:banner} altImage="banner-img"></AppImage>                
                 </div>        
         )
     }
@@ -23,7 +23,7 @@ export default function AppPostVideoBanner(props) {
         <React.Fragment>
             <div className={`${Styles.Banner} ${props.dstate} card-img-top`}>
                 <AppImage classImage={`${Styles.CardIconPlay}`} pathImage={play} altImage="play-icon"></AppImage>
-                <AppImage classImage={`${Styles.CardImage} w-100`} pathImage={banner} altImage="banner-img"></AppImage>                
+                <AppImage classImage={`${Styles.CardImage} w-100`} pathImage={props.pathImage? props.pathImage:banner} altImage="banner-img"></AppImage>                
             </div>     
         </React.Fragment>
     );
