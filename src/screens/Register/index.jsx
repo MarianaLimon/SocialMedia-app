@@ -276,6 +276,8 @@ export default function Register() {
                 keyNameValue={0}
                 value={specialty_id}
                 onChange={(event) => setSpecialtyId(event.target.value)}
+                placeholderOption="Seleccione su especialidad"
+                valueSeleted=""
               />
               {specialty_idError ? (
                 <AppFeedback
