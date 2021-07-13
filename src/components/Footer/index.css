@@ -28,6 +28,7 @@ footer .active{
     footer {
         height: 65px ;
         position: absolute;
-        margin-bottom: 0px !important;
+        /* margin-bottom: 0px !important; */
+        bottom: auto;
     }
 }

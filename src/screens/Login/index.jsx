@@ -56,11 +56,11 @@ export default function Login() {
       <Header />
       <div className="container">
         <div className="row d-flex align-items-center content-row">
-          <div className="col-md-6 my-4">
+          <div className="col-lg-6 my-4">
             <img src={banner} alt="" className="banner-register" />
           </div>
-          <div className="col-md-6 my-0 my-md-4">
-            <h1 className="m-md-5 m-3 text-center">INICIAR SESIÓN</h1>
+          <div className="col-lg-6 my-0 my-md-4">
+            <h1 className="m-lg-5 mt-md-0 m-3 text-center">INICIAR SESIÓN</h1>
             <form className="m-md-5 m-3" onSubmit={handleSubmit}>
               <Input
                 placeholder="Correo electrónico"
