@@ -22,3 +22,10 @@ export const getDateFormatAdmin = (date) => {
         locale: es
     })
 }
+
+export const logout = () => {
+    if (localStorage.getItem("token")) {
+        localStorage.removeItem("token")
+        console.log('SocialMedic - Log out');
+    }
+}
