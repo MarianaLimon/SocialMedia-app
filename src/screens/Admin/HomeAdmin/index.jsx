@@ -12,10 +12,10 @@ export default function HomeAdmin() {
   return (
     <React.Fragment>
       <Header />
-      <div className="container my-4">
-        <div className="row">
+      <div className="container my-4 content-row">
+        <div className="row ">
           <div className="col-12">
-            <img src={banner} alt="" className="w-100 }" />
+            <img src={banner} alt="" className="w-100" />
             <p className="text-center my-4"><b>Bienvenido Administrador</b></p>
           </div>
         </div>

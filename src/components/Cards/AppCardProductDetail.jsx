@@ -11,7 +11,32 @@ import Styles from "./AppCardProductDetail.module.css"
 
 import banner from "../../img/card/banner-product.jpg"
 
-export default function AppCardProductDetail() {
+export default function AppCardProductDetail({
+    cardId,
+    cardLink,
+    cardCategory,
+    cardName,
+    cardImage,
+    cardTags,
+    sustance,
+    formulation,
+    terapeutic_indications,
+    general_description,
+    dose,
+    cardDate,
+    updatedate,
+
+    cardAutor,
+    cardAutorAvatar,
+}) {
+
+    const buildTags = (tag, index) => {
+        return (
+          <React.Fragment key={index}>
+            <span className="me-2">#{tag}</span>
+          </React.Fragment>
+        );
+      };
 
   return (
     <React.Fragment>
@@ -24,16 +49,18 @@ export default function AppCardProductDetail() {
 
             {/* Title */}
             <h2 className={`${Styles.PublishedTitle}`}>
-                <a href="#">Title</a>
+                <a href="#">{cardName ? cardName : "Title"}</a>
             </h2>
 
             {/* Tags */}
-            <div className={`${Styles.PublishedTags} tags-color d-flex flex-wrap`}> #webdev #wordpress #frontend #tutorial </div>
+            <div className={`${Styles.PublishedTags} tags-color d-flex flex-wrap`}> 
+                {cardTags && cardTags.map(buildTags)}
+            </div>
 
 
             {/* Content */}
             <div className={`${Styles.PublishedContent}`}>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae asperiores perferendis beatae perspiciatis facilis! Rem, mollitia nesciunt assumenda vel magni doloremque fuga iste quis sunt sequi expedita ratione quos laborum.</p>
+                <p>{general_description ? general_description : "..."}</p>
             </div>
 
             {/* Reactions and Creation Date */}
@@ -41,12 +68,21 @@ export default function AppCardProductDetail() {
 
                 <div className="row d-flex align-items-center">
                     <div className="col-12 col-lg-9">
+
                         {/* Reactions */}
-                        <AppPostReactions/>
+                        <AppPostReactions
+                        idDocument={cardId ? cardId : ""}
+                        typeDomument="articles"
+                        linkReply="#replytext"
+                        />
+
                     </div>
+
                     <div className="col-12 col-lg-3">
+
                         {/* Creation Date */}
                         <AppPostDateCreation cname="text-end"/>
+
                     </div>
                 </div>
 
@@ -57,9 +93,9 @@ export default function AppCardProductDetail() {
 
         {/* /////////////////  Seccion Comments  ////////////// */}
 
-        <div class={`${Styles.ReplyCard}`}>
+        <div className={`${Styles.ReplyCard}`}>
             
-            <div class="w-100">
+            <div className="w-100">
                     {/* ************* Lists Comments ************** */}
 
                     <div className="CommentList my-3">
@@ -68,7 +104,7 @@ export default function AppCardProductDetail() {
                         <AppPostAuthorInfo  cname="justify-content-between" estado="full-info"/>
 
                         {/* Contenedor del comment publicado */}
-                        <div class={`w-100 p-2 my-2 border rounded`}>
+                        <div className={`w-100 p-2 my-2 border rounded`}>
                             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. At, consequatur?</p>
                         </div>                        
                      </div>  {/* Fin del Comment List */}
@@ -76,8 +112,12 @@ export default function AppCardProductDetail() {
                     {/* ************* Post Comments ************** */}
                     
                     {/* Contenedor del avatar y el name */}
-                    <AppPostAuthorInfo estado=" "/>
-
+                    <AppPostAuthorInfo
+                    estado=" "
+                    authorName={cardAutor ? cardAutor : ""}
+                    authorAvatar={cardAutorAvatar ? cardAutorAvatar : ""}
+                    postDate={cardDate ? cardDate : ""}
+                    />
                         
                      {/* Seccion para Publicar un Comentario    */}
                     <div className={`${Styles.CommentWrapper} w-100 my-2 `}>

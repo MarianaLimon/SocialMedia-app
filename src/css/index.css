@@ -26,13 +26,6 @@ h1{
   font-weight: 700;
 }
 
-
-@media screen and (min-width: 770px){
-  h1{
-    color: var(--blue-secondary);
-  }
-}
-
 h5{
   color: var(--text-color);
   font-weight: bold;
@@ -41,10 +34,6 @@ h5{
 p{
   font-size: 18px;
   color: var(--text-color);
-}
-
-.content-row{
-  height: calc(100vh - 114px)
 }
 
 .select {
@@ -59,4 +48,12 @@ p{
   .form-wrapper{
       margin: 0;
   }
-} 
+  
+  .content-row{
+    min-height: calc(100vh - 115px)
+  }
+
+  h1{
+    color: var(--blue-secondary);
+  }
+}
