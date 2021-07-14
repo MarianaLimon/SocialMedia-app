@@ -71,6 +71,7 @@ export default function AppCardArticleDetail({
         />
       </div>{" "}
       {/* Fin del Card Body */}
+      
       {/* /////////////////  Seccion Comments  ////////////// */}
       <AppCardReplies documentId={cardId} documentType={"articles"} />
     </article>

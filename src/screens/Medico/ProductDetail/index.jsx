@@ -10,7 +10,6 @@ import Header from "../../../components/Header";
 
 export default function ProductDetail() {
 
-
   const [product, setProduct] = useState({});
   const { id } = useParams();
   //const history = useHistory();

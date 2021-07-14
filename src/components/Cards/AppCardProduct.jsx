@@ -9,7 +9,6 @@ import Styles from "./AppCardProduct.module.css"
 import banner from "../../img/card/banner-product.jpg"
 
 export default function AppCardProduct({
-  key,
   cardId,
   cardLink,
   cardCategory,

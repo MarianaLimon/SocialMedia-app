@@ -7,6 +7,7 @@ import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
 
 export default function ArticleDetail() {
+  
   const [article, setArticle] = useState({});
   const { id } = useParams();
   //const history = useHistory();
