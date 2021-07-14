@@ -3,6 +3,7 @@ import React from "react";
 // import AppCheckboxFilter from "../components/commons/AppCheckboxFilter";
 import AppImage from "../commons/AppImage";
 import AppPostDateCreation from "./AppPostDateCreation"
+import AppPostReactions from "./AppPostReactions";
 
 import Styles from "./AppCardProduct.module.css"
 
@@ -10,7 +11,6 @@ import banner from "../../img/card/banner-product.jpg"
 
 export default function AppCardProduct({
   cardId,
-  cardLink,
   cardCategory,
   cardName,
   cardImage,
@@ -22,6 +22,7 @@ export default function AppCardProduct({
   dose,
   cardDate,
   updatedate,
+  cardLink
 }) {
 
   return (
@@ -40,7 +41,9 @@ export default function AppCardProduct({
               <div className={`${Styles.CardBody} card-body`}>
                   {/* Title */}
                   <h2 className={`${Styles.CardTitle}`}>
-                      <a href="#">{cardName ? cardName : "Title"}</a>
+                      <a href={cardLink ? cardLink : "#"}>
+                        {cardName ? cardName : "Title"}
+                      </a>
                   </h2>
 
                   {/* Tags */}
@@ -57,6 +60,12 @@ export default function AppCardProduct({
 
                   {/* Publication Date */}
                   <AppPostDateCreation cname="text-end"/>
+
+                  {/* Reactions */}
+                  <AppPostReactions
+                    idDocument={cardId ? cardId : ""}
+                    typeDomument="articles"
+                  />
               </div>
           </div>
 
