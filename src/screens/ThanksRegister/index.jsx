@@ -9,6 +9,9 @@ import { useHistory } from "react-router-dom";
 
 export default function TnksRegister() {
 
+  const history = useHistory()
+  const handleClick = () => history.push('/');
+
   return (
     <React.Fragment>
       <Header />
@@ -21,7 +24,13 @@ export default function TnksRegister() {
             <h1 className="my-4 text-center">REGISTRO</h1>
             <p className="tnks text-center">Gracias por registrarse</p>
             <p className="text-center pb-4">Le hemos enviado un correo de confirmación</p>
-            <AppButton classButton="secondary w-50 d-block mx-auto my-5" type="submit" text="IR AL INICIO" />
+            <form onClick= {handleClick}>
+              <AppButton 
+                classButton="secondary w-50 d-block mx-auto my-5" 
+                type="submit" 
+                text="IR AL INICIO" 
+              />
+            </form>
           </div>
         </div>
       </div>
