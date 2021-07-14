@@ -6,6 +6,8 @@ import { whois } from "../../utils/functions";
 import AppTextarea from "../commons/AppTextarea";
 import AppPostAuthorInfo from "./AppPostAuthorInfo";
 //import AppPostReactions from "./AppPostReactions";
+import { getDateFormat } from "../../utils/functions";
+
 
 import Styles from "./AppCardArticleDetail.module.css";
 
@@ -58,7 +60,7 @@ export default function AppCardReplies({
           estado="full-info"
           authorName={`${userReply.firstname} ${userReply.lastname}`}
           authorAvatar={userReply.avatar_url}
-          postDate={replyDate}
+          postDate={replyDate ? getDateFormat(replyDate) : ""}
         />
 
         {/* Contenedor del comment publicado */}

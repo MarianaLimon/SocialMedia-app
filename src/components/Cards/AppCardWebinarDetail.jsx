@@ -5,6 +5,7 @@ import AppPostAuthorInfo from "./AppPostAuthorInfo";
 import AppPostReactions from "./AppPostReactions";
 import AppCardReplies from "./AppCardRplies";
 import ReactPlayer from "react-player";
+import { getDateFormat } from "../../utils/functions";
 
 import Styles from "./AppCardWebinarDetail.module.css";
 
@@ -55,7 +56,7 @@ export default function AppCardWebinarDetail({
             estado="full-info"
             authorName={cardAutor ? cardAutor : ""}
             authorAvatar={cardAutorAvatar ? cardAutorAvatar : ""}
-            postDate={cardDate ? cardDate : ""}
+            postDate={cardDate ? getDateFormat(cardDate) : ""}
           />
 
           {/* Reactions */}

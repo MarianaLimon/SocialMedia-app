@@ -39,7 +39,6 @@ export default function Register() {
     useState(false);
   const [termsError, setTermsError] = useState(false);
 
-  let validForm = true;
   useEffect(() => {
     const request = async () => {
       const json = await getSpecialties();
@@ -60,6 +59,7 @@ export default function Register() {
   const history = useHistory();
 
   const handleValidation = () => {
+    let validForm = true;
     if (!isName(firstname) || firstname.length < 3) {
       validForm = false;
       setFirstnameError(true);
@@ -90,7 +90,7 @@ export default function Register() {
     } else {
       setPasswordError(false);
     }
-    if (password_confirm.length < 6 || password != password_confirm) {
+    if (password_confirm.length < 6 || password !== password_confirm) {
       validForm = false;
       setPasswordConfirmError(true);
     } else {
@@ -108,7 +108,7 @@ export default function Register() {
     } else {
       setSpecialtyIdError(false);
     }
-    if (professional_license_url.length === "") {
+    if (professional_license_url.length < 1) {
       validForm = false;
       setProfessionalLicenseUrlError(true);
     } else {
@@ -298,9 +298,15 @@ export default function Register() {
               <AppDragDrop
                 stateUrl={professional_license_url}
                 callbackSetState={setProfessionalLicenseUrl}
-                textDragDrop="Arrastre la foto de su Cedula Profesional"
+                textDragDrop="Arrastre la foto de su Cédula Profesional"
                 textBrowse="seleccione el archivo"
               />
+              {professional_license_urlError ? (
+                <AppFeedback
+                  className="moveup"
+                  feedback="Falta agregar la foto de se cédula profesional"
+                />
+              ) : null}
               <label>
                 <input
                   type="checkbox"
