@@ -6,6 +6,7 @@ import AppTextarea from "../commons/AppTextarea";
 import AppPostAuthorInfo from "./AppPostAuthorInfo";
 import AppPostDateCreation from "./AppPostDateCreation";
 import AppPostReactions from "./AppPostReactions";
+import AppCardReplies from "./AppCardRplies";
 
 import Styles from "./AppCardProductDetail.module.css"
 
@@ -13,7 +14,6 @@ import banner from "../../img/card/banner-product.jpg"
 
 export default function AppCardProductDetail({
     cardId,
-    cardLink,
     cardCategory,
     cardName,
     cardImage,
@@ -28,6 +28,7 @@ export default function AppCardProductDetail({
 
     cardAutor,
     cardAutorAvatar,
+    cardLink
 }) {
 
     const buildTags = (tag, index) => {
@@ -49,8 +50,16 @@ export default function AppCardProductDetail({
 
             {/* Title */}
             <h2 className={`${Styles.PublishedTitle}`}>
-                <a href="#">{cardName ? cardName : "Title"}</a>
+                {cardName ? cardName : "Nombre del Producto"}
             </h2>
+
+            <h5 className={`${Styles.PublishedSustance}`}>
+                {sustance ? sustance : "Sustancia"}
+            </h5>
+
+            <h6 className={`${Styles.PublishedFormula}`}>
+                {formulation ? formulation : "Fórmula"}
+            </h6>
 
             {/* Tags */}
             <div className={`${Styles.PublishedTags} tags-color d-flex flex-wrap`}> 
@@ -91,42 +100,8 @@ export default function AppCardProductDetail({
         </div>  {/* Fin del Card Body */}
 
 
-        {/* /////////////////  Seccion Comments  ////////////// */}
-
-        <div className={`${Styles.ReplyCard}`}>
-            
-            <div className="w-100">
-                    {/* ************* Lists Comments ************** */}
-
-                    <div className="CommentList my-3">
-
-                        {/* Contenedor del avatar y el name */}
-                        <AppPostAuthorInfo  cname="justify-content-between" estado="full-info"/>
-
-                        {/* Contenedor del comment publicado */}
-                        <div className={`w-100 p-2 my-2 border rounded`}>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. At, consequatur?</p>
-                        </div>                        
-                     </div>  {/* Fin del Comment List */}
-
-                    {/* ************* Post Comments ************** */}
-                    
-                    {/* Contenedor del avatar y el name */}
-                    <AppPostAuthorInfo
-                    estado=" "
-                    authorName={cardAutor ? cardAutor : ""}
-                    authorAvatar={cardAutorAvatar ? cardAutorAvatar : ""}
-                    postDate={cardDate ? cardDate : ""}
-                    />
-                        
-                     {/* Seccion para Publicar un Comentario    */}
-                    <div className={`${Styles.CommentWrapper} w-100 my-2 `}>
-                        <AppTextarea classTextArea=" w-100 " placeholder="Add to the discussion" />
-                        <button type="button" className="btn" id="reply-comment">Comentar</button> 
-                    </div>
-
-            </div>
-        </div>
+      {/* /////////////////  Seccion Comments  ////////////// */}
+      <AppCardReplies documentId={cardId} documentType={"articles"} />
 
     </article>
 
