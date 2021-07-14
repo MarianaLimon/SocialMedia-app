@@ -47,7 +47,7 @@ export default function AddWebinar() {
                 textBrowse="seleccione el archivo"
               />
               
-              <div class="columns">
+              <div className="columns">
                 <Input
                   id=""
                   placeholder=""

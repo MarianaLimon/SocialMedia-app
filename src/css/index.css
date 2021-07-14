@@ -43,10 +43,6 @@ p{
   color: var(--text-color);
 }
 
-.content-row{
-  height: calc(100vh - 114px)
-}
-
 .select {
   appearance: auto;
 }
@@ -58,5 +54,8 @@ p{
 @media screen and (min-width: 770px){
   .form-wrapper{
       margin: 0;
+  }
+  .content-row{
+    height: calc(100vh - 114px)
   }
 } 
