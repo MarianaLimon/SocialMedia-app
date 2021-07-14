@@ -24,7 +24,7 @@ export default function ProductsListAdmin() {
               </h1>
               <AppButton classButton="aqua newArticle mt-1 mt-lg-3 mb-1"  type="submit" text="+ Nuevo Webinar" />
             </div>
-            <table class="table table-striped">
+            <table className="table table-striped">
               <thead>
                 <tr>
                   <th scope="col"><Icons value={'delete'}/></th>

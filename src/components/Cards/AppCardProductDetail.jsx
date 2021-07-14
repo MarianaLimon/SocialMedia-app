@@ -57,9 +57,9 @@ export default function AppCardProductDetail() {
 
         {/* /////////////////  Seccion Comments  ////////////// */}
 
-        <div class={`${Styles.ReplyCard}`}>
+        <div className={`${Styles.ReplyCard}`}>
             
-            <div class="w-100">
+            <div className="w-100">
                     {/* ************* Lists Comments ************** */}
 
                     <div className="CommentList my-3">
@@ -68,7 +68,7 @@ export default function AppCardProductDetail() {
                         <AppPostAuthorInfo  cname="justify-content-between" estado="full-info"/>
 
                         {/* Contenedor del comment publicado */}
-                        <div class={`w-100 p-2 my-2 border rounded`}>
+                        <div className={`w-100 p-2 my-2 border rounded`}>
                             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. At, consequatur?</p>
                         </div>                        
                      </div>  {/* Fin del Comment List */}
