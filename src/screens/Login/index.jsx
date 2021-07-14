@@ -14,15 +14,16 @@ import AppFeedback from "../../components/commons/AppFeedback";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  //const [home, setHome] = useState("");
   const [emailError, setEmailError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
+  const [serviceError, setServiceError] = useState(false);
 
   const history = useHistory();
 
-  //useEffect(() => {}, []);
-
   const handleValidation = () => {
+    setEmailError(false);
+    setPasswordError(false);
+    setServiceError(false);
     let validForm = true;
     if (!isEmail(email)) {
       validForm = false;
@@ -41,21 +42,20 @@ export default function Login() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("handleSubmit");
+
     if (!handleValidation()) {
       return false;
     }
-    console.log("validation");
+
     try {
       const user = {
         email,
         password,
       };
-      console.log(user);
+
       const login = await postLogin(user);
 
       if (login.success) {
-        console.log("sucess", login.success);
         const { token } = login.data;
 
         const dataUser = jwt_decode(token);
@@ -65,6 +65,8 @@ export default function Login() {
         dataUser.role[0] === "admin"
           ? history.push("/homeadmin")
           : history.push("/home");
+      } else {
+        setServiceError(true);
       }
     } catch (error) {
       console.log(error);
@@ -92,7 +94,7 @@ export default function Login() {
               {emailError ? (
                 <AppFeedback
                   className="moveup"
-                  feedback="Escriba un email valido"
+                  feedback="Escriba el email con el que se registro"
                 />
               ) : null}
               <Input
@@ -105,7 +107,13 @@ export default function Login() {
               {passwordError ? (
                 <AppFeedback
                   className="moveup"
-                  feedback="Escriba un password de por lo menos 6 caracteres"
+                  feedback="Escriba su contraseña correctamente"
+                />
+              ) : null}
+              {serviceError ? (
+                <AppFeedback
+                  className="big"
+                  feedback="Email ó contraseña incorrectos"
                 />
               ) : null}
               <AppButton
