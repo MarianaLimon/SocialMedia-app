@@ -6,6 +6,7 @@ import AppPostReactions from "./AppPostReactions";
 import AppCardReplies from "./AppCardRplies";
 import Styles from "./AppCardArticleDetail.module.css";
 import banner from "../../img/card/banner-article.jpg";
+import { getDateFormat } from "../../utils/functions";
 
 export default function AppCardArticleDetail({
   cardId,
@@ -54,7 +55,7 @@ export default function AppCardArticleDetail({
           estado="full-info"
           authorName={cardAutor ? cardAutor : ""}
           authorAvatar={cardAutorAvatar ? cardAutorAvatar : ""}
-          postDate={cardDate ? cardDate : ""}
+          postDate={cardDate ? getDateFormat(cardDate) : ""}
         />
 
         {/* Content */}
@@ -71,7 +72,7 @@ export default function AppCardArticleDetail({
         />
       </div>{" "}
       {/* Fin del Card Body */}
-      
+
       {/* /////////////////  Seccion Comments  ////////////// */}
       <AppCardReplies documentId={cardId} documentType={"articles"} />
     </article>

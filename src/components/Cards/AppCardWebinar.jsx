@@ -3,6 +3,7 @@ import React from "react";
 import AppPostAuthorInfo from "./AppPostAuthorInfo"
 import AppPostVideoBanner from "./AppPostVideoBanner"
 import AppPostReactions from "./AppPostReactions";
+import { getDateFormat } from "../../utils/functions";
 
 import Styles from "./AppCardWebinar.module.css"
 
@@ -21,17 +22,17 @@ export default function AppCardArticle({
     <React.Fragment>
 
 
-    <article className="col-12 mb-4">
+      <article className="col-12 mb-4">
 
-      <div className={`${Styles.CardWebinar} card`}>
+        <div className={`${Styles.CardWebinar} card`}>
 
           {/* Contenedor Banner ---- MOBILE*/}
-          <AppPostVideoBanner 
+          <AppPostVideoBanner
             dstate="d-flex d-md-none"
             pathImage={cardImage}
           />
 
-        <div className="card-body ">
+          <div className="card-body ">
 
             {/* Title */}
             <h2 className={`${Styles.CardTitle}`}>
@@ -39,40 +40,40 @@ export default function AppCardArticle({
             </h2>
 
             {/* Contenedor del avatar y el name */}
-            <AppPostAuthorInfo 
-              dstate="d-none d-md-block" 
+            <AppPostAuthorInfo
+              dstate="d-none d-md-block"
               estado="full-info"
               authorName={cardAutor ? cardAutor : ""}
               authorAvatar={cardAutorAvatar ? cardAutorAvatar : ""}
-              postDate={cardDate ? cardDate : ""}
+              postDate={cardDate ? getDateFormat(cardDate) : ""}
             />
 
             {/* Contenedor Banner */}
-            <AppPostVideoBanner 
+            <AppPostVideoBanner
               dstate="d-none d-md-flex"
               pathImage={cardImage}
             />
-            
+
             {/* Title ---- Mobile */}
             <h2 className={`${Styles.CardTitleMobile}`}>
-                <a href={cardLink ? cardLink : "#"}>{cardTitle ? cardTitle : "Title"}</a>
+              <a href={cardLink ? cardLink : "#"}>{cardTitle ? cardTitle : "Title"}</a>
             </h2>
 
             {/* Contenedor del avatar y el name ---- MOBILE */}
-            <AppPostAuthorInfo 
-              className={``} 
-              dstate="d-flex d-md-none" 
-              cname={`d-flex ${Styles.WebinarAuthorInfo}`} 
+            <AppPostAuthorInfo
+              className={``}
+              dstate="d-flex d-md-none"
+              cname={`d-flex ${Styles.WebinarAuthorInfo}`}
               estado="full-info"
               authorName={cardAutor ? cardAutor : ""}
               authorAvatar={cardAutorAvatar ? cardAutorAvatar : ""}
-              postDate={cardDate ? cardDate : ""}
+              postDate={cardDate ? getDateFormat(cardDate) : ""}
             />
 
 
             {/* Content */}
             <div className={`${Styles.Content}`}>
-                <p>{cardDescription ? cardDescription : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae asperiores perferendis beatae perspiciatis facilis! Rem, mollitia nesciunt assumenda vel magni doloremque fuga iste quis sunt sequi expedita ratione quos laborum."}</p>
+              <p>{cardDescription ? cardDescription : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae asperiores perferendis beatae perspiciatis facilis! Rem, mollitia nesciunt assumenda vel magni doloremque fuga iste quis sunt sequi expedita ratione quos laborum."}</p>
             </div>
 
             {/* Reactions */}
@@ -83,7 +84,7 @@ export default function AppCardArticle({
 
           </div>
         </div>
-    </article>
+      </article>
 
     </React.Fragment>
   );

@@ -8,6 +8,7 @@ import AppPostReactions from "./AppPostReactions";
 import Styles from "./AppCardArticle.module.css";
 
 import banner from "../../img/card/banner-article.jpg";
+import { getDateFormat } from "../../utils/functions";
 
 export default function AppCardArticle({
   cardId,
@@ -22,6 +23,8 @@ export default function AppCardArticle({
   cardLikes,
   props,
 }) {
+
+
   return (
     <React.Fragment>
       <article className="col-12 mb-4">
@@ -52,7 +55,7 @@ export default function AppCardArticle({
               estado="full-info"
               authorName={cardAutor ? cardAutor : ""}
               authorAvatar={cardAutorAvatar ? cardAutorAvatar : ""}
-              postDate={cardDate ? cardDate : ""}
+              postDate={cardDate ? getDateFormat(cardDate) : ""}
             />
 
             {/* Reactions */}
