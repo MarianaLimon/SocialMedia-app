@@ -3,9 +3,12 @@ import banner from "../../../img/home-banner.png"
 import Icons from "../../../components/commons/icons";
 import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
+import { useHistory } from "react-router";
+
+import "./index.css"
 
 export default function HomeAdmin() {
-
+  const history = useHistory()
   return (
     <React.Fragment>
       <Header />
@@ -17,29 +20,29 @@ export default function HomeAdmin() {
           </div>
         </div>
         <div className="row icons-home mt-4">
-        <div className="col-md-3">
-            <a href="">
-              <Icons value={'doctor'}/>
-              <p className="icon-label pb-4 pb-lg-0">Usuarios</p>
-            </a>
+          <div className="col-6 col-lg-3">
+            <button className="btn-menu" onClick={() => { history.push("/users") }}>
+              <Icons value={'doctor'} />
+              <p className="icon-label pb-lg-0">Usuarios</p>
+            </button>
           </div>
-          <div className="col-md-3">
-            <a href="">
-              <Icons value={'products'}/>
-              <p className="icon-label pb-4 pb-lg-0">Productos</p>
-            </a>
+          <div className="col-6 col-lg-3">
+            <button className="btn-menu" onClick={() => { history.push("/products-admin") }}>
+              <Icons value={'products'} />
+              <p className="icon-label pb-lg-0">Productos</p>
+            </button>
           </div>
-          <div className="col-md-3">
-            <a href="">
-              <Icons value={'articles'}/>
+          <div className="col-6 col-lg-3">
+            <button className="btn-menu" onClick={() => { history.push("/articles-admin") }}>
+              <Icons value={'articles'} />
               <p className="icon-label">Artículos</p>
-            </a>
+            </button>
           </div>
-          <div className="col-md-3">
-            <a href="">
-              <Icons value={'webinars'}/>
+          <div className="col-6 col-lg-3">
+            <button className="btn-menu" onClick={() => { history.push("/webinars-admin") }}>
+              <Icons value={'webinars'} />
               <p className="icon-label">Webinars</p>
-            </a>
+            </button>
           </div>
         </div>
       </div>

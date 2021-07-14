@@ -19,6 +19,9 @@ import WebinarsList from "./screens/Medico/WebinarsList";
 import WebinarDetail from "./screens/Medico/WebinarDetail";
 import ProductsList from "./screens/Medico/ProductsList";
 import ProductDetail from "./screens/Medico/ProductDetail";
+import AddArticle from "./screens/Admin/AddArticle";
+import AddProduct from "./screens/Admin/AddProduct";
+import AddWebinar from "./screens/Admin/AddWebinar";
 
 // Examples and Tests
 //import AppCardProductDetail from "./components/commons/AppCardProductDetail";
@@ -31,46 +34,49 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/products-admin"><ProductsListAdmin /></Route>
+          <Route exact path="/add-product"><AddProduct /></Route>
           <Route exact path="/webinars-admin"><WebinarsListAdmin /></Route>
+          <Route exact path="/add-webinar"><AddWebinar /></Route>
           <Route exact path="/articles-admin"><ArticlesListAdmin /></Route>
-          <Route exact path="/user-validate"><UserValidate /></Route>
+          <Route exact path="/add-article"><AddArticle /></Route>
+          <Route exact path="/user-validate/:id"><UserValidate /></Route>
           <Route exact path="/users"><UsersList /></Route>
 
           <Route exact path="/register"><Register /></Route>
-
           <Route exact path="/tnksregister"><TnksRegister /></Route>
+          <Route exact path="/"><Login /></Route>
 
-          <Route exact path="/login"><Login /></Route>
+          <Route exact path="/articles"><ArticlesList /></Route>
 
-          <Route exact path="/articles"><ArticlesList/></Route>
-
-          <Route exact path="/article-detail">
-              <ArticleDetail />
+          <Route exact path="/article-detail/:id">
+            <ArticleDetail />
           </Route>
 
           <Route exact path="/webinars">
-            <WebinarsList/>
+            <WebinarsList />
           </Route>
 
-          <Route exact path="/webinar-detail">
-            <WebinarDetail/>
+          <Route exact path="/webinar-detail/:id">
+            <WebinarDetail />
           </Route>
 
           <Route exact path="/products">
-            <ProductsList/>
+            <ProductsList />
           </Route>
 
-          <Route exact path="/product-detail">
-            <ProductDetail/>
+          <Route exact path="/product-detail/:id">
+            <ProductDetail />
           </Route>
 
           {/* ************ EXAMPLES AND TESTS ********* */}
 
-         <Route exact path="/home"><HomeMedico /></Route>
+          <Route exact path="/home"><HomeMedico /></Route>
 
           <Route exact path="/profile"><EditProfile /></Route>
 
           <Route exact path="/homeadmin"><HomeAdmin /></Route>
+
+          <Route exact path="/validated"><UserValidate /></Route>
 
           <Route exact path="/modal">
             <ModalScreen />

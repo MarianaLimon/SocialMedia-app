@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AppImage from '../components/commons/AppImage'
 import MenuHamburger from "../components/Header/MenuHamburger";
 import {
@@ -8,10 +8,17 @@ import {
     patchArticle,
     deleteArticle
 } from "../services/articles";
-
+import { getProfessionalLicense } from "../services/sep"
 export default function Test() {
-
+    const [institucion, setInstitucion] = useState()
     useEffect(() => {
+        async function professionalLicense() {
+            console.log("probando")
+            const json = await getProfessionalLicense("0083346");
+            setInstitucion(json.items[0].desins)
+            console.log(json)
+        }
+        professionalLicense()
         const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZTI4YTU3ZmFkYWU3NWY0Yzg1MjIzNiIsImlhdCI6MTYyNTQ1OTM1NSwiZXhwIjoxNjI1NTQ1NzU1fQ.IMPeZzG09c2pG4IJ7mtADXXRvvlfPrfOEEjGbbi1j6g"
         localStorage.setItem("token", token);
         async function articleById() {
@@ -66,7 +73,7 @@ export default function Test() {
             const json = await deleteArticle(id);
             console.log(json)
         }
-        deletedArticles()
+        //deletedArticles()
 
 
 
@@ -77,7 +84,7 @@ export default function Test() {
     return (
         <React.Fragment>
             <MenuHamburger />
-
+            {institucion}
         </React.Fragment>
     )
 }

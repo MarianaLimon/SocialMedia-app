@@ -10,6 +10,7 @@
 
 .newArticle{
   width: 200px;
+  font-size: 14px;
 }
 
 tbody, td, tfoot, th, thead, tr {
@@ -29,5 +30,10 @@ tbody, td, tfoot, th, thead, tr {
   }
   .table-show{
     display: table-cell;
+  }
+  .newArticle{
+    width: 220px;
+    font-size: 17px;
+
   }
 } 

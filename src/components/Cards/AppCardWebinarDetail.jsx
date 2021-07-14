@@ -1,83 +1,80 @@
 import React from "react";
 
-
-import AppTextarea from "../commons/AppTextarea";
 import AppPostVideoBanner from "./AppPostVideoBanner";
-import AppPostVideoControls from "./AppPostVideoControls";
 import AppPostAuthorInfo from "./AppPostAuthorInfo";
 import AppPostReactions from "./AppPostReactions";
+import AppCardReplies from "./AppCardRplies";
+import ReactPlayer from "react-player";
 
-import Styles from "./AppCardWebinarDetail.module.css"
+import Styles from "./AppCardWebinarDetail.module.css";
 
-export default function AppCardWebinarDetail(props) {
+export default function AppCardWebinarDetail({
+  cardId,
+  cardImage,
+  cardTitle,
+  cardLink,
+  cardTags,
+  cardAutor,
+  cardAutorAvatar,
+  cardDate,
+  cardVideo,
+  cardDuration,
+  cardContent,
+  ...props
+}) {
+  const buildVideo = (title, url) => {
+    if (cardVideo) {
+      return (
+        // Render a YouTube video player
+        <ReactPlayer
+          url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
+          controls={false}
+          width="100%"
+          styles="background-color: #f0f2f5;"
+        />
+      );
+    }
+    return <AppPostVideoBanner size="webinar-detail" />;
+  };
 
   return (
     <React.Fragment>
-
-    <article className="card mb-3">
-
+      <article className="card mb-3">
         {/* Banner del Webinar */}
-        <AppPostVideoBanner size="webinar-detail"/>
-
-        {/* Video Controls */}
-        <AppPostVideoControls/>
-
+        {buildVideo(cardTitle, cardVideo)}
         <div className={`card-body ${Styles.CardBody}`}>
+          {/* Title */}
+          <h2 className={`${Styles.PublishedTitle}`}>
+            <a href={cardLink ? cardLink : "#"}>
+              {cardTitle ? cardTitle : "Title"}
+            </a>
+          </h2>
 
-            {/* Title */}
-            <h2 className={`${Styles.PublishedTitle}`}>
-                <a href="#">Title</a>
-            </h2>
+          {/* Contenedor del avatar y el name */}
+          <AppPostAuthorInfo
+            estado="full-info"
+            authorName={cardAutor ? cardAutor : ""}
+            authorAvatar={cardAutorAvatar ? cardAutorAvatar : ""}
+            postDate={cardDate ? cardDate : ""}
+          />
 
-            {/* Contenedor del avatar y el name */}
-            <AppPostAuthorInfo estado="full-info"/>
+          {/* Reactions */}
+          <AppPostReactions
+            idDocument={cardId ? cardId : ""}
+            typeDomument="webinars"
+            linkReply="#replytext"
+          />
 
-            {/* Reactions */}
-            <AppPostReactions/>
-
-            {/* Content */}
-            <div className={`${Styles.PublishedContent}`}>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae asperiores perferendis beatae perspiciatis facilis! Rem, mollitia nesciunt assumenda vel magni doloremque fuga iste quis sunt sequi expedita ratione quos laborum.</p>
-            </div>
-
-        </div>  {/* Fin del Card Body */}
-
-
+          {/* Content */}
+          <div
+            className={`${Styles.PublishedContent}`}
+            dangerouslySetInnerHTML={{ __html: cardContent }}
+          ></div>
+        </div>{" "}
+        {/* Fin del Card Body */}
         {/* /////////////////  Seccion Comments  ////////////// */}
-
-        <div class={`${Styles.ReplyCard}`}>
-            
-            <div class="w-100">
-                    {/* ************* Lists Comments ************** */}
-
-                    <div className="CommentList my-3">
-
-                        {/* Contenedor del avatar y el name */}
-                        <AppPostAuthorInfo cname="justify-content-between" estado="full-info"/>
-
-                        {/* Contenedor del comment publicado */}
-                        <div class={`w-100 p-2 my-2 border rounded`}>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. At, consequatur?</p>
-                        </div>                        
-                     </div>  {/* Fin del Comment List */}
-
-                    {/* ************* Post Comments ************** */}
-                    
-                    {/* Contenedor del avatar y el name */}
-                    <AppPostAuthorInfo estado=" "/>
-
-                        
-                     {/* Seccion para Publicar un Comentario    */}
-                    <div className={`${Styles.CommentWrapper} w-100 my-2 `}>
-                        <AppTextarea classTextArea=" w-100 " placeholder="Add to the discussion" />
-                        <button type="button" className="btn" id="reply-comment">Comentar</button> 
-                    </div>
-
-            </div>
-        </div>
-
-    </article>
-
+        <AppCardReplies documentId={cardId} documentType={"webinars"} />
+      </article>
     </React.Fragment>
   );
 }

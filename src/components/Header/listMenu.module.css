@@ -20,14 +20,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid var(--blue-primary);
   padding: 16px;
 }
 .MenuWrapper .MenuTitle h2 {
   margin: 0;
-  font-size: 18px !important;
+  font-size: 22px !important;
   color: var(--blue-primary);
   padding-left: 14px;
+  font-weight:700;
 }
 .MenuWrapper .MenuTitle .MenuCloseBtn {
   display: flex;
@@ -36,12 +36,12 @@
   width: 35px;
   height: 35px;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 26px;
   display: flex;
   border-radius: 50%;
-  border: 0px solid blueviolet;
+  border: none;
   color: var(--blue-primary);
-  background-color: var(--blue-menu);
+  background-color: transparent;
 }
 /*
 .MenuWrapper .MenuTitle .MenuCloseBtn:hover {
@@ -54,6 +54,7 @@
 .MenuWrapper ul li {
   padding: 10px 29px;
   font-size: 18px;
+  font-weight: 400;
   width: 100%;
 }
 /*

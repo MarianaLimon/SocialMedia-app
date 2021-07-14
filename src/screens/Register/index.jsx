@@ -4,21 +4,14 @@ import { getSpecialties } from "../../services/specialties";
 import { postUser } from "../../services/users";
 import banner from "../../img/doctor-banner.png";
 import Input from "../../components/commons/AppInput";
-import AppCheckbox from "../../components/commons/AppCheckbox";
 import AppButton from "../../components/commons/AppButton";
 import AppSelect from "../../components/commons/AppSelect";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import "./index.css";
-//
-import AppImage from "../../components/commons/AppImage";
-import Uppy from "@uppy/core";
-import Tus from "@uppy/tus";
-import { DragDrop } from "@uppy/react";
-import Transloadit from "@uppy/transloadit";
-import "@uppy/drag-drop/dist/style.css";
-
-//
+import { isName, isEmail, allowLetters } from "../../utils/validations";
+import AppFeedback from "../../components/commons/AppFeedback";
+import AppDragDrop from "../../components/commons/AppDragDrop";
 
 export default function Register() {
   const [firstname, setFirstname] = useState("");
@@ -30,6 +23,7 @@ export default function Register() {
   const [specialty_id, setSpecialtyId] = useState("");
   const [professional_license, setProfessionalLicense] = useState("");
   const [professional_license_url, setProfessionalLicenseUrl] = useState("");
+  const [avatar_url, setAvatarUrl] = useState("");
   const [options, setOptions] = useState([]);
   const [checked, setChecked] = useState(false);
   const [firstnameError, setFirstnameError] = useState(false);
@@ -57,23 +51,15 @@ export default function Register() {
     };
 
     request();
+
+    setAvatarUrl(
+      "https://socialmedic-bucket.s3.us-east-2.amazonaws.com/avatar-default.png"
+    );
   }, []);
 
   const history = useHistory();
 
-  const printError = (feddback) => {
-    return (
-      <small
-        className="text-danger"
-        style={{ position: "absolute", marginTop: "-20px" }}
-      >
-        {feddback}
-      </small>
-    );
-  };
-
   const handleValidation = () => {
-    //console.log("validation");
     if (!isName(firstname) || firstname.length < 3) {
       validForm = false;
       setFirstnameError(true);
@@ -137,26 +123,6 @@ export default function Register() {
     return validForm;
   };
 
-  function isEmail(email) {
-    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-    return regex.test(email);
-  }
-
-  function isName(name) {
-    var regex = /^[a-zA-ZáéíóúÁÉÍÓÚÑñ\s]*$/;
-    return regex.test(name);
-  }
-
-  function isPhone(phone) {
-    var regex = /^[0-9]*$/;
-    return regex.test(phone);
-  }
-
-  function isSpace(campo) {
-    var regex = /^\s+|\s/;
-    return regex.test(campo);
-  }
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (!handleValidation()) {
@@ -173,6 +139,7 @@ export default function Register() {
         specialty_id,
         professional_license,
         professional_license_url,
+        avatar_url,
       };
       await postUser(newUser);
       history.push("/tnksregister");
@@ -181,136 +148,65 @@ export default function Register() {
     }
   };
 
-  /*const termins = () => {
-    return <AppButton type="anchor" text="Términos y Condiciones" />;
-  };*/
-
-  //
-  const uppy = new Uppy({
-    meta: { type: "avatar" },
-    restrictions: { maxNumberOfFiles: 1 },
-    autoProceed: true,
-  });
-
-  uppy.use(Transloadit, {
-    params: {
-      auth: {
-        key: "a67a160389ce4dfea1f8bb6c4d24a5bd",
-      },
-      template_id: "bca5c038a4f745ccbadaf9d83f924964",
-    },
-    waitForEncoding: true,
-  });
-
-  uppy.on("complete", (result) => {
-    const url = result.successful[0].uploadURL;
-    console.log(url);
-    setProfessionalLicenseUrl(url);
-  });
-
-  const uploadLicense = () => {
-    //console.log(professional_license_url);
-    if (professional_license_url) {
-      return (
-        <div>
-          <AppImage
-            pathImage={professional_license_url}
-            altImage="Professional License"
-          />
-        </div>
-      );
-    }
-    return (
-      <DragDrop
-        uppy={uppy}
-        locale={{
-          strings: {
-            // Text to show on the droppable area.
-            // `%{browse}` is replaced with a link that opens the system file selection dialog.
-            dropHereOr: "Arrastra la foto de cédula aqui ó %{browse}",
-            // Used as the label for the link that opens the system file selection dialog.
-            browse: "selecciona el archivo",
-          },
-        }}
-      />
-    );
-  };
-  //
-
-  const checkLetters = (event) => {
-    if (/[0-9+*%@#$&?=+_]/g.test(event.currentTarget.value)) {
-      event.currentTarget.value = event.currentTarget.value.replace(
-        /[0-9+*%@#$&?=+_]/g,
-        ""
-      );
-    }
-  };
-
-  const checkNumbers = (event) => {
-    if (/^\d{10}$/.test(event.currentTarget.value)) {
-      event.currentTarget.value = event.currentTarget.value.replace(
-        /^\d{10}$/,
-        ""
-      );
-    }
-  };
-
   return (
     <React.Fragment>
       <Header />
       <div className="register-container container">
-        <div className="row">
-          <div className="col-md-6 my-4">
+        <div className="row mt-md-3">
+          <div className="col-lg-6 my-4">
             <img src={banner} alt="" className="banner-register" />
           </div>
-          <div className="form-wrapper col-md-6">
-            <h1 className="my-4">REGISTRO</h1>
-            <form onSubmit={handleSubmit} className="needs-validation">
+          <div className="form-wrapper col-lg-6">
+            <h1 className="my-md-4 text-center">REGISTRO</h1>
+            <form onSubmit={handleSubmit} className="needs-validation mt-lg-4">
               <Input
                 id="firstname"
                 placeholder="Nombre"
                 type="text"
                 value={firstname}
-                /*onChange={(event) => setFirstname(event.target.value)}*/
                 required
                 onChange={(event) => {
-                  if (/[0-9+*%@#$&?=+_]/g.test(event.currentTarget.value)) {
-                    event.currentTarget.value =
-                      event.currentTarget.value.replace(
-                        /[0-9+*%@#$&?=+_]/g,
-                        ""
-                      );
-                  }
+                  allowLetters(event);
                   setFirstname(event.target.value);
                 }}
               />
-              {firstnameError ? printError("Escriba su nombre") : null}
+              {firstnameError ? (
+                <AppFeedback className="moveup" feedback="Escriba su nombre" />
+              ) : null}
               <Input
                 id="lastname"
                 placeholder="Apellido Paterno"
                 type="text"
                 value={lastname}
                 onChange={(event) => {
-                  checkLetters(event);
+                  allowLetters(event);
                   setLastname(event.target.value);
                 }}
                 required
               />
-              {lastnameError ? printError("Escriba su apellido paterno") : null}
+              {lastnameError ? (
+                <AppFeedback
+                  className="moveup"
+                  feedback="Escriba su apellido paterno"
+                />
+              ) : null}
               <Input
                 id="mother_lastname"
                 placeholder="Apellido Materno"
                 type="text"
                 value={mother_lastname}
                 onChange={(event) => {
-                  checkLetters(event);
+                  allowLetters(event);
                   setMotherLastname(event.target.value);
                 }}
                 required
               />
-              {mother_lastnameError
-                ? printError("Escriba su apellido materno")
-                : null}
+              {mother_lastnameError ? (
+                <AppFeedback
+                  className="moveup"
+                  feedback="Escriba su apellido materno"
+                />
+              ) : null}
               <Input
                 id="email"
                 placeholder="Correo electrónico"
@@ -319,7 +215,12 @@ export default function Register() {
                 onChange={(event) => setEmail(event.target.value)}
                 required
               />
-              {emailError ? printError("Escriba un email valido") : null}
+              {emailError ? (
+                <AppFeedback
+                  className="moveup"
+                  feedback="Escriba un email valido"
+                />
+              ) : null}
               <Input
                 id="password"
                 placeholder="Contraseña"
@@ -328,9 +229,12 @@ export default function Register() {
                 onChange={(event) => setPassword(event.target.value)}
                 required
               />
-              {passwordError
-                ? printError("Escriba un password de por lo menos 6 caracteres")
-                : null}
+              {passwordError ? (
+                <AppFeedback
+                  className="moveup"
+                  feedback="Escriba un password de por lo menos 6 caracteres"
+                />
+              ) : null}
               <Input
                 id="password_confirm"
                 placeholder="Confirme su contraseña"
@@ -339,9 +243,12 @@ export default function Register() {
                 onChange={(event) => setPasswordConfirm(event.target.value)}
                 required
               />
-              {password_confirmError
-                ? printError("Confirme su password, debe ser identico")
-                : null}
+              {password_confirmError ? (
+                <AppFeedback
+                  className="moveup"
+                  feedback="Confirme su password, debe ser identico"
+                />
+              ) : null}
               <Input
                 id="professional_license"
                 placeholder="Cédula Profesional"
@@ -352,11 +259,14 @@ export default function Register() {
                 }}
                 required
               />
-              {professional_licenseError
-                ? printError("Escriba su cédula profesional correctamente")
-                : null}
+              {professional_licenseError ? (
+                <AppFeedback
+                  className="moveup"
+                  feedback="Escriba su cédula profesional correctamente"
+                />
+              ) : null}
               <AppSelect
-                classSelect="AppInput_InputComponent__1j-T8"
+                classSelect="AppInput_InputComponent"
                 classLabel="col-12"
                 idSelect="especialidad"
                 placeholder="Especialidad"
@@ -366,32 +276,31 @@ export default function Register() {
                 keyNameValue={0}
                 value={specialty_id}
                 onChange={(event) => setSpecialtyId(event.target.value)}
+                placeholderOption="Seleccione su especialidad"
+                valueSeleted=""
               />
-              {specialty_idError
-                ? printError("Selecione su especialidad")
-                : null}
+              {specialty_idError ? (
+                <AppFeedback
+                  className="moveup"
+                  feedback="Selecione su especialidad"
+                />
+              ) : null}
               <Input
                 id="professional_license_url"
-                placeholder="Upload Foto Cédula"
                 type="hidden"
+                placeholder="Url Cédula Profesional"
                 value={professional_license_url}
                 onChange={(event) =>
                   setProfessionalLicenseUrl(event.target.value)
                 }
                 required
               />
-              {uploadLicense()}
-              {/* <AppCheckbox label={termins()}/> */}
-              {/*<AppCheckbox
-                id="name"
-                defaultChecked={checked}
-                onCheckboxChange={() => setChecked(!checked)}
-                isSelected={checked}
-                value={checked}
-                label={`Acepto los ${(
-                  <AppButton type="anchor" text="Términos y Condiciones" />
-                )}`}
-                />*/}
+              <AppDragDrop
+                stateUrl={professional_license_url}
+                callbackSetState={setProfessionalLicenseUrl}
+                textDragDrop="Arrastre la foto de su Cedula Profesional"
+                textBrowse="seleccione el archivo"
+              />
               <label>
                 <input
                   type="checkbox"
@@ -402,12 +311,13 @@ export default function Register() {
                 <AppButton type="anchor" text="Términos y Condiciones" />
               </label>
               <div>
-                {termsError
-                  ? printError("Acepte los terminos y condiciones")
-                  : null}
+                {termsError ? (
+                  <AppFeedback feedback="Acepte los terminos y condiciones" />
+                ) : null}
               </div>
+
               <AppButton
-                classButton="secondary w-50 d-block mx-auto my-5"
+                classButton="secondary w-50 d-block mx-auto mb-5"
                 type="submit"
                 text="Registrar"
               />

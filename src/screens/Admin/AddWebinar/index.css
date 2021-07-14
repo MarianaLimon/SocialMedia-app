@@ -1,0 +1,23 @@
+.webinar-duration, .webinar-date{
+    border-radius: 4px;
+    color: var(--text-color);
+    border: 0px;
+    padding: 10px 24px;
+    width: 100%;
+    margin-bottom: 20px;
+    outline: none;
+}
+.columns{
+    columns: 2;
+}
+
+form{
+    padding-bottom: 6rem;
+}
+
+@media screen and (min-width: 770px){
+    form{
+        padding-bottom: 1rem;
+    }
+    
+} 
