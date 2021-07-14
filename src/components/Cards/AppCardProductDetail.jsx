@@ -49,13 +49,15 @@ export default function AppCardProductDetail({
         <div className={`card-body ${Styles.CardBody}`}>
 
             {/* Title */}
-            <h2 className={`${Styles.PublishedTitle}`}>
-                {cardName ? cardName : "Nombre del Producto"}
-            </h2>
+            <div className="col-12 d-flex align-items-center">
+                <h2 className={`${Styles.PublishedTitle}`}>
+                    {cardName ? cardName : "Nombre del Producto"}
+                </h2>  
 
-            <h5 className={`${Styles.PublishedSustance}`}>
-                {sustance ? sustance : "Sustancia"}
-            </h5>
+                <h5 className={`${Styles.PublishedSustance} pl-3`}>
+                    ({sustance ? sustance : "Sustancia"})
+                </h5>                              
+            </div>
 
             <h6 className={`${Styles.PublishedFormula}`}>
                 {formulation ? formulation : "Fórmula"}

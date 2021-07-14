@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 // import AppCheckboxFilter from "../components/commons/AppCheckboxFilter";
 import AppImage from "../commons/AppImage";
@@ -8,6 +8,8 @@ import AppPostReactions from "./AppPostReactions";
 import Styles from "./AppCardProduct.module.css"
 
 import banner from "../../img/card/banner-product.jpg"
+
+const MAX_LENGTH = 250;
 
 export default function AppCardProduct({
   cardId,
@@ -22,12 +24,36 @@ export default function AppCardProduct({
   dose,
   cardDate,
   updatedate,
-  cardLink
+  cardLink,
 }) {
 
+  const LongText = ({ content,limit}) => {
+    const [showAll, setShowAll] = useState(false);
+  
+    const showMore = () => setShowAll(true);
+    const showLess = () => setShowAll(false);
+  
+    if (content.length <= limit) {
+      // there is nothing more to show
+      return <div>{content}</div>
+    }
+    if (showAll) {
+      // We show the extended text and a link to reduce it
+      return <div> 
+        {content} 
+        {/* <button onClick={showLess}>Read less</button>  */}
+      </div>
+    }
+    // In the final case, we show a text with ellipsis and a `Read more` button
+    const toShow = content.substring(0, limit) + "...";
+    return <div> 
+      {toShow} 
+      {/* <button onClick={showMore}>Read more</button> */}
+    </div>
+  }
+  
   return (
     <React.Fragment>
-
 
       <article className="col-6 col-lg-6 mb-4">
 
@@ -55,7 +81,11 @@ export default function AppCardProduct({
 
                 {/* Content */}
                 <div className={`${Styles.PublishedContent}`}>
-                    <p>{general_description ? general_description : "..."}</p>
+
+
+                    <LongText content = {general_description ? general_description : "..."} limit = {450} /> 
+
+                    {/* <p>{general_description ? general_description : "..."}</p> */}
                 </div>
 
                   {/* Publication Date */}

@@ -23,6 +23,14 @@
     color: var(--blue-primary)
 }
 
+.PublishedSustance{
+    margin: 10px;
+}
+
+.PublishedFormula{
+    color: var(--text-color);
+}
+
 /*Tags*/
 
 .PublishedTags {
