@@ -45,9 +45,9 @@ export default function AppCardProduct() {
 
 
               {/* Image Mobile */}
-              <div class={`${Styles.Square} d-block d-md-none`}>
-                <div class={`${Styles.Content}`}>
-                    <img class={`${Styles.Rs}`} src={banner}/>
+              <div className={`${Styles.Square} d-block d-md-none`}>
+                <div className={`${Styles.Content}`}>
+                    <img className={`${Styles.Rs}`} src={banner}/>
                 </div>
               </div>
             </div>
