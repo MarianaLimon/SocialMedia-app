@@ -55,13 +55,13 @@ export default function Login() {
     <React.Fragment>
       <Header />
       <div className="container">
-        <div className="row">
-          <div className="col-md-6 my-4">
+        <div className="row d-flex align-items-center content-row">
+          <div className="col-lg-6 my-4">
             <img src={banner} alt="" className="banner-register" />
           </div>
-          <div className="col-md-6 my-0 my-md-4">
-            <h1 className="my-4">INICIAR SESIÓN</h1>
-            <form className="mx-5" onSubmit={handleSubmit}>
+          <div className="col-lg-6 my-0 my-md-4">
+            <h1 className="m-lg-5 mt-md-0 m-3 text-center">INICIAR SESIÓN</h1>
+            <form className="m-md-5 m-3" onSubmit={handleSubmit}>
               <Input
                 placeholder="Correo electrónico"
                 type="email"
@@ -74,7 +74,7 @@ export default function Login() {
                 onChange={(event) => setPassword(event.target.value)}
 
               />
-              <AppButton classButton="secondary w-50 d-block mx-auto mt-5" type="submit" text="INGRESAR" />
+              <AppButton classButton="secondary w-50 d-block mx-auto mt-4" type="submit" text="INGRESAR" />
               <p className="text-center">¿Aún no estás registrado?<AppButton classButton="aqua" type="anchor" text="Registrate aquí" url="/register" /></p>
             </form>
           </div>

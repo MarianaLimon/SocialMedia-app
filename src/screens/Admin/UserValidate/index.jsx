@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getSpecialties } from "../../../services/specialties";
 import { getUserById, patchUser } from "../../../services/users";
-import { getProfessionalLicense } from "../../../services/sep"
+import { getProfessionalLicense } from "../../../services/sep";
 
 import LeftMenu from "../../../components/LeftMenu";
 import AppImage from "../../../components/commons/AppImage";
@@ -9,25 +9,24 @@ import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
 import AppSelect from "../../../components/commons/AppSelect";
 import AppButton from "../../../components/commons/AppButton";
-import AppModal from "../../../components/commons/AppModal"
+import AppModal from "../../../components/commons/AppModal";
 import { useParams, useHistory } from "react-router";
 
-import Styles from "./index.module.css"
+import Styles from "./index.module.css";
 import data from "@iconify/icons-vaadin/home";
 import userEvent from "@testing-library/user-event";
 
-
-
 export default function UserValidate() {
-  const [professional_licenseError, setProfessionalLicenseError] = useState(false)
-  const [specialty, setSpecialty] = useState({})
-  const [options, setOptions] = useState([])
-  const [dataUser, setDataUser] = useState({})
-  const [dataProfessionalLicense, setDataProfessionalLicense] = useState([])
-  const [updateLicense, setUpdateLicense] = useState(false)
-  const [show, setShow] = useState(false)
-  const { id } = useParams()
-  const history = useHistory()
+  const [professional_licenseError, setProfessionalLicenseError] =
+    useState(false);
+  const [specialty, setSpecialty] = useState({});
+  const [options, setOptions] = useState([]);
+  const [dataUser, setDataUser] = useState({});
+  const [dataProfessionalLicense, setDataProfessionalLicense] = useState([]);
+  const [updateLicense, setUpdateLicense] = useState(false);
+  const [show, setShow] = useState(false);
+  const { id } = useParams();
+  const history = useHistory();
 
   const printError = (feddback) => {
     return (
@@ -37,11 +36,10 @@ export default function UserValidate() {
       >
         {feddback}
       </small>
-    )
-  }
+    );
+  };
 
   useEffect(() => {
-
     const request = async () => {
       try {
         const json = await getSpecialties();
@@ -51,81 +49,83 @@ export default function UserValidate() {
         );
         setOptions(arrayOptions);
 
-        const jsonUser = await getUserById(id)
+        const jsonUser = await getUserById(id);
 
-        setDataUser(jsonUser)
-        setSpecialty(jsonUser.specialty_id)
-
-
-
+        setDataUser(jsonUser);
+        setSpecialty(jsonUser.specialty_id);
       } catch (error) {
         console.log(error);
       }
-    }
-    if (id) request()
-
-  }, [id])
+    };
+    if (id) request();
+  }, [id]);
 
   useEffect(() => {
     const request = async () => {
-      const jsonLicense = await getProfessionalLicense(dataUser.professional_license)
+      const jsonLicense = await getProfessionalLicense(
+        dataUser.professional_license
+      );
 
       if (jsonLicense.items) {
-        setDataProfessionalLicense(jsonLicense.items[0])
+        setDataProfessionalLicense(jsonLicense.items[0]);
       }
-    }
+    };
 
-    if (dataUser.professional_license) request()
-  }, [dataUser])
+    if (dataUser.professional_license) request();
+  }, [dataUser]);
 
   const validateUSer = async (status) => {
     try {
       const user = {
-        status
-      }
+        status,
+      };
       await patchUser(id, user);
-      setShow(true)
+      setShow(true);
 
       //history.push("/");
     } catch (error) {
       console.log(error);
     }
-
-  }
-
-
-
+  };
 
   return (
     <React.Fragment>
-      <AppModal title="" onClose={() => {
-        setShow(false)
-        history.push("/users")
-      }} show={show} estado="aviso">
+      <AppModal
+        title=""
+        onClose={() => {
+          setShow(false);
+          history.push("/users");
+        }}
+        show={show}
+        estado="aviso"
+      >
         <p>El usuario se ha actualizado</p>
       </AppModal>
       <Header />
       <div className="container my-4">
         <div className="row">
-
           {/* Columna del Menu */}
           <div className="col-lg-2">
             <LeftMenu />
           </div>
 
           {/* Columna del Contenido */}
-          <div className={`${Styles.UservalidateContainer} col-lg-10 container`}>
-
+          <div
+            className={`${Styles.UservalidateContainer} col-lg-10 container`}
+          >
             <div className="row">
               <div className="col-12 col-md-2"></div>
               <div className="col-12 col-md-8">
-
                 <h1 className="col-12 my-4 text-center">
                   <b>Validación de Usuario</b>
                 </h1>
 
                 <div className="text-center">
-                  <AppImage pathImage={`${dataUser.professional_license_url}`} classImage="w-25" altImage="" />
+                  <AppImage
+                    pathImage={`${dataUser.professional_license_url}`}
+                    classImage="w-25"
+                    altImage=""
+                  />
                 </div>
 
                 <div className="col-12 my-3 d-flex justify-content-between">
@@ -145,22 +145,20 @@ export default function UserValidate() {
                     <h5>Especialidad</h5>
                     <p>{`${specialty.name}`}</p>
                     {/*
-                  {professional_licenseError
-                    ? printError("Escriba su cédula profesional correctamente")
-                    : null}
-                  <AppSelect
-                    classSelect="AppInput_InputComponent"
-                    classLabel="col-12 mb-0"
-                    idSelect="especialidad"
-                    placeholder="Especialidad"
-                    classContainerInput=""
-                    options={options}
-                    keyNameOption={1}
-                    keyNameValue={0}
-                    value={specialty_id}
-                    onChange={(event) => setSpecialtyId(event.target.value)}
-
-                  />*/}
+                    <AppSelect
+                      classSelect="AppInput_InputComponent"
+                      classLabel="col-12 mb-0"
+                      idSelect="especialidad"
+                      placeholder="Especialidad"
+                      classContainerInput=""
+                      options={options}
+                      keyNameOption={1}
+                      keyNameValue={0}
+                      onChange={(event) => setSpecialty(event.target.value)}
+                      placeholderOption={"Seleccione una especialidad"}
+                      valueSelected={specialty.id ? specialty.id : ""}
+                    />
+                    */}
                   </div>
                 </div>
 
@@ -169,7 +167,6 @@ export default function UserValidate() {
                 <h5 className="my-3 text-center">Informacion de la SEP</h5>
 
                 <div className="col-12 mb-4 d-flex justify-content-between">
-
                   <div className="col-6 text-md-center">
                     <h5>Número de cédula</h5>
                     <p>{dataProfessionalLicense.idCedula}</p>
@@ -206,7 +203,9 @@ export default function UserValidate() {
                   <div className="col-6 text-md-center">
                     <button
                       className={`${Styles.Button} w-50 d-block mx-auto my-5 form-control btn button`}
-                      onClick={() => { validateUSer("Suscrito") }}
+                      onClick={() => {
+                        validateUSer("Suscrito");
+                      }}
                       text="VALIDAR"
                     >
                       VALIDAR
@@ -215,23 +214,22 @@ export default function UserValidate() {
                   <div className="col-6 text-md-center">
                     <button
                       className={`${Styles.Button} w-50 d-block mx-auto my-5 form-control btn button`}
-                      onClick={() => { validateUSer("Rechazado") }}
-                    >RECHAZAR</button>
+                      onClick={() => {
+                        validateUSer("Rechazado");
+                      }}
+                    >
+                      RECHAZAR
+                    </button>
                   </div>
                 </div>
               </div>
 
               <div className="col-12 col-md-2"></div>
             </div>
-
-
-
-
-
           </div>
         </div>
       </div>
       <Footer />
-    </React.Fragment >
+    </React.Fragment>
   );
 }

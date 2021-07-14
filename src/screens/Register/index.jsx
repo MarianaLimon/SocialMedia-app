@@ -152,13 +152,13 @@ export default function Register() {
     <React.Fragment>
       <Header />
       <div className="register-container container">
-        <div className="row">
-          <div className="col-md-6 my-4">
+        <div className="row mt-md-3">
+          <div className="col-lg-6 my-4">
             <img src={banner} alt="" className="banner-register" />
           </div>
-          <div className="form-wrapper col-md-6">
-            <h1 className="mt-4">REGISTRO</h1>
-            <form onSubmit={handleSubmit} className="needs-validation">
+          <div className="form-wrapper col-lg-6">
+            <h1 className="my-md-4 text-center">REGISTRO</h1>
+            <form onSubmit={handleSubmit} className="needs-validation mt-lg-4">
               <Input
                 id="firstname"
                 placeholder="Nombre"
@@ -276,6 +276,8 @@ export default function Register() {
                 keyNameValue={0}
                 value={specialty_id}
                 onChange={(event) => setSpecialtyId(event.target.value)}
+                placeholderOption="Seleccione su especialidad"
+                valueSeleted=""
               />
               {specialty_idError ? (
                 <AppFeedback

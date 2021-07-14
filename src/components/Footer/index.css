@@ -1,6 +1,6 @@
 footer{
     background-color: var(--blue-ligth);
-    height: 70px;
+    height: 55px;
     display:grid;
     align-items: center;
     pointer-events: none;
@@ -27,7 +27,8 @@ footer .active{
 @media screen and (min-width: 770px){
     footer {
         height: 65px ;
-        position: inherit;
-        margin-bottom: 0px !important;
+        position: absolute;
+        /* margin-bottom: 0px !important; */
+        bottom: auto;
     }
 }

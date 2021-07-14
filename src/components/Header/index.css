@@ -2,6 +2,10 @@
   width: 100%;
   padding: 0.6rem 1.4rem;
   background: var(--blue-primary);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0px 8px 13px -3px rgba(28, 65, 86, 0.46);
 }
 
 .header .logo {
@@ -9,12 +13,12 @@
   height: 2rem;
 }
 
-.aqui button{
+.aqui button {
   margin: 0px;
   padding: 0px;
 }
 
-@media screen and (min-width: 770px){
+@media screen and (min-width: 770px) {
   .header {
     width: 100%;
     padding: 0.5rem 7rem;

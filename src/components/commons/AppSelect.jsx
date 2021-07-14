@@ -13,6 +13,8 @@ const AppSelect = ({
   keyNameOption,
   keyNameValue,
   errorMessage = "",
+  placeholderOption,
+  valueSelected,
   ...props
 }) => {
   const optionsRender =
@@ -50,9 +52,14 @@ const AppSelect = ({
               aria-describedby={ariaDescribedBy}
               disabled={isDisabled}
               onChange={onChange}
+              value={valueSelected}
               {...props}
             >
-              <option value="">Seleccione una opción</option>
+              <option value="" disabled>
+                {placeholderOption
+                  ? placeholderOption
+                  : "Seleccione una opción"}
+              </option>
               {optionsRender}
             </select>
           </div>
