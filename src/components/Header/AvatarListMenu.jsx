@@ -38,7 +38,7 @@ export default function AvatarListMenu({ open }) {
           </button>
         </div>
       <button type="button" className={`${Styles.MenuBtn}`} onClick={logout} >
-        Cerar Sesión
+        Cerrar Sesión
       </button>
         
       </div>
