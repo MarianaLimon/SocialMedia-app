@@ -12,7 +12,7 @@ export default function WebinarsListAdmin() {
     <React.Fragment>
       <Header />
       <div className="container my-4">
-        <div className="row">
+        <div className="row content-row">
           <div className="col-lg-2">
             <LeftMenu />
           </div>
