@@ -8,7 +8,22 @@ import Styles from "./AppCardProduct.module.css"
 
 import banner from "../../img/card/banner-product.jpg"
 
-export default function AppCardProduct() {
+export default function AppCardProduct({
+  key,
+  cardId,
+  cardLink,
+  cardCategory,
+  cardName,
+  cardImage,
+  cardTags,
+  sustance,
+  formulation,
+  terapeutic_indications,
+  general_description,
+  dose,
+  cardDate,
+  updatedate,
+}) {
 
   return (
     <React.Fragment>
@@ -18,20 +33,27 @@ export default function AppCardProduct() {
 
           <div className={`${Styles.CardProduct} card d-none d-md-block`}>
 
-              <AppImage classImage={`${Styles.CardImage} card-img-top`} pathImage={banner} altImage="banner-img"></AppImage>
+              <AppImage 
+              classImage={`${Styles.CardImage} card-img-top`} 
+              pathImage={cardImage ? cardImage : banner} 
+              altImage="banner-img"></AppImage>
 
               <div className={`${Styles.CardBody} card-body`}>
                   {/* Title */}
                   <h2 className={`${Styles.CardTitle}`}>
-                      <a href="#">Title</a>
+                      <a href="#">{cardName ? cardName : "Title"}</a>
                   </h2>
 
                   {/* Tags */}
-                  <div className={`${Styles.Tags} tags-color d-flex flex-wrap`}> #webdev #wordpress #frontend #tutorial </div>
+                  <div className={`${Styles.Tags} tags-color d-flex flex-wrap`}> 
+                    {cardTags
+                    ? cardTags.map((tag) => `#${tag} `)
+                    : "#webdev #wordpress #frontend #tutorial"}{" "} 
+                  </div>
 
                 {/* Content */}
                 <div className={`${Styles.PublishedContent}`}>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae asperiores perferendis beatae perspiciatis facilis! Rem, mollitia nesciunt assumenda vel magni doloremque fuga iste quis sunt sequi expedita ratione quos laborum.</p>
+                    <p>{general_description ? general_description : "..."}</p>
                 </div>
 
                   {/* Publication Date */}
@@ -47,7 +69,9 @@ export default function AppCardProduct() {
               {/* Image Mobile */}
               <div className={`${Styles.Square} d-block d-md-none`}>
                 <div className={`${Styles.Content}`}>
-                    <img className={`${Styles.Rs}`} src={banner}/>
+                    <img 
+                    className={`${Styles.Rs}`} 
+                    src={cardImage ? cardImage : banner}/>
                 </div>
               </div>
             </div>
@@ -55,7 +79,7 @@ export default function AppCardProduct() {
             <div className="col-12">
               {/* Title Mobile */}
               <h2 className={`${Styles.CardTitleMobile} d-block d-md-none`}>
-                  <a href="#">Title</a>
+                  <a href="#">{cardName ? cardName : "Title"}</a>
               </h2>
             </div>
 
