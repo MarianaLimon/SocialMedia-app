@@ -24,11 +24,13 @@ export default function AvatarListMenu({ open }) {
 
   const profile = () => history.push('/profile');
 
+  const [setDoctor] = useState(false)
+
   return (
     <div className={`${openMenu} ${Styles.MenuMobile}`}>
       <div className={`${Styles.MenuWrapper}`}>
         <div className={`${Styles.MenuTitle}`}>
-          <button type="button" className={`${Styles.MenuBtn} mx-1`} onClick={profile} >
+          <button type="button" className={`${Styles.MenuBtn} mx-1 pt-2 ${setDoctor ? "d-block" : "d-none"}`} onClick={profile} >
             Ver Perfil
           </button>
           <button className={`${Styles.MenuCloseBtn}`} type="button">
