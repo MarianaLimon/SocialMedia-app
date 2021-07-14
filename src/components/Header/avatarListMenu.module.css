@@ -44,6 +44,9 @@
     border: none;
     color: #fff;
     background-color: transparent;
+    right: 25px;
+    position: absolute;
+    top: 22px;
   }
 
   .MenuWrapper ul {
@@ -77,8 +80,8 @@
     background-color: transparent;
     color: #fff;
     border: none;
-    margin: 0px 20px;
-    font-size: 17px;
+    margin: 0px 20px 5px 20px;
+    font-size: 16px;
 }
 
   @media screen and (min-width: 770px){
