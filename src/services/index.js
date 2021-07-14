@@ -1,6 +1,5 @@
 
 const API_URL = "https://socialmedicapi-accountable-quoll-rk.mybluemix.net";
-
 // Endpoints
 export const API_URL_USERS = `${API_URL}/users`;
 export const API_URL_PRODUCTS = `${API_URL}/products`;
