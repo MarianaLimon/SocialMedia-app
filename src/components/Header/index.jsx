@@ -108,11 +108,13 @@ export default function Header() {
                 <Logo url={urlHome} />
             </div>
             <div className="auth d-flex justify-content-center align-items-center">
-                <AppImage
-                    pathImage={avatar}
-                    classImage={`avatar ${login ? "d-block" : "d-none"}`}
-                    altImage="User Name"
-                />
+                <button className="avatar-btn">
+                    <AppImage
+                        pathImage={avatar}
+                        classImage={`avatar ${login ? "d-block" : "d-none"}`}
+                        altImage="User Name"
+                    />
+                </button>
             </div>
         </nav>
     )

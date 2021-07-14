@@ -20,7 +20,7 @@ export default function Footer() {
 
   return (
     <footer>
-      <div className={`footer-menu d-md-none d-flex mx-3 ${menuDoctor ? "d-block" : "d-none"}  ${url ? "d-none" : ""}`}>
+      <div className={`footer-menu d-md-none d-flex mx-3 ${menuDoctor ? "d-block" : "d-none"}  ${url ? "d-none" : ""} `}>
         <a href="/home"><Icons value={'home'} /></a>
         <a href="/webinars"><Icons value={'webinars'} /></a>
         <a href="/articles"><Icons value={'articles'} /></a>
