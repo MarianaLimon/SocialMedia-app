@@ -7,6 +7,7 @@ import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
 import Icons from "../../../components/commons/icons";
 import Skeleton from "react-loading-skeleton";
+import LeftMenuDoctor from "../../../components/LeftMenuDoctor";
 
 export default function WebinarDetail() {
   const [data, setData] = useState({});
@@ -147,9 +148,9 @@ export default function WebinarDetail() {
       <Header />
       <div className="container">
         <div className="row  my-3">
-          <div className="col-12 col-md-2"></div>
+          <div className="col-12 col-md-2"><LeftMenuDoctor /></div>
           <div className="col-12 col-md-8">{buildWebinar(data)}</div>
-          <div className="col-12 col-md-2"></div>
+          <div className="col-12 col-md-2"><LeftMenuDoctor /></div>
         </div>
       </div>
       <Footer />
