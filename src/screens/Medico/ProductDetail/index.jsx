@@ -6,6 +6,7 @@ import {getProductById} from "../../../services/products"
 import AppCardProductDetail from "../../../components/Cards/AppCardProductDetail"
 import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
+import LeftMenuDoctor from "../../../components/LeftMenuDoctor";
 
 
 export default function ProductDetail() {
@@ -73,12 +74,12 @@ export default function ProductDetail() {
       <Header />
       <div className="container">
           <div className="row">
-              <div className="col-12 col-md-2"></div>
-              <div className="col-12 col-md-8">
+              <div className="col-12 col-md-2"><LeftMenuDoctor /></div>
+              <div className="col-12 col-md-8 mt-4">
                   {buildProduct(product)}
                   {/* <AppCardProductDetail/> */}
               </div>
-              <div className="col-12 col-md-2"></div>
+              <div className="col-12 col-md-2"><LeftMenuDoctor /></div>
           </div>
       </div>
       <Footer />
