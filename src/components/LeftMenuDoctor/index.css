@@ -1,0 +1,27 @@
+.left-menu-item {
+    list-style:none;
+    margin-top: 3rem;
+}
+
+.left-menu-item a{
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px
+}
+
+.left-menu-item span{
+    color: #6c6a6a;
+}
+
+.left-menu-item li{
+    padding-bottom: .5rem;
+}
+
+.left-menu-item a:hover{
+    color: var(--hover-blue) !important;
+    filter: var(--hover-blue) !important;
+}
+
+.left-menu-item .icon{
+    margin-top: -10px;
+}

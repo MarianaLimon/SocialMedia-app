@@ -8,6 +8,7 @@ import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
 import Skeleton from "react-loading-skeleton";
 import Icons from "../../../components/commons/icons";
+import LeftMenuDoctor from "../../../components/LeftMenuDoctor";
 
 export default function WebinarsList() {
   const [webinars, setWebinars] = useState([]);
@@ -118,15 +119,28 @@ export default function WebinarsList() {
   return (
     <React.Fragment>
       <Header />
-      <div className="col-12 container">
-        <AppImage
-          classImage={`${Styles.FilterImage}`}
-          pathImage={filter}
-          altImage="filter-img"
-        ></AppImage>
-        <h1 className={`${Styles.TitleSection}`}>Webinars</h1>
-
-        <div className="row">{buildWebinars(webinars)}</div>
+      <div className="container pb-5">
+        <div className="row">
+          <div className="col-12">
+            <AppImage
+              classImage={`${Styles.FilterImage}`}
+              pathImage={filter}
+              altImage="filter-img"
+            ></AppImage>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-2 d-none d-md-block mt-4">
+            <LeftMenuDoctor />
+          </div>
+          <div className="col-12 col-md-8 px-lg-5">
+            <h1 className={`${Styles.TitleSection} mb-4`}>Webinars</h1>
+            {buildWebinars(webinars)}
+          </div>
+          <div className="col-2 d-none d-md-block mt-4">
+            <LeftMenuDoctor />
+          </div>
+        </div>
       </div>
       <Footer />
     </React.Fragment>
