@@ -1,51 +1,48 @@
-.AppInput_InputComponent{
-    border-radius: 4px;
-    color: var(--text-color);
-    border: 0px;
-    padding: 10px 24px;
-    width: 100%;
-    margin-bottom: 20px;
-    outline: none;
+.AppInput_InputComponent {
+  border-radius: 4px;
+  color: var(--text-color);
+  border: 0px;
+  padding: 10px 24px;
+  width: 100%;
+  margin-bottom: 20px;
+  outline: none;
 }
 
-::placeholder{
-    color: var(--text-color);
-    opacity: 1;
+::placeholder {
+  color: var(--text-color);
+  opacity: 1;
 }
 
+.UservalidateContainer p {
+  margin: 0;
+  font-size: 12pt;
+}
 
-
-.UservalidateContainer p{
+@media screen and (min-width: 770px) {
+  .UservalidateContainer p {
     margin: 0;
-    font-size: 12pt;
+    font-size: 18px;
+  }
 }
 
-@media screen and (min-width: 770px){
-    .UservalidateContainer p{
-        margin: 0;
-        font-size: 18px;
-    }
+.UservalidateContainer .label {
+  margin: 0;
 }
 
-
-.UservalidateContainer .label{
-    margin: 0;
+.UservalidateContainer h5 {
+  font-size: 14pt;
+}
+.UservalidateContainer h3 {
+  color: var(--text-color);
 }
 
-
-
-.UservalidateContainer h5{
-    font-size: 12pt;
+@media screen and (min-width: 770px) {
+  .UservalidateContainer h5 {
+    font-size: 1.25rem;
+  }
 }
 
-@media screen and (min-width: 770px){
-    .UservalidateContainer h5{
-        font-size: 1.25rem;
-    }
-}
-
-
-.UservalidateContainer .Button{
-    background-color: var(--aqua);
-    margin: 20px auto !important;
+.UservalidateContainer .Button {
+  background-color: var(--aqua);
+  margin: 20px auto !important;
 }
