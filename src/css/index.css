@@ -21,9 +21,13 @@ body {
 }
 
 h1{
-  
+  font-size: 2.7rem;
   color: var(--text-color);
   font-weight: 700;
+}
+
+h2{
+  font-size: 1.8rem;
 }
 
 h5{
@@ -56,4 +60,8 @@ p{
   h1{
     color: var(--blue-secondary);
   }
+  .card-body {
+    flex: 1 1 auto;
+    padding: 1.5rem 2rem;
+}
 }
