@@ -8,6 +8,8 @@ import filter from "../../../img/clarity_filter-solid.png"
 import Styles from "./index.module.css"
 import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
+import LeftMenuDoctor from "../../../components/LeftMenuDoctor";
+
 
 export default function ProductsList() {
 
@@ -71,21 +73,32 @@ export default function ProductsList() {
   return (
     <React.Fragment>
       <Header />
-      <div className="col-12 container">
-
-      <AppImage 
-      classImage={`${Styles.FilterImage}`} 
-      pathImage={filter} 
-      altImage="filter-img"
-      ></AppImage>
-
-      <h1 className={`${Styles.TitleSection}`}>Productos</h1>
-        {/* <div className="row ">
-            <AppCardProduct/>
-            <AppCardProduct/>
-            <AppCardProduct/>              
-        </div> */}
-        <div className="row">{buildProducts(products)}</div>
+      <div className="container pb-5">
+        <div className="row">
+          <div className="col-12">
+            <AppImage 
+            classImage={`${Styles.FilterImage}`} 
+            pathImage={filter} 
+            altImage="filter-img"
+            ></AppImage>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-2 d-none d-md-block mt-4">
+            <LeftMenuDoctor />
+          </div>
+          <div className="col-12 col-md-8">
+            <div className="container">
+              <div className="row">
+              <h1 className={`${Styles.TitleSection} mb-4`}>Productos</h1>
+              {buildProducts(products)}
+              </div>
+            </div>
+          </div>
+          <div className="col-2 d-none d-md-block mt-4">
+            <LeftMenuDoctor />
+          </div>
+        </div>
       </div>
       <Footer />
     </React.Fragment>
