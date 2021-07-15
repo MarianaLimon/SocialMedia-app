@@ -117,7 +117,9 @@ export default function AppCardProduct({
             <div className="col-12">
               {/* Title Mobile */}
               <h2 className={`${Styles.CardTitleMobile} d-block d-md-none`}>
-                  <a href="#">{cardName ? cardName : "Title"}</a>
+                  <a  href={cardLink ? cardLink : "#"}>
+                    {cardName ? cardName : "Title"}
+                    </a>
               </h2>
             </div>
 
