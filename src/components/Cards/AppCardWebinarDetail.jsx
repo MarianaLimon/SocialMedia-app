@@ -28,7 +28,7 @@ export default function AppCardWebinarDetail({
       return (
         // Render a YouTube video player
         <ReactPlayer
-          url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
+          url={cardVideo}
           controls={false}
           width="100%"
           styles="background-color: #f0f2f5;"
