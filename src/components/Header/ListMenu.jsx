@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 
 import Styles from "./listMenu.module.css";
 
 export default function ListMenu({ open }) {
   const [openMenu, setOpenMenu] = useState("d-none");
+  const history = useHistory()
 
   useEffect(() => {
     if (open) {
@@ -15,8 +17,13 @@ export default function ListMenu({ open }) {
     open = !open;
   };
 
+  const logout = () => {
+    localStorage.removeItem("token");
+    history.push('/');
+  }
+
   return (
-    <div className={`${openMenu} ${Styles.MenuMobile}  d-block d-md-none`}>
+    <div className={`${openMenu} ${Styles.MenuMobile}  d-block d-lg-none`}>
       <div className={`${Styles.MenuWrapper}`}>
         <div className={`${Styles.MenuTitle}`}>
           <h2>Menu</h2>
@@ -28,19 +35,23 @@ export default function ListMenu({ open }) {
 
         <ul>
           <li className="nav-item active">
-            <a href="/">Inicio</a>
+            <a href="/homeadmin">Home</a>
           </li>
           <li className="nav-item active">
-            <a href="/">Usuarios</a>
+            <a href="/webinars-admin">Webinars</a>
           </li>
           <li className="nav-item active">
-            <a href="/">Productos</a>
+            <a href="/articles-admin">Artículos</a>
           </li>
           <li className="nav-item active">
-            <a href="/">Articulos</a>
+            <a href="/products-admin">Productos</a>
           </li>
           <li className="nav-item active">
-            <a href="/">Webinars</a>
+            <a href="/users">Usuarios</a>
+          </li>
+
+          <li className="nav-item active">
+            <a href="#" onClick={logout}>Cerrar Sesión</a>
           </li>
         </ul>
       </div>

@@ -10,7 +10,7 @@ export default function MenuHamburger() {
   return (
     <>
       <button
-        className={`${Styles.navbarToggler} d-block d-md-none`}
+        className={`${Styles.navbarToggler} d-block d-lg-none`}
         type="button"
         open={open}
         onClick={() => setOpen(!open)}
