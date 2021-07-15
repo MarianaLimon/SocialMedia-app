@@ -5,6 +5,9 @@ import { getWebinarById } from "../../../services/webinars";
 import AppCardWebinarDetail from "../../../components/Cards/AppCardWebinarDetail";
 import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
+import Icons from "../../../components/commons/icons";
+import Skeleton from "react-loading-skeleton";
+import LeftMenuDoctor from "../../../components/LeftMenuDoctor";
 
 export default function WebinarDetail() {
   const [data, setData] = useState({});
@@ -20,6 +23,89 @@ export default function WebinarDetail() {
       request(id);
     }
   }, [id]);
+
+  const buildSkeleton = () => {
+    return (
+      <article className="col-12 mb-4">
+        <div className={` card p-3`}>
+          <Skeleton height={250} />
+
+          <div className="card-body">
+            <h2>
+              <Skeleton />
+            </h2>
+            <div className={`tags-color d-flex flex-wrap`}>
+              <Skeleton width={100} /> <Skeleton width={100} />
+            </div>
+
+            <div className={`d-flex py-2`}>
+              <div className={`w-100`}>
+                <Skeleton circle={true} width={40} height={40} />
+                <div className={`w-100  `}>
+                  <div>
+                    <Skeleton width={300} />
+                  </div>
+
+                  {/* Publication Date */}
+                  <div>
+                    <Skeleton width={200} />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div>
+                <Icons value="likes" />
+                <span>{" 0 "} </span> <span>Likes </span>{" "}
+                <Icons value="comments" /> <span>{" 0 "}</span>{" "}
+                <span>Comments</span>
+              </div>
+            </div>
+          </div>
+
+          <div className={`py-2`}>
+            <div className={`w-100`}>
+              <Skeleton circle={true} width={40} height={40} />
+              <div className={`w-100  `}>
+                <div>
+                  <Skeleton width={300} />
+                </div>
+
+                {/* Publication Date */}
+                <div>
+                  <Skeleton width={200} />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <Skeleton count={5} />
+          </div>
+          <div className={`py-2`}>
+            <div className={`w-100`}>
+              <Skeleton circle={true} width={40} height={40} />
+              <div className={`w-100  `}>
+                <div>
+                  <Skeleton width={300} />
+                </div>
+
+                {/* Publication Date */}
+                <div>
+                  <Skeleton width={200} />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <Skeleton count={3} />
+          </div>
+        </div>
+      </article>
+    );
+  };
 
   const buildWebinar = (objectWebinar) => {
     console.log(objectWebinar);
@@ -54,7 +140,7 @@ export default function WebinarDetail() {
         />
       );
     }
-    return <AppCardWebinarDetail />;
+    return <React.Fragment>{buildSkeleton()}</React.Fragment>;
   };
 
   return (
@@ -62,9 +148,9 @@ export default function WebinarDetail() {
       <Header />
       <div className="container">
         <div className="row  my-3">
-          <div className="col-12 col-md-2"></div>
+          <div className="col-12 col-md-2"><LeftMenuDoctor /></div>
           <div className="col-12 col-md-8">{buildWebinar(data)}</div>
-          <div className="col-12 col-md-2"></div>
+          <div className="col-12 col-md-2"><LeftMenuDoctor /></div>
         </div>
       </div>
       <Footer />

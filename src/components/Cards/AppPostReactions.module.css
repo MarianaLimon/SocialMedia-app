@@ -11,7 +11,8 @@
 }
 .Reactions .ReactionsWrapper {
     display: flex;
-    margin: 1rem 0;
+    margin:0;
+    margin-top: 10px
 }
 
 .Reactions .ReactionsWrapper a img {

@@ -11,6 +11,7 @@ import "./index.css"
 
 export default function HomeDoctor() {
   const history = useHistory()
+
   const [stateUser, setStateUser] = useState({}) 
   useEffect(() => {
     const request = async () => {
@@ -21,6 +22,7 @@ export default function HomeDoctor() {
     }
     request()
   },[])
+  
   return (
     <React.Fragment>
       <Header />
