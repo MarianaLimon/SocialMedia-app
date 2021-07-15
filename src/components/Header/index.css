@@ -18,6 +18,11 @@
   padding: 0px;
 }
 
+.avatar-btn{
+  background-color: transparent;
+  border: none;
+}
+
 @media screen and (min-width: 770px) {
   .header {
     width: 100%;

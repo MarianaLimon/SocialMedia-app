@@ -8,6 +8,7 @@
 /*Card Title*/
 
 .PublishedTitle{
+    color: var(--text-color);
     font-size: 2.25rem;
     margin: 6px 0;
 }
@@ -20,6 +21,14 @@
 
 .PublishedTitle a:hover{
     color: var(--blue-primary)
+}
+
+.PublishedSustance{
+    margin: 10px;
+}
+
+.PublishedFormula{
+    color: var(--text-color);
 }
 
 /*Tags*/

@@ -7,6 +7,8 @@ import { getUserById } from "../../services/users"
 import Hamburger from "./MenuHamburger"
 import { useHistory, useLocation } from "react-router";
 
+import AvatarListMenu from "./AvatarListMenu";
+
 import "./index.css";
 
 export default function Header() {
@@ -101,6 +103,8 @@ export default function Header() {
 
 
 
+    const [open, setOpen] = useState(false);
+
     return (
         <nav className="header d-flex justify-content-between align-items-center">
             <div className={`aqui ${menuAdmin ? "d-block d-lg-none" : "d-none"}`}>
@@ -110,11 +114,18 @@ export default function Header() {
                 <Logo url={urlHome} />
             </div>
             <div className="auth d-flex justify-content-center align-items-center">
-                <AppImage
-                    pathImage={avatar}
-                    classImage={`avatar ${login ? "d-block" : "d-none"}`}
-                    altImage="User Name"
-                />
+                <button className={` avatar-btn`}
+                        type="button"
+                        open={open}
+                        onClick={() => setOpen(!open)}
+                 >
+                    <AppImage
+                        pathImage={avatar}
+                        classImage={`avatar ${login ? "d-block" : "d-none"}`}
+                        altImage="User Name"
+                    />
+                </button>
+                <AvatarListMenu open={open} />
             </div>
         </nav>
     )

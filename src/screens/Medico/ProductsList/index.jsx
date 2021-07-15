@@ -27,6 +27,7 @@ export default function ProductsList() {
     {
       name,
       image,
+      tags,
       sustance,
       presentation_id: presentation,
       category_id: category,
@@ -48,6 +49,7 @@ export default function ProductsList() {
 
         cardName={name}
         cardImage={image}
+        cardTags={tags}
         sustance={sustance}
         formulation={formulation}
         terapeutic_indications={terapeutic_indications}
@@ -55,7 +57,6 @@ export default function ProductsList() {
         dose={dose}
         cardDate={creationdate}
         updatedate={updatedate}
-        cardCategory={category.name}
       />
     );
   };

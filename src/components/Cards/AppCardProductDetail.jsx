@@ -6,12 +6,38 @@ import AppTextarea from "../commons/AppTextarea";
 import AppPostAuthorInfo from "./AppPostAuthorInfo";
 import AppPostDateCreation from "./AppPostDateCreation";
 import AppPostReactions from "./AppPostReactions";
+import AppCardReplies from "./AppCardRplies";
 
 import Styles from "./AppCardProductDetail.module.css"
 
 import banner from "../../img/card/banner-product.jpg"
 
-export default function AppCardProductDetail() {
+export default function AppCardProductDetail({
+    cardId,
+    cardCategory,
+    cardName,
+    cardImage,
+    cardTags,
+    sustance,
+    formulation,
+    terapeutic_indications,
+    general_description,
+    dose,
+    cardDate,
+    updatedate,
+
+    cardAutor,
+    cardAutorAvatar,
+    cardLink
+}) {
+
+    const buildTags = (tag, index) => {
+        return (
+          <React.Fragment key={index}>
+            <span className="me-2">#{tag}</span>
+          </React.Fragment>
+        );
+      };
 
   return (
     <React.Fragment>
@@ -23,17 +49,29 @@ export default function AppCardProductDetail() {
         <div className={`card-body ${Styles.CardBody}`}>
 
             {/* Title */}
-            <h2 className={`${Styles.PublishedTitle}`}>
-                <a href="#">Title</a>
-            </h2>
+            <div className="col-12 d-flex align-items-center">
+                <h2 className={`${Styles.PublishedTitle}`}>
+                    {cardName ? cardName : "Nombre del Producto"}
+                </h2>  
+
+                <h5 className={`${Styles.PublishedSustance} pl-3`}>
+                    ({sustance ? sustance : "Sustancia"})
+                </h5>                              
+            </div>
+
+            <h6 className={`${Styles.PublishedFormula}`}>
+                {formulation ? formulation : "Fórmula"}
+            </h6>
 
             {/* Tags */}
-            <div className={`${Styles.PublishedTags} tags-color d-flex flex-wrap`}> #webdev #wordpress #frontend #tutorial </div>
+            <div className={`${Styles.PublishedTags} tags-color d-flex flex-wrap`}> 
+                {cardTags && cardTags.map(buildTags)}
+            </div>
 
 
             {/* Content */}
             <div className={`${Styles.PublishedContent}`}>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae asperiores perferendis beatae perspiciatis facilis! Rem, mollitia nesciunt assumenda vel magni doloremque fuga iste quis sunt sequi expedita ratione quos laborum.</p>
+                <p>{general_description ? general_description : "..."}</p>
             </div>
 
             {/* Reactions and Creation Date */}
@@ -41,12 +79,21 @@ export default function AppCardProductDetail() {
 
                 <div className="row d-flex align-items-center">
                     <div className="col-12 col-lg-9">
+
                         {/* Reactions */}
-                        <AppPostReactions/>
+                        <AppPostReactions
+                        idDocument={cardId ? cardId : ""}
+                        typeDomument="articles"
+                        linkReply="#replytext"
+                        />
+
                     </div>
+
                     <div className="col-12 col-lg-3">
+
                         {/* Creation Date */}
                         <AppPostDateCreation cname="text-end"/>
+
                     </div>
                 </div>
 
@@ -55,38 +102,8 @@ export default function AppCardProductDetail() {
         </div>  {/* Fin del Card Body */}
 
 
-        {/* /////////////////  Seccion Comments  ////////////// */}
-
-        <div class={`${Styles.ReplyCard}`}>
-            
-            <div class="w-100">
-                    {/* ************* Lists Comments ************** */}
-
-                    <div className="CommentList my-3">
-
-                        {/* Contenedor del avatar y el name */}
-                        <AppPostAuthorInfo  cname="justify-content-between" estado="full-info"/>
-
-                        {/* Contenedor del comment publicado */}
-                        <div class={`w-100 p-2 my-2 border rounded`}>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. At, consequatur?</p>
-                        </div>                        
-                     </div>  {/* Fin del Comment List */}
-
-                    {/* ************* Post Comments ************** */}
-                    
-                    {/* Contenedor del avatar y el name */}
-                    <AppPostAuthorInfo estado=" "/>
-
-                        
-                     {/* Seccion para Publicar un Comentario    */}
-                    <div className={`${Styles.CommentWrapper} w-100 my-2 `}>
-                        <AppTextarea classTextArea=" w-100 " placeholder="Add to the discussion" />
-                        <button type="button" className="btn" id="reply-comment">Comentar</button> 
-                    </div>
-
-            </div>
-        </div>
+      {/* /////////////////  Seccion Comments  ////////////// */}
+      <AppCardReplies documentId={cardId} documentType={"articles"} />
 
     </article>
 
