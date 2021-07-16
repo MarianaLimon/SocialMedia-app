@@ -7,7 +7,7 @@ export default function LeftMenuDoctor() {
   return (
     <nav className="left-menu-item pt-md-4 d-none d-lg-block">
       <li>
-        <a href="/">
+        <a href="/home">
           <Icons value={'home'} /> &nbsp;<span>Home</span>
         </a>
       </li>
