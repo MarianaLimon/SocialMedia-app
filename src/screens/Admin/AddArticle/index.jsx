@@ -9,10 +9,14 @@ import AppButton from "../../../components/commons/AppButton";
 import AppSelect from "../../../components/commons/AppSelect";
 import EditorDraft from "../../../components/EditorDraft";
 import AppDragDrop from "../../../components/commons/AppDragDrop";
-import { postArticle } from "../../../services/articles";
+import {
+  getArticleById,
+  patchArticle,
+  postArticle,
+} from "../../../services/articles";
 import { getCategories } from "../../../services/categories";
 import { getUsers } from "../../../services/users";
-import { Editor, EditorState } from "draft-js";
+//import { Editor, EditorState } from "draft-js";
 //import { convertToRaw } from "draft-js";
 
 export default function AddArticle() {
@@ -20,18 +24,42 @@ export default function AddArticle() {
   const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
   const [content, setContent] = useState("");
-  const [tags, setTags] = useState("");
+  //const [tags, setTags] = useState("");
   const [category_id, setCategoryId] = useState("");
   const [options, setOptions] = useState("");
   const [authors, setAuthors] = useState("");
   const [user_id, setUserId] = useState("");
   const history = useHistory();
   const [editorState, setEditorState] = useState("");
+  const [edit, setEdit] = useState(false);
+  const [article, setArticle] = useState({});
 
   useEffect(() => {
     requestCategories();
     requestAuthors();
   }, []);
+
+  useEffect(() => {
+    if (id) {
+      requestArticle(id);
+      setEdit(true);
+    }
+  }, [id]);
+
+  useEffect(() => {
+    if (article._id) {
+      setCategoryId(article.category_id);
+      setUserId(article.user_id);
+      setContent(article.content);
+      setTitle(article.title);
+      setImage(article.image);
+    }
+  }, [article]);
+
+  const requestArticle = async (id) => {
+    const jsonArticle = await getArticleById(id);
+    setArticle(jsonArticle);
+  };
 
   const requestCategories = async () => {
     const json = await getCategories();
@@ -69,10 +97,16 @@ export default function AddArticle() {
         title,
         user_id,
       };
-
-      const articlePosted = await postArticle(newArticle);
-      if (articlePosted.success) {
-        history.push("/articles-admin");
+      if (edit && id) {
+        const articleUpdated = await patchArticle(id, newArticle);
+        if (articleUpdated.success) {
+          history.push("/articles-admin");
+        }
+      } else {
+        const articlePosted = await postArticle(newArticle);
+        if (articlePosted.success) {
+          history.push("/articles-admin");
+        }
       }
     } catch (error) {
       console.log(error);
@@ -127,6 +161,15 @@ export default function AddArticle() {
               <EditorDraft
                 editorState={editorState}
                 onChange={(event) => setEditorState(event.target.value)}
+              />
+              <Input
+                id="content"
+                type="hidden"
+                value={content}
+                onChange={(event) => {
+                  setContent(event.target.value);
+                }}
+                required
               />
 
               <AppSelect

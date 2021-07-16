@@ -151,7 +151,7 @@ export default function ProductsList() {
   return (
     <React.Fragment>
       <Header />
-      <div className="container pb-5">
+      <div className="container content-row pb-5">
         <div className="row">
           <div className="col-12">
             <AppImage

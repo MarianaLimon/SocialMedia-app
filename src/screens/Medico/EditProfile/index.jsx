@@ -4,6 +4,7 @@ import Input from "../../../components/commons/AppInput";
 import AppButton from "../../../components/commons/AppButton";
 import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
+import banner from "../../../img/banner-right.png";
 
 import { useHistory } from "react-router-dom";
 import AppDragDrop from "../../../components/commons/AppDragDrop";
@@ -88,12 +89,12 @@ export default function EditProfile() {
   return (
     <React.Fragment>
       <Header />
-      <div className="container mb-5">
+      <div className="container mb-5 content-row">
         <div className="row mb-5">
           <div className="col-2 d-none d-md-block">
             <LeftMenuDoctor />
           </div>
-          <div className="col-12 col-md-10 mb-5">
+          <div className="col col-md-7 mb-5">
             <div className="card my-4 p-4">
               {loader ? (
                 <React.Fragment>
@@ -122,17 +123,17 @@ export default function EditProfile() {
                 </React.Fragment>
               )}
             </div>
-            <div className="border rounded my-4 p-4 pb-0">
+            <div className="border rounded my-4 p-4 pb-0 ">
               <form onSubmit={handleSubmit}>
                 <div className="d-flex flex-column justify-content-center align-items-md-center">
-                  <h5>NickName</h5>
+                  <h5 className="my-3">NickName</h5>
                   {loaderNickName ? (
                     <Skeleton width={400} />
                   ) : (
                     <Input
                       placeholder="NickName"
                       type="text"
-                      classContainerInput="input-nick-name"
+                      classContainerInput="input-nick-name mb-0"
                       required
                       value={nickName}
                       onChange={(event) => setNickName(event.target.value)}
@@ -154,7 +155,9 @@ export default function EditProfile() {
               text="Cerrar Sesión"
             />
           </div>
-          <div className="col col-md-3"></div>
+          <div className="col col-md-3 mt-5 pt-2">
+            <img src={banner} alt="" className="w-100 }" />
+          </div>
         </div>
       </div>
       <Footer />
