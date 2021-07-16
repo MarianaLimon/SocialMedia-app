@@ -177,7 +177,7 @@ export default function ArticlesList() {
           <div className="col-3 d-none d-md-block mt-4">
             <div className="card p-3">
               <Filter {...cvProps} />
-              <button onClick={handlerFilter} className="btn text-center">Aplicar filtro</button>
+              <button onClick={handlerFilter} className={`btn text-center mt-3 ${Styles.Button}`}>Aplicar filtro</button>
             </div>
           </div>
         </div>
