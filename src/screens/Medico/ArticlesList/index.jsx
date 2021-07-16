@@ -167,19 +167,23 @@ export default function ArticlesList() {
           </div>
         </div>
         <div className="row">
-          <div className="col-2 d-none d-md-block mt-4">
+
+          <div className="col-2 d-none d-md-block col-md-3 col-lg-2 mt-4">
             <LeftMenuDoctor />
           </div>
-          <div className="col-12 col-md-8 col-lg-7 px-lg-5">
+
+          <div className="col-12 col-md-9 col-lg-7 px-lg-3">
             <h1 className={`${Styles.TitleSection} mb-4`}>Artículos</h1>
             {filterCategories ? buildArticles(filterArticles) : buildArticles(articles)}
           </div>
-          <div className="col-3 d-none d-md-block mt-4">
+
+          <div className={`${Styles.RightColumn} col-3 d-none d-md-block`}>
             <div className="card p-3">
               <Filter {...cvProps} />
-              <button onClick={handlerFilter} className="btn text-center">Aplicar filtro</button>
+              <button onClick={handlerFilter} className={`btn text-center mt-3 ${Styles.Button}`}>Aplicar filtro</button>
             </div>
           </div>
+
         </div>
       </div>
       <Footer />

@@ -11,7 +11,6 @@ import "./index.css"
 
 export default function HomeDoctor() {
   const history = useHistory()
-
   const [stateUser, setStateUser] = useState({}) 
   useEffect(() => {
     const request = async () => {
@@ -23,6 +22,43 @@ export default function HomeDoctor() {
     request()
   },[])
   
+
+  const buildSkeleton = () => {
+    return (
+      <article className="card mb-3">
+        <Skeleton height={250} />
+        <div className={`card-body`}>
+          {/* Title */}
+          <h2>
+            <Skeleton />
+          </h2>
+          {/* Contenedor del avatar y el name */}
+          <div className={`  py-2 container`}>
+            <div className={` w-100 col-12 row`}>
+              <div className={`col-4 `}>
+                  <Skeleton height={300} />
+              </div>
+              <div className={`col-4 `}>
+                  <Skeleton height={300} />
+              </div>
+              <div className={`col-4 `}>
+                  <Skeleton height={300} />
+              </div>
+            </div>
+          </div>
+        </div>{" "}
+        {/* Fin del Card Body */}
+      </article>
+    );
+  };
+
+  const buildArticle = () => {
+    return (
+      <React.Fragment>{buildSkeleton()}</React.Fragment>
+    )
+  }
+
+
   return (
     <React.Fragment>
       <Header />
