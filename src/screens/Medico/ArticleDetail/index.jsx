@@ -9,6 +9,7 @@ import Skeleton from "react-loading-skeleton";
 import Icons from "../../../components/commons/icons";
 import Styles from "../../../components/Cards/AppCardArticleDetail.module.css";
 import LeftMenuDoctor from "../../../components/LeftMenuDoctor";
+import Promo from "../../../img/banner-right.png"
 
 export default function ArticleDetail() {
   const [article, setArticle] = useState({});
@@ -137,8 +138,8 @@ export default function ArticleDetail() {
       <div className="container">
         <div className="row my-3">
           <div className="col-12 col-md-2"><LeftMenuDoctor /></div>
-          <div className="col-12 col-md-8">{buildArticle(article)}</div>
-          <div className="col-12 col-md-2"><LeftMenuDoctor /></div>
+          <div className="col-12 col-md-8 mt-4 col-lg-7">{buildArticle(article)}</div>
+          <div className="col-12 col-md-3 mt-5"><img src={Promo} alt="" className="w-100 }" /></div>
         </div>
       </div>
       <Footer />
