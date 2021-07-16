@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getArticles } from "../../../services/articles";
+import { getCategories } from "../../../services/categories";
 import AppCardArticle from "../../../components/Cards/AppCardArticle";
 import AppImage from "../../../components/commons/AppImage";
 import filter from "../../../img/clarity_filter-solid.png";
@@ -9,9 +10,18 @@ import Header from "../../../components/Header";
 import Skeleton from "react-loading-skeleton";
 import Icons from "../../../components/commons/icons";
 import LeftMenuDoctor from "../../../components/LeftMenuDoctor";
+import Filter from '../../../components/Filter'
 
 export default function ArticlesList() {
   const [articles, setArticles] = useState([]);
+  /*filter */
+  const [filterArticles, setFilterArticles] = useState([])
+  const [filterCategories, setFilterCategories] = useState(false)
+  const [checkedValues, setCheckedValues] = useState([]);
+  const [categories, setCategories] = useState([])
+  const cvProps = { categories, checkedValues, setCheckedValues };
+
+  /* filter*/
 
   useEffect(() => {
     const request = async () => {
@@ -19,8 +29,39 @@ export default function ArticlesList() {
       setArticles(jsonArticles);
     };
 
+    /*filter */
+    const requestCategories = async () => {
+      const jsonCategories = await getCategories()
+      const newCategories = Object.values(jsonCategories).map(item => item.name)
+      setCategories(newCategories)
+    }
+
     request();
+    requestCategories()//filter
   }, []);
+
+  const handlerFilter = () => {
+
+    const request = async () => {
+      const jsonArticles = await getArticles();
+      const articles = []
+
+      Object.entries(jsonArticles).reverse().forEach((item, index) => {
+        if (checkedValues.includes(item[1].category_id.name)) {
+          articles.push(jsonArticles[item[0]])
+        }
+      })
+
+      if (articles.length) {
+        setFilterCategories(true)
+        setFilterArticles(articles)
+      } else {
+        setFilterCategories(false)
+      }
+    }
+    request()
+
+  }
 
   const printArticles = ([
     key,
@@ -118,10 +159,10 @@ export default function ArticlesList() {
       <div className="container pb-5">
         <div className="row">
           <div className="col-12">
-            <AppImage 
-            classImage={`${Styles.FilterImage}`} 
-            pathImage={filter} 
-            altImage="filter-img"
+            <AppImage
+              classImage={`${Styles.FilterImage}`}
+              pathImage={filter}
+              altImage="filter-img"
             ></AppImage>
           </div>
         </div>
@@ -129,12 +170,15 @@ export default function ArticlesList() {
           <div className="col-2 d-none d-md-block mt-4">
             <LeftMenuDoctor />
           </div>
-          <div className="col-12 col-md-8 px-lg-5">
+          <div className="col-12 col-md-8 col-lg-7 px-lg-5">
             <h1 className={`${Styles.TitleSection} mb-4`}>Artículos</h1>
-            {buildArticles(articles)}
+            {filterCategories ? buildArticles(filterArticles) : buildArticles(articles)}
           </div>
-          <div className="col-2 d-none d-md-block mt-4">
-            <LeftMenuDoctor />
+          <div className="col-3 d-none d-md-block mt-4">
+            <div className="card p-3">
+              <Filter {...cvProps} />
+              <button onClick={handlerFilter} className="btn text-center">Aplicar filtro</button>
+            </div>
           </div>
         </div>
       </div>
