@@ -130,16 +130,20 @@ export default function WebinarsList() {
           </div>
         </div>
         <div className="row">
-          <div className="col-2 d-none d-md-block mt-4">
+
+          <div className="col-2 d-none d-md-block col-md-3 col-lg-2 mt-4">
             <LeftMenuDoctor />
           </div>
-          <div className="col-12 col-md-8 px-lg-5">
+
+          <div className="col-12 col-md-9 col-lg-7 px-lg-3">
             <h1 className={`${Styles.TitleSection} mb-4`}>Webinars</h1>
             {buildWebinars(webinars)}
           </div>
-          <div className="col-2 d-none d-md-block mt-4">
+
+          <div className={`${Styles.RightColumn} col-3 d-none d-md-block`}>
             <LeftMenuDoctor />
           </div>
+
         </div>
       </div>
       <Footer />
