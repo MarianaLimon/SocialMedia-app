@@ -6,21 +6,51 @@ import AppCheckbox from "../../../components/commons/AppCheckbox";
 import AppButton from "../../../components/commons/AppButton";
 import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
-import { getArticles } from "../../../services/articles";
+import AppModal from "../../../components/commons/AppModal";
+import { getArticles, deleteArticle } from "../../../services/articles";
 import { getDateFormatAdmin } from "../../../utils/functions";
 
 export default function ArticlesListAdmin() {
   const [articles, setArticles] = useState([]);
   const history = useHistory();
+  const [checkedValues, setCheckedValues] = useState([]);
+  const [show, setShow] = useState(false); //Modal
+  const [deleteArticles, setDeleteArticles] = useState(false);
 
   useEffect(() => {
-    const request = async () => {
-      const jsonArticles = await getArticles();
-      setArticles(jsonArticles);
-    };
-
     request();
   }, []);
+
+  const request = async () => {
+    const jsonArticles = await getArticles();
+    setArticles(jsonArticles);
+  };
+
+  const handlerDelete = () => {
+    const response = async () => {
+      if (checkedValues.length) {
+        checkedValues.forEach(async (article) => {
+          await deleteArticle(article);
+        });
+        request();
+        setDeleteArticles(true);
+      }
+    };
+    response();
+  };
+
+  const questionDelete = () => {
+    if (checkedValues.length) setShow(true);
+  };
+  const handleChecked = (e) => {
+    const idArticle = e.target.dataset.id;
+    const newCheckedValues = checkedValues.filter((item) => item !== idArticle);
+
+    if (e.target.checked) {
+      newCheckedValues.push(e.target.dataset.id);
+    }
+    setCheckedValues(newCheckedValues);
+  };
 
   const printArticles = ([
     key,
@@ -40,7 +70,7 @@ export default function ArticlesListAdmin() {
     return (
       <tr key={idArticle}>
         <th scope="row">
-          <AppCheckbox />
+          <AppCheckbox dataID={idArticle} onClick={handleChecked} />
         </th>
         <td>{title}</td>
         <td className="d-lg-block d-none">
@@ -62,13 +92,28 @@ export default function ArticlesListAdmin() {
 
   const buildArticles = (articles) => {
     if (Object.entries(articles).length) {
-      return Object.entries(articles).map(printArticles);
+      return Object.entries(articles).reverse().map(printArticles);
     }
   };
 
   return (
     <React.Fragment>
       <Header />
+      <AppModal
+        title=""
+        onClose={() => {
+          setShow(false);
+        }}
+        onClick={() => {
+          handlerDelete();
+          setShow(false);
+        }}
+        show={show}
+      >
+        <p className="text-center">
+          ¿Desea eliminar los webinars seleccionados?
+        </p>
+      </AppModal>
       <div className="container my-4">
         <div className="row content-row">
           <div className="col-lg-2">
@@ -91,7 +136,9 @@ export default function ArticlesListAdmin() {
               <thead>
                 <tr>
                   <th scope="col">
-                    <Icons value={"delete"} />
+                    <div onClick={questionDelete}>
+                      <Icons value={"delete"} />
+                    </div>
                   </th>
                   <th scope="col">
                     <span className="table-show">Título</span>
@@ -102,7 +149,11 @@ export default function ArticlesListAdmin() {
                   <th scope="col"> </th>
                 </tr>
               </thead>
-              <tbody>{buildArticles(articles)}</tbody>
+              <tbody>
+                {deleteArticles
+                  ? buildArticles(articles)
+                  : buildArticles(articles)}
+              </tbody>
             </table>
           </div>
         </div>
