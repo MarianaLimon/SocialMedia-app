@@ -127,7 +127,7 @@ export default function ProductDetail() {
                   {buildProduct(product)}
                   {/* <AppCardProductDetail/> */}
               </div>
-              <div className="col-12 col-md-3 mt-5"><img src={Promo} alt="" className="w-100 }" /></div>
+              <div className="col-md-3 mt-5 d-none d-md-block"><img src={Promo} alt="" className="w-100 }" /></div>
           </div>
       </div>
       <Footer />
