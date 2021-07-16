@@ -1,7 +1,7 @@
 import React from "react";
 import "./appButton.css";
 
-function AppButton({ classButton, type, text, url, props }) {
+function AppButton({ classButton, type, text, url, ...props }) {
   const className = classButton ? classButton : "";
 
   if (type === "anchor") {
@@ -25,7 +25,7 @@ function AppButton({ classButton, type, text, url, props }) {
   }
 
   return (
-    <button className={`btn button ${className} m-3`} type="button">
+    <button className={`btn button ${className} m-3`} type="button" {...props}>
       {text ? text.toUpperCase() : ""}
     </button>
   );

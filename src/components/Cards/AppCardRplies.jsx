@@ -8,7 +8,6 @@ import AppPostAuthorInfo from "./AppPostAuthorInfo";
 //import AppPostReactions from "./AppPostReactions";
 import { getDateFormat } from "../../utils/functions";
 
-
 import Styles from "./AppCardArticleDetail.module.css";
 
 //import banner from "../../img/card/banner-article.jpg";
@@ -81,7 +80,7 @@ export default function AppCardReplies({
         document_type: documentType,
         document_id: documentId,
       };
-      console.log(newReply);
+      //console.log(newReply);
 
       setUserComment("");
       const reply = await postReply(newReply);
