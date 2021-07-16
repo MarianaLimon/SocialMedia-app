@@ -46,59 +46,57 @@ export default function Header() {
     }
 
 
-    useEffect(() => {
-        const request = async () => {
+    useEffect(async () => {
 
 
-            if (localStorage.getItem("token")) {
-                const decoded = jwt_decode(localStorage.getItem("token"));
-                const logged = await verifyExpirationToken(decoded)
+        if (localStorage.getItem("token")) {
+            const decoded = jwt_decode(localStorage.getItem("token"));
+            const logged = await verifyExpirationToken(decoded)
 
-                if (logged) {
+            if (logged) {
 
-                    setLogin(true)
+                setLogin(true)
 
 
-                    if (decoded.role[0] === "medico") {
-                        setRoleDoctor(true)
-                        setRoleAdmin(false)
-                        setMenuAdmin(false)
-                        setUrlHome("/home")
-                        const found = routesMedico.find(path => path === location.pathname.split("/")[1])
-                        if (!found) {
-                            history.push(urlHome)
-                        }
+                if (decoded.role[0] === "medico") {
+                    setRoleDoctor(true)
+                    setRoleAdmin(false)
+                    setMenuAdmin(false)
+                    setUrlHome("/home")
+                    const found = routesMedico.find(path => path === location.pathname.split("/")[1])
+                    if (!found) {
+                        history.push(urlHome)
                     }
-                    if (decoded.role[0] === "admin") {
-                        setRoleDoctor(false)
-                        setRoleAdmin(true)
-                        setMenuAdmin(true)
-                        setUrlHome("/homeadmin")
-                        const found = routesAdmin.find(path => path === location.pathname.split("/")[1])
-                        if (!found) {
-                            history.push(urlHome)
-                        }
-                    }
-
-
-                    const user = await getUserById(decoded.id)
-
-                    setAvatar(user.avatar_url)
-
-                    const foundRouteLogin = routesFree.find(path => path === location.pathname)
-                    if (foundRouteLogin) {
-                        decoded.role[0] === "admin" ? history.push("/homeadmin") : history.push("/home")
-                    }
-
                 }
-            } else {
-                const foundRoute = routesFree.find(path => path === location.pathname)
-                if (!foundRoute) {
-                    history.push("/")
+                if (decoded.role[0] === "admin") {
+                    setRoleDoctor(false)
+                    setRoleAdmin(true)
+                    setMenuAdmin(true)
+                    setUrlHome("/homeadmin")
+                    const found = routesAdmin.find(path => path === location.pathname.split("/")[1])
+                    if (!found) {
+                        history.push(urlHome)
+                    }
                 }
+
+
+                const user = await getUserById(decoded.id)
+
+                setAvatar(user.avatar_url)
+
+                const foundRouteLogin = routesFree.find(path => path === location.pathname)
+                if (foundRouteLogin) {
+                    decoded.role[0] === "admin" ? history.push("/homeadmin") : history.push("/home")
+                }
+
+            }
+        } else {
+            const foundRoute = routesFree.find(path => path === location.pathname)
+            if (!foundRoute) {
+                history.push("/")
             }
         }
-        request()
+
     }, [])
 
 
