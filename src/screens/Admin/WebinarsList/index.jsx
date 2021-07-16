@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 import { getWebinars } from "../../../services/webinars";
 import Icons from "../../../components/commons/icons";
 import LeftMenu from "../../../components/LeftMenu";
@@ -7,67 +6,12 @@ import AppCheckbox from "../../../components/commons/AppCheckbox";
 import AppButton from "../../../components/commons/AppButton";
 import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
-
-export default function WebinarsListAdmin() {
-  const [webinars, setWebinars] = useState([])
-  const history = useHistory()
-
-  useEffect(() => {
-    const request = async () => {
-      const webinarsList = await getWebinars()
-      //console.log(webinarsList)
-      setWebinars(webinarsList);
-    };
-
-    request();
-  })
-
-  const printWebinars = ([
-    key,
-    {
-      _id: idWebinar,
-      title: title,
-      user_id: user_id,
-      image: image,
-      video_url: video_url,
-      description: description,
-      datewebinar: datewebinar,
-      duration: duration,
-      category_id: category_id,
-      creationdate: creationdate
-    },
-  ]) => {
-    return (
-      <React.Fragment key={idWebinar}>
-        <tr>
-          <th scope="row"><AppCheckbox /></th>
-          <td>{`${title}`}</td>
-          <td className="table-show">{`${category_id.name}`}</td>
-          <td className="table-show">{`${duration}`}</td>
-          <td className="table-show">{`${datewebinar}`}00/00/00</td>
-          <td className="table-show">{`${creationdate}`}00/00/00</td>
-          <th scope="col"><button className="btn-edit" onClick={() => { history.push(`/edit-webinar/${idWebinar}`) }}><Icons value={'edit'} /></button></th>
-        </tr>
-      </React.Fragment>
-
-
-    );
-  };
-
-  const buildWebinars = (webinars) => {
-    if (Object.entries(webinars).length) {
-      return Object.entries(webinars).map(printWebinars);
-    }
-
-  };
-
 import { getDateFormatAdmin } from '../../../utils/functions'
 import { useHistory } from "react-router";
 
 export default function WebinarsListAdmin() {
   const [webinars, setWebinars] = useState([]);
   const history = useHistory()
-
 
   useEffect(() => {
     const request = async () => {
@@ -123,7 +67,6 @@ export default function WebinarsListAdmin() {
               <h1 className="mt-3 title-sections">
                 <b>Webinars</b>
               </h1>
-
               <AppButton classButton="aqua newArticle mt-1 mt-lg-3 mb-1" type="submit" text="+ Nuevo Webinar" onClick={() => { history.push("/add-webinar") }} />
             </div>
             <table className="table table-striped">
@@ -135,7 +78,6 @@ export default function WebinarsListAdmin() {
                   <th scope="col" className="">Duración</th>
                   <th scope="col" className="">Publicación</th>
                   <th scope="col" className="">Actualizacion</th>
-
                   <th scope="col"> </th>
                 </tr>
               </thead>

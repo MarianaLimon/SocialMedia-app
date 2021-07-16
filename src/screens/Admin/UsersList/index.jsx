@@ -8,6 +8,7 @@ import Header from "../../../components/Header";
 import { useHistory } from "react-router";
 
 import "./index.css"
+import react from "react";
 
 export default function UsersList() {
   const [users, setUsers] = useState([]);
@@ -21,7 +22,6 @@ export default function UsersList() {
 
     request();
   }, []);
-
   const printUsers = ([
     key,
     {
@@ -35,8 +35,8 @@ export default function UsersList() {
     },
   ]) => {
     return (
-      <React.Fragment key={idUser}>
-        <tr>
+      <React.Fragment>
+        <tr key={idUser}>
           <th scope="row"><AppCheckbox /></th>
           <td>{`${firstName} ${lastName}`}</td>
           <td className="d-lg-block d-none">{email}</td>

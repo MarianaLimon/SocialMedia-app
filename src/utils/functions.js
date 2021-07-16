@@ -26,5 +26,6 @@ export const getDateFormatAdmin = (date) => {
 export const logout = () => {
     if (localStorage.getItem("token")) {
         localStorage.removeItem("token")
+        console.log('SocialMedic - Log out');
     }
 }
