@@ -140,7 +140,7 @@ export default function WebinarsList() {
             {buildWebinars(webinars)}
           </div>
 
-          <div className={`${Styles.RightColumn} col-3 d-none d-md-block`}>
+          <div className={`${Styles.RightColumn} col-3 d-none d-lg-block`}>
             <LeftMenuDoctor />
           </div>
 

@@ -177,7 +177,7 @@ export default function ArticlesList() {
             {filterCategories ? buildArticles(filterArticles) : buildArticles(articles)}
           </div>
 
-          <div className={`${Styles.RightColumn} col-3 d-none d-md-block`}>
+          <div className={`${Styles.RightColumn} col-3 d-none d-lg-block`}>
             <div className="card p-3">
               <Filter {...cvProps} />
               <button onClick={handlerFilter} className={`btn text-center mt-3 ${Styles.Button}`}>Aplicar filtro</button>
