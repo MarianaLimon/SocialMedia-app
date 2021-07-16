@@ -11,6 +11,10 @@
   top: 80px;
   display: block;
 }
+.button {
+  background-color: var(--aqua);
+  margin: 20px auto !important;
+}
 
 @media screen and (min-width: 770px){
   .FilterImage{
