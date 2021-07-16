@@ -98,7 +98,7 @@ export default function UserValidate() {
                   <h1 className="col-12 my-4 text-center">
                     <b>Validación de Usuario</b>
                   </h1>
-                  <div class="p-3 bg-white border rounded">
+                  <div className="p-3 bg-white border rounded">
                     <div className="text-center">
                       {dataUser.professional_license_url ? (
                         <React.Fragment>
@@ -141,7 +141,7 @@ export default function UserValidate() {
                     </div>
                   </div>
 
-                  <div class="p-3 bg-white border rounded mt-3">
+                  <div className="p-3 bg-white border rounded mt-3">
                     <h3 className="my-3 text-center">Informacion de la SEP</h3>
                     <hr></hr>
                     <div className="col-12 mb-4 d-flex justify-content-between">
