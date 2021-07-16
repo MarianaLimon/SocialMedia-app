@@ -20,7 +20,7 @@
   margin: 0 auto;
 }
 
-@media screen and (min-width: 770px){
+@media screen and (min-width: 992px){
   .FilterImage{
       display: none;
   }

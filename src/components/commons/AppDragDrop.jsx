@@ -5,12 +5,12 @@ import { DragDrop } from "@uppy/react";
 import Transloadit from "@uppy/transloadit";
 import "./appDragDrop.css";
 
-function AppDragDrop({
+export default function AppDragDrop({
   stateUrl,
   callbackSetState,
   textDragDrop,
   textBrowse,
-  props,
+  ...props
 }) {
   const uppy = new Uppy({
     meta: { type: "avatar" },
@@ -29,19 +29,14 @@ function AppDragDrop({
   });
 
   uppy.on("complete", (result) => {
-    const url = result.successful[0].uploadURL;
-    console.log(url);
+    const url = result.transloadit[0].uploads[0].ssl_url;
     callbackSetState(url);
   });
 
   if (stateUrl) {
     return (
       <div>
-        <AppImage
-          pathImage={stateUrl}
-          altImage="Professional License"
-          classImage="cedula"
-        />
+        <AppImage pathImage={stateUrl} altImage="image" classImage="cedula" />
       </div>
     );
   }
@@ -62,5 +57,3 @@ function AppDragDrop({
     />
   );
 }
-
-export default AppDragDrop;
