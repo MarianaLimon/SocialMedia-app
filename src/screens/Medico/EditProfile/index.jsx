@@ -5,6 +5,7 @@ import AppCheckbox from "../../../components/commons/AppCheckbox";
 import AppButton from "../../../components/commons/AppButton";
 import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
+import LeftMenuDoctor from "../../../components/LeftMenuDoctor"
 
 import "./index.css"
 
@@ -15,7 +16,10 @@ export default function EditProfile() {
       <Header />
       <div className="container mb-5">
         <div className="row mb-5">
-          <div className="col mb-5">
+          <div className="col-2 d-none d-md-block">
+            <LeftMenuDoctor />
+          </div>
+          <div className="col-12 col-md-10 mb-5">
             <AppImage pathImage="https://avatars.githubusercontent.com/u/17584137?v=4" classImage="avatar-edit-profile" altImage=""/>
             <AppButton classButton="aqua btn-profile-primary d-block mx-auto my-5" type="submit" text="Subir foto de perfil" />            
             <form action="" >
