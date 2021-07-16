@@ -21,12 +21,12 @@ export default function AppCardArticle({
     <React.Fragment>
       <article className="col-12 mb-4">
         <div className={`${Styles.CardWebinar} card`}>
-          {/* Contenedor Banner ---- MOBILE*/}
 
+          {/* Contenedor Banner ---- MOBILE*/}
           <AppPostVideoBanner
             dstate="d-flex d-md-none"
             pathImage={cardImage}
-            url={cardLink ? cardLink : "#"}
+            pathUrl={cardLink ? cardLink : "#"}
           />
 
           <div className="card-body ">
