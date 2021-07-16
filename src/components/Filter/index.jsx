@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
-import jwt_decode from "jwt-decode";
-import { useLocation } from "react-router";
+import React from "react";
+
 import "./index.css"
 
 export default function Filter(props) {

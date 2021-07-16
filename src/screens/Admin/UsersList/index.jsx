@@ -27,15 +27,15 @@ export default function UsersList() {
       _id: idUser,
       firstname: firstName,
       lastname: lastName,
-      mother_lastname: motherLastName,
-      email: email,
-      status: status,
-      registerdate: registerDate,
+      mother_lastname,
+      email,
+      status,
+      registerdate,
     },
   ]) => {
     return (
-      <React.Fragment>
-        <tr key={idUser}>
+      <React.Fragment key={idUser}>
+        <tr>
           <th scope="row">
             <AppCheckbox />
           </th>
@@ -60,7 +60,7 @@ export default function UsersList() {
   const buildUsers = (users) => {
     if (Object.entries(users).length) {
       return Object.entries(users)
-        .filter((user) => user[1].role[0] == "medico")
+        .filter((user) => user[1].role[0] === "medico")
         .reverse()
         .map(printUsers);
     }
