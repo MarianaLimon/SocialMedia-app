@@ -16,7 +16,7 @@ export default function HomeAdmin() {
         <div className="row ">
           <div className="col-12">
             <img src={banner} alt="" className="w-100" />
-            <p className="text-center my-4"><b>Bienvenido Administrador</b></p>
+            <p className="text-center my-4 welcome-text"><b>Bienvenido Administrador</b></p>
           </div>
         </div>
         <div className="row icons-home mt-4">

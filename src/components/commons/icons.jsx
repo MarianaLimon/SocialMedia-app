@@ -13,6 +13,7 @@ import trashIcon from "@iconify/icons-vaadin/trash";
 import hamburger from "@iconify/icons-bx/bx-menu";
 import pencilIcon from '@iconify/icons-vaadin/pencil';
 import shieldIcon from '@iconify/icons-vaadin/shield';
+import signOut from '@iconify/icons-vaadin/sign-out';
 
 function Icons(props) {
   switch (props.value) {
@@ -40,6 +41,8 @@ function Icons(props) {
       return <Icon icon={pencilIcon} className={`icon edit ${props.className}`} />;
     case "validate":
       return <Icon icon={shieldIcon} className={`icon validate ${props.className}`} />;
+    case "exit":
+      return <Icon icon={signOut} className={`icon validate ${props.className}`} />;
     default:
       return "sin icono";
   }

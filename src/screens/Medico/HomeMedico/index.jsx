@@ -30,7 +30,7 @@ export default function HomeDoctor() {
         <div className="row">
           <div className="col-12">
             <img src={banner} alt="" className="w-100 }" />
-            <p className="text-center my-4"><b>Bienvenido Dr. {`${stateUser.firstname} ${stateUser.lastname}` || <Skeleton width={300}/>}</b></p>
+            <p className="text-center my-4 welcome-text"><b>Bienvenido Dr. {`${stateUser.firstname} ${stateUser.lastname}` || <Skeleton width={300}/>}</b></p>
           </div>
         </div>
         <div className="row icons-home mt-4">
