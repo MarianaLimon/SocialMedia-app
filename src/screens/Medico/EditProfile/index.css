@@ -21,6 +21,7 @@
   width: 12rem;
 }
 
+
 @media screen and (min-width: 770px) {
   .input-nick-name {
     width: 35rem;
