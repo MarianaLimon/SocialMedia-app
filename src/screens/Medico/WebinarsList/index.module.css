@@ -33,3 +33,12 @@
     margin-top: 104px;
   }
   
+
+  .Button {
+    background-color: var(--aqua);
+    border-radius: 30px;
+    color: #fff;
+    width: 160px;
+    margin: 0 auto;
+  }
+  
