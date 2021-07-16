@@ -8,21 +8,21 @@ import "./AppModal.css";
 const AppModal = props => {
 
   const botones = () => {
-    if(props.estado === "aviso"){
+    if (props.estado === "aviso") {
       return (
         <div className="modal-footer">
-        {/* Button Aceptar */}
-        <button onClick={props.onClose} className="button">
-          Aceptar
-        </button>
-      </div>
+          {/* Button Aceptar */}
+          <button onClick={props.onClose} className="button">
+            Aceptar
+          </button>
+        </div>
       )
     }
 
-    return(
+    return (
       <div className="modal-footer">
         {/* Button Aceptar */}
-        <button onClick={props.onClose} className="button">
+        <button onClick={props.onClick} className="button">
           Aceptar
         </button>
         {/* Button Cancelar */}

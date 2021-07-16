@@ -2,7 +2,7 @@ import React from "react";
 
 import Styles from "./AppCheckbox.module.css"
 
-const AppCheckbox = ({ label, isSelected, onCheckboxChange }) => (
+const AppCheckbox = ({ label, isSelected, onCheckboxChange, onClick, dataID }) => (
   <div className={`${Styles.CheckboxComponent}`}>
     <label>
       <input
@@ -11,6 +11,8 @@ const AppCheckbox = ({ label, isSelected, onCheckboxChange }) => (
         checked={isSelected}
         onChange={onCheckboxChange}
         className="form-check-input"
+        onClick={onClick}
+        data-id={dataID}
       />
       {label}
     </label>
