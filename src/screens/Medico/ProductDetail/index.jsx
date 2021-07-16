@@ -8,6 +8,9 @@ import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
 import LeftMenuDoctor from "../../../components/LeftMenuDoctor";
 
+import Styles from "./index.module.css"
+import Skeleton from "react-loading-skeleton";
+import Icons from "../../../components/commons/icons";
 
 export default function ProductDetail() {
 
@@ -24,6 +27,50 @@ export default function ProductDetail() {
       request(id);  
     }
   }, [id]);
+
+
+  const buildSkeleton = (n) => {
+    let Cards = [];
+    n = !n ? (n = 1) : n;
+    for (let i = 0; i < n; i++) {
+      Cards.push(
+        <article className="col-12 mb-4" key={i}>
+        
+          <div className={`${Styles.CardArticles} card`}>
+            <Skeleton height={250} />
+
+            <div className="card-body">
+              <h2 className={`${Styles.CardTitle}`}>
+                <Skeleton />
+              </h2>
+
+              <div className={`${Styles.Tags} tags-color d-flex flex-wrap`}>
+                <Skeleton width={100} /> <Skeleton width={100} />
+              </div>
+
+              <div className={`${Styles.PublishedContent}  py-2`}>
+                <Skeleton count={30} />
+              </div>
+
+              <div className={`${Styles.Reactions}`}>
+                <div className={`${Styles.ReactionsWrapper}`}>
+                  <Icons value="likes" />
+                  <span>0</span>
+                  <span className={`${Styles.ReactionsText}`}>Likes</span>{" "}
+                  <Icons value="comments" />
+                  <span>0</span>
+                  <span className={`${Styles.ReactionsText}`}>Comments</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      );
+    }
+    return <React.Fragment>{Cards}</React.Fragment>;
+  };
+
+
 
   const buildProduct = (objectProduct) => {
     console.log(objectProduct);
@@ -66,7 +113,7 @@ export default function ProductDetail() {
         );
         
       }
-      return <AppCardProductDetail />;
+      return <React.Fragment>{buildSkeleton()}</React.Fragment>;
     };
 
   return (
