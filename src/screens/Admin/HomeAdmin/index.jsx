@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import banner from "../../../img/home-banner.png"
+import banner from "../../../img/home-banner4.png"
 import Icons from "../../../components/commons/icons";
 import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
