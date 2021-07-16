@@ -72,7 +72,7 @@ export default function AddArticle() {
 
       const articlePosted = await postArticle(newArticle);
       if (articlePosted.success) {
-        history.pushState("/articles-admin");
+        history.push("/articles-admin");
       }
     } catch (error) {
       console.log(error);
