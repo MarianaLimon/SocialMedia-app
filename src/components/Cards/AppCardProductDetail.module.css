@@ -24,8 +24,16 @@
 }
 
 .PublishedSustance{
-    margin: 10px;
+    margin: 0px 0px 14px 0;
 }
+
+@media screen and (min-width: 992px){
+    .PublishedSustance{
+        margin: 10px;
+    }
+}
+
+
 
 .PublishedFormula{
     color: var(--text-color);

@@ -49,7 +49,7 @@ export default function AppCardProductDetail({
         <div className={`card-body ${Styles.CardBody}`}>
 
             {/* Title */}
-            <div className="col-12 d-flex align-items-center">
+            <div className="col-12 d-block d-lg-flex align-items-center">
                 <h2 className={`${Styles.PublishedTitle}`}>
                     {cardName ? cardName : "Nombre del Producto"}
                 </h2>  
