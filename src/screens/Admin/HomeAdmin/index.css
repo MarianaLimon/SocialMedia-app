@@ -24,6 +24,9 @@
     font-weight: bold;
 }
 
+.welcome-text{
+    font-size: 22px;
+}
 @media screen and (min-width: 770px){
     .icons-home .icon{
         font-size: 9rem;
@@ -36,5 +39,8 @@
         border: solid 4px var(--blue-secondary);
         border-radius: 15px;
         box-shadow: 5px 10px 8px #888888;
+    }
+    .welcome-text{
+        font-size: 31px;
     }
 } 

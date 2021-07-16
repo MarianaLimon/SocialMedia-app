@@ -127,18 +127,18 @@ export default function ProductsList() {
           </div>
         </div>
         <div className="row">
-          <div className="col-2 d-none d-md-block mt-4">
+          <div className="col-3 col-lg-2 d-none d-md-block mt-4">
             <LeftMenuDoctor />
           </div>
-          <div className="col-12 col-md-8">
-            <div className="container">
+          <div className="col-12 col-md-9 col-lg-8">
+            <div className="container px-0">
               <div className="row">
               <h1 className={`${Styles.TitleSection} mb-4`}>Productos</h1>
               {buildProducts(products)}
               </div>
             </div>
           </div>
-          <div className="col-2 d-none d-md-block mt-4">
+          <div className="col-2 d-none d-lg-block mt-4">
             <LeftMenuDoctor />
           </div>
         </div>
