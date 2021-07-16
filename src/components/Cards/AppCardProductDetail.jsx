@@ -43,9 +43,9 @@ export default function AppCardProductDetail({
 
             {/* Title */}
             <div className="col-12 d-block d-lg-flex align-items-center">
-                <h2 className={`${Styles.PublishedTitle}`}>
+                <h1 className={`${Styles.PublishedTitle}`}>
                     {cardName ? cardName : "Nombre del Producto"}
-                </h2>  
+                </h1>  
 
                 <h5 className={`${Styles.PublishedSustance} pl-3`}>
                     ({sustance ? sustance : "Sustancia"})
@@ -61,7 +61,7 @@ export default function AppCardProductDetail({
                 {cardCategory && cardCategory}
             </div>
 
-            <h2 className={`${Styles.PublishedTitle}`}>
+            <h2 className={`${Styles.SubTitle}`}>
                 Indicaciones terapeúticas
             </h2>  
 
@@ -69,7 +69,7 @@ export default function AppCardProductDetail({
                 {terapeutic_indications ? terapeutic_indications : "incidaciones..."}
             </p>
 
-            <h2 className={`${Styles.PublishedTitle}`}>
+            <h2 className={`${Styles.SubTitle}`}>
                 Dosis y Vía de adminstración
             </h2>  
 
@@ -77,7 +77,7 @@ export default function AppCardProductDetail({
                 {dose ? dose : "dosis..."}
             </p>
 
-            <h2 className={`${Styles.PublishedTitle}`}>
+            <h2 className={`${Styles.SubTitle}`}>
                 Descripción General
             </h2>  
 
