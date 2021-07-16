@@ -92,7 +92,7 @@ export default function ArticlesListAdmin() {
 
   const buildArticles = (articles) => {
     if (Object.entries(articles).length) {
-      return Object.entries(articles).map(printArticles);
+      return Object.entries(articles).reverse().map(printArticles);
     }
   };
 
