@@ -176,7 +176,7 @@ export default function WebinarsList() {
           </div>
 
           <div className="col-12 col-md-9 col-lg-7 px-lg-3">
-            <h1 className={`${Styles.TitleSection} mb-4`}>Webinars</h1>
+            <h1 className={`${Styles.TitleSection}`}>Webinars</h1>
             {filterCategories ? buildWebinars(filterWebinars) : buildWebinars(webinars)}
           </div>
 
