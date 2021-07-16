@@ -29,11 +29,13 @@ export default function AppCardArticle({
     <React.Fragment>
       <article className="col-12 mb-4">
         <div className={`${Styles.CardArticles} card`}>
-          <AppImage
-            classImage={`${Styles.CardImage} card-img-top`}
-            pathImage={cardImage ? cardImage : banner}
-            altImage="banner-img"
-          ></AppImage>
+          <a href={cardLink ? cardLink : "#"}>
+            <AppImage
+              classImage={`${Styles.CardImage} card-img-top`}
+              pathImage={cardImage ? cardImage : banner}
+              altImage="banner-img"
+            ></AppImage>
+          </a>
 
           <div className="card-body">
             {/* Title */}
