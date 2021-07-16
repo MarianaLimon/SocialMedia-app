@@ -23,7 +23,7 @@ export default function Header() {
     const history = useHistory();
     const location = useLocation();
 
-    const routesAdmin = ["homeadmin", "articles-admin", "webinars-admin", "products-admin", "users", "user-validate", "product-detail", "add-article", "add-product", "add-webinar", "test", "modal"]
+    const routesAdmin = ["homeadmin", "articles-admin", "webinars-admin", "products-admin", "users", "user-validate", "product-detail", "add-article", "add-product", "add-webinar", "edit-webinar", "edit-article", "edit-product", "test", "modal"]
     const routesMedico = ["home", "profile", "products", "product-detail", "webinars", "webinar-detail", "articles", "article-detail", "test", "modal"]
     const routesFree = ["/register", "/tnksregister", "/"]
 
@@ -115,12 +115,12 @@ export default function Header() {
             </div>
             <div className="auth d-flex justify-content-center align-items-center">
                 <button className={` avatar-btn`}
-                        type="button"
-                        open={open}
-                        onClick={() => setOpen(!open)}
-                 >
+                    type="button"
+                    open={open}
+                    onClick={() => setOpen(!open)}
+                >
                     <AppImage
-                        pathImage={avatar || AvatarImgDefault }
+                        pathImage={avatar || AvatarImgDefault}
                         classImage={`avatar ${login ? "d-block" : "d-none"}`}
                         altImage="User Name"
                     />
