@@ -68,8 +68,11 @@
 /*Content*/
 
 .PublishedContent{
-    padding: 20px 0 0 0;
     color: var(--text-color);
+}
+
+.Dates{
+    font-size: 11pt;
 }
 
 
