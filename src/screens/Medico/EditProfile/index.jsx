@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from "react";
 import AppImage from "../../../components/commons/AppImage";
 import Input from "../../../components/commons/AppInput";
-import AppCheckbox from "../../../components/commons/AppCheckbox";
 import AppButton from "../../../components/commons/AppButton";
 import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
+
 import AppDragDrop from "../../../components/commons/AppDragDrop";
 import { patchUser, getUserById } from "../../../services/users";
 import { whois } from "../../../utils/functions";
 import "./index.css";
 import Skeleton from "react-loading-skeleton";
+import LeftMenuDoctor from "../../../components/LeftMenuDoctor";
+
+import "./index.css";
 
 export default function EditProfile() {
   const [user, setUser] = useState({});
@@ -80,8 +83,10 @@ export default function EditProfile() {
       <Header />
       <div className="container mb-5">
         <div className="row mb-5">
-          <div className="col col-md-3"></div>
-          <div className="col col-md-6">
+          <div className="col-2 d-none d-md-block">
+            <LeftMenuDoctor />
+          </div>
+          <div className="col-12 col-md-10 mb-5">
             <div className="card my-4 p-4">
               {loader ? (
                 <React.Fragment>
@@ -99,7 +104,7 @@ export default function EditProfile() {
                 <React.Fragment>
                   <AppImage
                     pathImage={user.avatar_url && user.avatar_url}
-                    classImage="avatar-edit-profile mb-4"
+                    classImage="avatar-edit-profile mb-4 border px-lg-5"
                     altImage=""
                   />
                   <AppButton
@@ -110,7 +115,7 @@ export default function EditProfile() {
                 </React.Fragment>
               )}
             </div>
-            <div className="border rounded my-4 p-4">
+            <div className="border rounded my-4 p-4 pb-0">
               <form onSubmit={handleSubmit}>
                 <div className="d-flex flex-column justify-content-center align-items-md-center">
                   <h5>NickName</h5>
@@ -129,7 +134,7 @@ export default function EditProfile() {
                 </div>
 
                 <AppButton
-                  classButton="aqua btn-profile-primary d-block mx-auto my-5"
+                  classButton="aqua btn-profile-primary d-block mx-auto "
                   type="submit"
                   text="Actualizar NickName"
                   disabled={!nickName}

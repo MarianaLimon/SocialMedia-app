@@ -12,6 +12,14 @@
   display: block;
 }
 
+.Button {
+  background-color: var(--aqua);
+  border-radius: 30px;
+  color: #fff;
+  width: 160px;
+  margin: 0 auto;
+}
+
 @media screen and (min-width: 770px){
   .FilterImage{
       display: none;
@@ -20,4 +28,8 @@
     color: var(--blue-secondary);
     text-align: inherit;
   }
+}
+
+.RightColumn{
+  margin-top: 104px;
 }
