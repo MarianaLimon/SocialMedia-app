@@ -1,0 +1,44 @@
+.CheckboxComponent input{
+
+    border: 3px solid var(--text-color);
+    color: var(--text-color);
+    margin-right: 4px;
+}
+
+.CheckboxComponent input:checked{
+    background-color: var(--text-color);
+    border-color: var(--text-color);
+}
+
+.CheckboxComponent input:checked[type="checkbox"]{
+    background-size: 16px;
+}
+
+.CheckContainer{
+    background: var(--white);
+    color: var(--text-color);
+    padding: 2rem;
+    border-radius: 6px;
+}
+
+.CheckOptions{
+    background: var(--light-grey);
+    padding: 2rem;
+}
+
+.CheckOptions form{
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+}
+
+.CheckOptions form div{
+    margin-bottom: 8px;
+}
+
+.CheckOptions button{
+    background: var(--blue-primary);
+    color: var(--white);
+    padding: 8px 18px;
+    border-radius: 30px;
+}
