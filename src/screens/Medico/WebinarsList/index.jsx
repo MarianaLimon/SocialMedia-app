@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getWebinars } from "../../../services/webinars";
+import { getCategories } from "../../../services/categories";
 import AppCardWebinar from "../../../components/Cards/AppCardWebinar";
 import AppImage from "../../../components/commons/AppImage";
 import filter from "../../../img/clarity_filter-solid.png";
@@ -9,18 +10,57 @@ import Header from "../../../components/Header";
 import Skeleton from "react-loading-skeleton";
 import Icons from "../../../components/commons/icons";
 import LeftMenuDoctor from "../../../components/LeftMenuDoctor";
+import Filter from '../../../components/Filter'
 
 export default function WebinarsList() {
   const [webinars, setWebinars] = useState([]);
+  /*filter */
+  const [filterWebinars, setFilterWebinars] = useState([])
+  const [filterCategories, setFilterCategories] = useState(false)
+  const [checkedValues, setCheckedValues] = useState([]);
+  const [categories, setCategories] = useState([])
+  const cvProps = { categories, checkedValues, setCheckedValues };
+
+  /* filter*/
 
   useEffect(() => {
     const request = async () => {
       const jsonWebinars = await getWebinars();
       setWebinars(jsonWebinars);
     };
+    /*filter */
+    const requestCategories = async () => {
+      const jsonCategories = await getCategories()
+      const newCategories = Object.values(jsonCategories).map(item => item.name)
+      setCategories(newCategories)
+    }
 
     request();
+    requestCategories()//filter
   }, []);
+
+  const handlerFilter = () => {
+
+    const request = async () => {
+      const jsonWebinars = await getWebinars();
+      const webinars = []
+
+      Object.entries(jsonWebinars).reverse().forEach((item, index) => {
+        if (checkedValues.includes(item[1].category_id.name)) {
+          webinars.push(jsonWebinars[item[0]])
+        }
+      })
+
+      if (webinars.length) {
+        setFilterCategories(true)
+        setFilterWebinars(webinars)
+      } else {
+        setFilterCategories(false)
+      }
+    }
+    request()
+
+  }
 
   const buildSkeleton = (n) => {
     let Cards = [];
@@ -137,11 +177,15 @@ export default function WebinarsList() {
 
           <div className="col-12 col-md-9 col-lg-7 px-lg-3">
             <h1 className={`${Styles.TitleSection} mb-4`}>Webinars</h1>
-            {buildWebinars(webinars)}
+            {filterCategories ? buildWebinars(filterWebinars) : buildWebinars(webinars)}
           </div>
 
           <div className={`${Styles.RightColumn} col-3 d-none d-lg-block`}>
-            <LeftMenuDoctor />
+            <div className="card p-3">
+              <Filter {...cvProps} />
+              <button onClick={handlerFilter} className={`btn text-center mt-3 ${Styles.Button}`}>Aplicar filtro</button>
+            </div>
+
           </div>
 
         </div>

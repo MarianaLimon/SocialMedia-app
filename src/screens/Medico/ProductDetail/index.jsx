@@ -7,6 +7,7 @@ import AppCardProductDetail from "../../../components/Cards/AppCardProductDetail
 import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
 import LeftMenuDoctor from "../../../components/LeftMenuDoctor";
+import Promo from "../../../img/banner-right.png"
 
 import Styles from "./index.module.css"
 import Skeleton from "react-loading-skeleton";
@@ -122,11 +123,11 @@ export default function ProductDetail() {
       <div className="container">
           <div className="row">
               <div className="col-12 col-md-2"><LeftMenuDoctor /></div>
-              <div className="col-12 col-md-8 mt-4">
+              <div className="col-12 col-md-8 mt-4 col-lg-7">
                   {buildProduct(product)}
                   {/* <AppCardProductDetail/> */}
               </div>
-              <div className="col-12 col-md-2"><LeftMenuDoctor /></div>
+              <div className="col-12 col-md-3 mt-5"><img src={Promo} alt="" className="w-100 }" /></div>
           </div>
       </div>
       <Footer />
