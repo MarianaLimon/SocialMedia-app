@@ -2,13 +2,14 @@
 
 .Reactions {
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
     align-items: center;
     font-size: 0.75rem;
     color: #4f4f4f;
    /*margin: 0.5rem 0 0;
    */
 }
+
 .Reactions .ReactionsWrapper {
     display: flex;
     margin:0;
@@ -42,10 +43,13 @@
 
 .ReactionsText{
     margin-left: 10px;
-    /*display: none;*/
+    display: none;
 }
 
-@media screen and (min-width: 770px){
+@media screen and (min-width: 1200px){
 
+    .ReactionsText{
+        display: block;
+    }
     
 }

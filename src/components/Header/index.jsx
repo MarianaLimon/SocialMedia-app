@@ -6,7 +6,7 @@ import jwt_decode from "jwt-decode";
 import { getUserById } from "../../services/users"
 import Hamburger from "./MenuHamburger"
 import { useHistory, useLocation } from "react-router";
-
+import AvatarImgDefault from "../../img/avatar-default.png"
 import AvatarListMenu from "./AvatarListMenu";
 
 import "./index.css";
@@ -120,12 +120,12 @@ export default function Header() {
                         onClick={() => setOpen(!open)}
                  >
                     <AppImage
-                        pathImage={avatar}
+                        pathImage={avatar || AvatarImgDefault }
                         classImage={`avatar ${login ? "d-block" : "d-none"}`}
                         altImage="User Name"
                     />
                 </button>
-                <AvatarListMenu open={open} />
+                <AvatarListMenu open={open} isDoctor={roleDoctor} />
             </div>
         </nav>
     )

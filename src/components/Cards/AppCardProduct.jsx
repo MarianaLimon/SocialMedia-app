@@ -83,7 +83,7 @@ export default function AppCardProduct({
                 <div className={`${Styles.PublishedContent}`}>
 
 
-                    <LongText content = {general_description ? general_description : "..."} limit = {450} /> 
+                    <LongText content = {general_description ? general_description : "..."} limit = {350} /> 
 
                     {/* <p>{general_description ? general_description : "..."}</p> */}
                 </div>

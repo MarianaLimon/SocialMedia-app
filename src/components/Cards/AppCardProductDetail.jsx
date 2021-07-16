@@ -44,12 +44,12 @@ export default function AppCardProductDetail({
 
     <article className="card mb-3">
 
-        <AppImage classImage="card-img-top w-100" pathImage={banner} altImage="banner-img"></AppImage>
+        <AppImage classImage={`${Styles.CardImage} card-img-top w-100`} pathImage={cardImage} altImage="banner-img"></AppImage>
 
         <div className={`card-body ${Styles.CardBody}`}>
 
             {/* Title */}
-            <div className="col-12 d-flex align-items-center">
+            <div className="col-12 d-block d-lg-flex align-items-center">
                 <h2 className={`${Styles.PublishedTitle}`}>
                     {cardName ? cardName : "Nombre del Producto"}
                 </h2>  
