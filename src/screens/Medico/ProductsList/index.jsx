@@ -134,7 +134,7 @@ export default function ProductsList() {
             <div className="container px-0">
               <div className="row">
               <h1 className={`${Styles.TitleSection} mb-4`}>Productos</h1>
-              {buildProducts(products)}
+                {buildProducts(products)}
               </div>
             </div>
           </div>
