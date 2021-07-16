@@ -7,8 +7,16 @@
 
 .CardImage{
     object-fit: cover;
-    height: 380px;
+    height: 230px;
 }
+
+@media screen and (min-width: 770px){
+    .CardImage{
+        object-fit: cover;
+        height: 380px;
+    }
+}
+
 /*Card Title*/
 
 .PublishedTitle{
