@@ -7,10 +7,12 @@ import Header from "../../../components/Header";
 
 import AppDragDrop from "../../../components/commons/AppDragDrop";
 import { patchUser, getUserById } from "../../../services/users";
-import { whois } from "../../../utils/functions";
+import { whois} from "../../../utils/functions";
 import "./index.css";
 import Skeleton from "react-loading-skeleton";
 import LeftMenuDoctor from "../../../components/LeftMenuDoctor";
+import { useHistory } from "react-router-dom";
+
 
 import "./index.css";
 
@@ -78,6 +80,13 @@ export default function EditProfile() {
     }
   };
 
+  const history = useHistory()
+  const logout = () => {
+    localStorage.removeItem("token");
+    history.push('/');
+  }
+
+
   return (
     <React.Fragment>
       <Header />
@@ -104,7 +113,7 @@ export default function EditProfile() {
                 <React.Fragment>
                   <AppImage
                     pathImage={user.avatar_url && user.avatar_url}
-                    classImage="avatar-edit-profile mb-4 border px-lg-5"
+                    classImage="avatar-edit-profile mb-4 border"
                     altImage=""
                   />
                   <AppButton
@@ -143,8 +152,8 @@ export default function EditProfile() {
             </div>
             <AppButton
               classButton="secondary btn-profile-secondary d-block mx-auto my-5"
-              type="submit"
               text="Cerrar Sesión"
+              onClick={logout}
             />
           </div>
           <div className="col col-md-3"></div>

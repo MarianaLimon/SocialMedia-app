@@ -6,10 +6,8 @@ import AppButton from "../../../components/commons/AppButton";
 import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
 
-import { useHistory } from "react-router";
-
 export default function ArticlesListAdmin() {
-  const history = useHistory()
+
   return (
     <React.Fragment>
       <Header />
@@ -23,9 +21,7 @@ export default function ArticlesListAdmin() {
               <h1 className="mt-3 title-sections">
                 <b>Artículos</b> 
               </h1>
-              <form action="" onClick={() => { history.push("/add-article") }}>
-                <AppButton classButton="aqua newArticle mt-1 mt-lg-3 mb-1"  type="submit" text="+ Nuevo Artículo" />
-              </form>
+              <AppButton classButton="aqua newArticle mt-1 mt-lg-3 mb-1"  type="submit" text="+ Nuevo Artículo" />
             </div>
             <table className="table table-striped">
               <thead>
