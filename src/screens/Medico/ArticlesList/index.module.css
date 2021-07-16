@@ -11,9 +11,13 @@
   top: 80px;
   display: block;
 }
-.button {
+
+.Button {
   background-color: var(--aqua);
-  margin: 20px auto !important;
+  border-radius: 30px;
+  color: #fff;
+  width: 160px;
+  margin: 0 auto;
 }
 
 @media screen and (min-width: 770px){

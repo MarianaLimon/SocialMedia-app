@@ -42,3 +42,8 @@
     padding: 8px 18px;
     border-radius: 30px;
 }
+
+.CheckboxComponent{
+    background-color: #FAFAFA;
+    padding: 14px;
+}
