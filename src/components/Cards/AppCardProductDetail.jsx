@@ -31,13 +31,6 @@ export default function AppCardProductDetail({
     cardLink
 }) {
 
-    const buildTags = (tag, index) => {
-        return (
-          <React.Fragment key={index}>
-            <span className="me-2">#{tag}</span>
-          </React.Fragment>
-        );
-      };
 
   return (
     <React.Fragment>
@@ -50,29 +43,49 @@ export default function AppCardProductDetail({
 
             {/* Title */}
             <div className="col-12 d-block d-lg-flex align-items-center">
-                <h2 className={`${Styles.PublishedTitle}`}>
+                <h1 className={`${Styles.PublishedTitle}`}>
                     {cardName ? cardName : "Nombre del Producto"}
-                </h2>  
+                </h1>  
 
                 <h5 className={`${Styles.PublishedSustance} pl-3`}>
                     ({sustance ? sustance : "Sustancia"})
-                </h5>                              
+                </h5>     
             </div>
 
-            <h6 className={`${Styles.PublishedFormula}`}>
-                {formulation ? formulation : "Fórmula"}
-            </h6>
+            <p className={`${Styles.PublishedFormula}`}>
+                {formulation ? formulation : "formulacion..."}
+            </p>
 
-            {/* Tags */}
+            {/* Categorys */}
             <div className={`${Styles.PublishedTags} tags-color d-flex flex-wrap`}> 
-                {cardTags && cardTags.map(buildTags)}
+                {cardCategory && cardCategory}
             </div>
 
+            <h2 className={`${Styles.SubTitle}`}>
+                Indicaciones terapeúticas
+            </h2>  
 
-            {/* Content */}
+            <p className={`${Styles.PublishedFormula}`}>
+                {terapeutic_indications ? terapeutic_indications : "incidaciones..."}
+            </p>
+
+            <h2 className={`${Styles.SubTitle}`}>
+                Dosis y Vía de adminstración
+            </h2>  
+
+            <p className={`${Styles.PublishedFormula}`}>
+                {dose ? dose : "dosis..."}
+            </p>
+
+            <h2 className={`${Styles.SubTitle}`}>
+                Descripción General
+            </h2>  
+
             <div className={`${Styles.PublishedContent}`}>
                 <p>{general_description ? general_description : "..."}</p>
             </div>
+
+            <p className={`${Styles.Dates}`}>Creado: {cardDate} <br /> Modificado: {updatedate}</p>
 
             {/* Reactions and Creation Date */}
             <div className={`py-2`}>

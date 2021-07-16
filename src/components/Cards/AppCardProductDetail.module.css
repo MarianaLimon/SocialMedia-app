@@ -12,8 +12,8 @@
 /*Card Title*/
 
 .PublishedTitle{
-    color: var(--text-color);
-    font-size: 2.25rem;
+    color: var(--blue-secondary);
+    font-size: 2.5rem;
     margin: 6px 0;
 }
 
@@ -23,17 +23,21 @@
     
 }
 
-.PublishedTitle a:hover{
-    color: var(--blue-primary)
+.SubTitle{
+    color: var(--text-color); 
+    font-size: 1.6rem;
+    margin: 1rem 0;
 }
+
 
 .PublishedSustance{
     margin: 0px 0px 14px 0;
+    color: var(--blue-secondary);
 }
 
 @media screen and (min-width: 992px){
     .PublishedSustance{
-        margin: 10px;
+        margin: 6px 0px 0 20px;
     }
 }
 
@@ -47,7 +51,7 @@
 
 .PublishedTags {
     margin-bottom: 0.75rem;
-    font-size: 0.875rem;
+    font-size: 1rem;
     display: inline-block;
     color: var(--blue-secondary);
 }
@@ -68,8 +72,11 @@
 /*Content*/
 
 .PublishedContent{
-    padding: 20px 0 0 0;
     color: var(--text-color);
+}
+
+.Dates{
+    font-size: 11pt;
 }
 
 

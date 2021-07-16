@@ -5,6 +5,11 @@
     padding: 2rem;
 }
 
+.CardImage{
+    object-fit: cover;
+    height: 380px;
+}
+
 /*Card Title*/
 
 .PublishedTitle{

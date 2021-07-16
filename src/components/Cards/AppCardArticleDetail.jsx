@@ -33,7 +33,7 @@ export default function AppCardArticleDetail({
   return (
     <article key={cardId} className="card mb-3">
       <AppImage
-        classImage="card-img-top w-100"
+        classImage={`${Styles.CardImage} card-img-top w-100`}
         pathImage={cardImage ? cardImage : banner}
         altImage="banner-img"
       ></AppImage>
