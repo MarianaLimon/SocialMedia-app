@@ -89,7 +89,7 @@ export default function WebinarsListAdmin() {
   };
   const buildWebinars = (webinars) => {
     if (Object.entries(webinars).length) {
-      return Object.entries(webinars).map(printWebinars);
+      return Object.entries(webinars).reverse().map(printWebinars);
     }
 
   };

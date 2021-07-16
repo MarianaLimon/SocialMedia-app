@@ -29,38 +29,50 @@ export const getWebinarById = async (id) => {
 };
 
 export const postWebinar = async (data) => {
-  const response = await fetch(API_URL_WEBINARS, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/JSON",
-      "authorization": localStorage.getItem("token")
-    },
-    body: JSON.stringify(data),
-  });
-  return await response.json();
+  try {
+    const response = await fetch(API_URL_WEBINARS, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/JSON",
+        "authorization": localStorage.getItem("token")
+      },
+      body: JSON.stringify(data),
+    });
+    return await response.json();
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const patchWebinar = async (id, data) => {
-  const response = await fetch(`${API_URL_WEBINARS}/${id}`, {
-    method: "PATCH",
-    headers: {
-      "Content-Type": "application/JSON",
-      "authorization": localStorage.getItem("token")
-    },
-    body: JSON.stringify(data),
-  });
-  return await response.json();
+  try {
+    const response = await fetch(`${API_URL_WEBINARS}/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/JSON",
+        "authorization": localStorage.getItem("token")
+      },
+      body: JSON.stringify(data),
+    });
+    return await response.json();
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const deleteWebinar = async (id) => {
-  const response = await fetch(`${API_URL_WEBINARS}/${id}`, {
-    method: "DELETE",
-    headers: {
-      "Content-Type": "application/JSON",
-      "authorization": localStorage.getItem("token")
-    },
-  });
-  return await response.json();
+  try {
+    const response = await fetch(`${API_URL_WEBINARS}/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/JSON",
+        "authorization": localStorage.getItem("token")
+      },
+    });
+    return await response.json();
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 //------------------------   usage example ----------------------
