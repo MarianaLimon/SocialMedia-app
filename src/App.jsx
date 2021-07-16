@@ -35,10 +35,13 @@ function App() {
         <Switch>
           <Route exact path="/products-admin"><ProductsListAdmin /></Route>
           <Route exact path="/add-product"><AddProduct /></Route>
+          <Route exact path="/edit-product/:id"><AddProduct /></Route>
           <Route exact path="/webinars-admin"><WebinarsListAdmin /></Route>
           <Route exact path="/add-webinar"><AddWebinar /></Route>
+          <Route exact path="/edit-webinar/:id"><AddWebinar /></Route>
           <Route exact path="/articles-admin"><ArticlesListAdmin /></Route>
           <Route exact path="/add-article"><AddArticle /></Route>
+          <Route exact path="/edit-article/:id"><AddArticle /></Route>
           <Route exact path="/user-validate/:id"><UserValidate /></Route>
           <Route exact path="/users"><UsersList /></Route>
 
