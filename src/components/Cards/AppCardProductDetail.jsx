@@ -44,7 +44,7 @@ export default function AppCardProductDetail({
 
     <article className="card mb-3">
 
-        <AppImage classImage="card-img-top w-100" pathImage={banner} altImage="banner-img"></AppImage>
+        <AppImage classImage={`${Styles.CardImage} card-img-top w-100`} pathImage={cardImage} altImage="banner-img"></AppImage>
 
         <div className={`card-body ${Styles.CardBody}`}>
 
