@@ -12,6 +12,8 @@ import AppDragDrop from "../../../components/commons/AppDragDrop";
 import { postArticle } from "../../../services/articles";
 import { getCategories } from "../../../services/categories";
 import { getUsers } from "../../../services/users";
+import { Editor, EditorState } from "draft-js";
+//import { convertToRaw } from "draft-js";
 
 export default function AddArticle() {
   const { id } = useParams();
@@ -24,6 +26,7 @@ export default function AddArticle() {
   const [authors, setAuthors] = useState("");
   const [user_id, setUserId] = useState("");
   const history = useHistory();
+  const [editorState, setEditorState] = useState("");
 
   useEffect(() => {
     requestCategories();
@@ -60,7 +63,8 @@ export default function AddArticle() {
     try {
       const newArticle = {
         category_id,
-        content,
+        content:
+          "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id felis nec erat dignissim maximus. Donec ac felis ut augue semper fermentum. Proin vestibulum accumsan pharetra. Nunc at elementum metus. In a neque ac turpis vestibulum accumsan. Sed in urna nunc. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed lorem justo, laoreet ultricies ex sed, facilisis gravida orci. Quisque interdum lorem et purus facilisis porttitor. Quisque varius sem nec augue convallis, nec venenatis ante tempus. Duis ac accumsan justo, ut luctus diam. Integer elementum semper quam, vitae euismod ligula tempus ut. Phasellus sodales ac felis eget iaculis.</p>",
         image,
         title,
         user_id,
@@ -120,9 +124,11 @@ export default function AddArticle() {
                 textBrowse="seleccione el archivo"
               />
 
-              <EditorDraft editorState={content} onChange={setContent} />
+              <EditorDraft
+                editorState={editorState}
+                onChange={(event) => setEditorState(event.target.value)}
+              />
 
-              <p>{content}</p>
               <AppSelect
                 classSelect="AppInput_InputComponent"
                 classLabel="col-12 mb-3"
