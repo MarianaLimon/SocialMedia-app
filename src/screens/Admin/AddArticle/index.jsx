@@ -1,15 +1,79 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router";
+import { useHistory } from "react-router";
 import LeftMenu from "../../../components/LeftMenu";
-
 import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
 import Input from "../../../components/commons/AppInput";
 import AppButton from "../../../components/commons/AppButton";
 import AppSelect from "../../../components/commons/AppSelect";
 import EditorDraft from "../../../components/EditorDraft";
-import AppDragDrop from "../../../components/commons/AppDragDrop"
+import AppDragDrop from "../../../components/commons/AppDragDrop";
+import { postArticle } from "../../../services/articles";
+import { getCategories } from "../../../services/categories";
+import { getUsers } from "../../../services/users";
 
 export default function AddArticle() {
+  const { id } = useParams();
+  const [title, setTitle] = useState("");
+  const [image, setImage] = useState("");
+  const [content, setContent] = useState("");
+  const [tags, setTags] = useState("");
+  const [category_id, setCategoryId] = useState("");
+  const [options, setOptions] = useState("");
+  const [authors, setAuthors] = useState("");
+  const [user_id, setUserId] = useState("");
+  const history = useHistory();
+
+  useEffect(() => {
+    requestCategories();
+    requestAuthors();
+  }, []);
+
+  const requestCategories = async () => {
+    const json = await getCategories();
+    const arrayOptions = json.reduce(
+      (accum, category) => (accum = [...accum, Object.values(category)]),
+      []
+    );
+    setOptions(arrayOptions);
+  };
+
+  const requestAuthors = async () => {
+    const json = await getUsers();
+    const arrayOptions = json.reduce((accum, author) => {
+      if (author.can_publish) {
+        accum = [
+          ...accum,
+          [author._id, `${author.firstname} ${author.lastname}`],
+        ];
+      }
+      return accum;
+    }, []);
+    console.log(arrayOptions);
+    setAuthors(arrayOptions);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const newArticle = {
+        category_id,
+        content,
+        image,
+        title,
+        user_id,
+      };
+
+      const articlePosted = await postArticle(newArticle);
+      if (articlePosted.success) {
+        history.pushState("/articles-admin");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <React.Fragment>
@@ -21,44 +85,65 @@ export default function AddArticle() {
           </div>
           <div className="col-lg-10 px-lg-5">
             <h1 className="mt-3 title-sections mb-4">
-              <b>Agregar Artículo</b> 
+              <b>{id ? "Editar" : "Agregar"} Artículo</b>
             </h1>
-            <form action="">
+            <form onSubmit={handleSubmit}>
               <Input
                 id=""
                 placeholder="Nombre del artículo"
                 type="text"
-                value=""
+                value={title}
+                onChange={(event) => {
+                  setTitle(event.target.value);
+                }}
                 required
               />
-              <Input
-                id=""
-                placeholder="Autor del artículo"
-                type="text"
-                value=""
-                required
-              />
-              
-              <AppDragDrop
-                // stateUrl=""
-                // callbackSetState=""
-                textDragDrop="Arrastre la imagen principal"
-                textBrowse="seleccione el archivo"
-              />
-              
-              <EditorDraft />
 
               <AppSelect
                 classSelect="AppInput_InputComponent"
                 classLabel="col-12 mb-3"
-                idSelect=""
-                placeholder=""
+                idSelect="categoria"
+                placeholder="Categoria"
                 classContainerInput=""
+                options={authors}
+                keyNameOption={1}
+                keyNameValue={0}
+                value={user_id}
+                onChange={(event) => setUserId(event.target.value)}
+                placeholderOption="Autor del artículo"
               />
-              <AppButton classButton="aqua newArticle d-block mx-auto"  type="submit" text="GUARDAR" />
+
+              <AppDragDrop
+                stateUrl={image}
+                callbackSetState={setImage}
+                textDragDrop="Arrastre la imagen de la publicación"
+                textBrowse="seleccione el archivo"
+              />
+
+              <EditorDraft editorState={content} onChange={setContent} />
+
+              <p>{content}</p>
+              <AppSelect
+                classSelect="AppInput_InputComponent"
+                classLabel="col-12 mb-3"
+                idSelect="categoria"
+                placeholder="Categoria"
+                classContainerInput=""
+                options={options}
+                keyNameOption={1}
+                keyNameValue={0}
+                value={category_id}
+                onChange={(event) => setCategoryId(event.target.value)}
+                placeholderOption="Seleccione la categoria"
+              />
+              <AppButton
+                classButton="aqua newArticle d-block mx-auto"
+                type="submit"
+                text="GUARDAR"
+              />
             </form>
           </div>
-        </div>     
+        </div>
       </div>
       <Footer />
     </React.Fragment>
