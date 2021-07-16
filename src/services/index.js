@@ -1,4 +1,3 @@
-
 const API_URL = "https://socialmedicapi-accountable-quoll-rk.mybluemix.net";
 
 // Endpoints

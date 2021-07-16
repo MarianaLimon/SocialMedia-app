@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import banner from "../../../img/home-banner4.png"
 import Icons from "../../../components/commons/icons";
 import Footer from "../../../components/Footer";

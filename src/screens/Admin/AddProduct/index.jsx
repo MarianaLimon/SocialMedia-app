@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import LeftMenu from "../../../components/LeftMenu";
 
 import Footer from "../../../components/Footer";
@@ -21,7 +21,7 @@ export default function AddProduct() {
           </div>
           <div className="col-lg-10 px-lg-5">
             <h1 className="mt-3 title-sections mb-4">
-              <b>Agregar Producto</b> 
+              <b>Agregar Producto</b>
             </h1>
             <form action="">
               <Input
@@ -86,7 +86,7 @@ export default function AddProduct() {
                 value=""
                 required
               />
-              
+
               <EditorDraft />
 
               <AppSelect
@@ -96,10 +96,10 @@ export default function AddProduct() {
                 placeholder=""
                 classContainerInput=""
               />
-              <AppButton classButton="aqua newArticle d-block mx-auto"  type="submit" text="GUARDAR" />
+              <AppButton classButton="aqua newArticle d-block mx-auto" type="submit" text="GUARDAR" />
             </form>
           </div>
-        </div>     
+        </div>
       </div>
       <Footer />
     </React.Fragment>

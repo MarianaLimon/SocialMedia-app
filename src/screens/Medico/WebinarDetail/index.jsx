@@ -17,7 +17,7 @@ export default function WebinarDetail() {
   useEffect(() => {
     const request = async (id_article) => {
       const jsonWebinar = await getWebinarById(id_article);
-      console.log(jsonWebinar);
+
       setData(jsonWebinar);
     };
     if (id) {
@@ -109,7 +109,7 @@ export default function WebinarDetail() {
   };
 
   const buildWebinar = (objectWebinar) => {
-    console.log(objectWebinar);
+
     if (Object.entries(objectWebinar).length) {
       const {
         category_id: category,

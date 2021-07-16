@@ -1,7 +1,7 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import { useParams } from "react-router";
-import {getProductById} from "../../../services/products"
+import { getProductById } from "../../../services/products"
 
 import AppCardProductDetail from "../../../components/Cards/AppCardProductDetail"
 import Footer from "../../../components/Footer";
@@ -24,8 +24,8 @@ export default function ProductDetail() {
       const jsonProduct = await getProductById(id_product);
       setProduct(jsonProduct);
     };
-    if(id){
-      request(id);  
+    if (id) {
+      request(id);
     }
   }, [id]);
 
@@ -36,7 +36,7 @@ export default function ProductDetail() {
     for (let i = 0; i < n; i++) {
       Cards.push(
         <article className="col-12 mb-4" key={i}>
-        
+
           <div className={`${Styles.CardArticles} card`}>
             <Skeleton height={250} />
 
@@ -74,10 +74,10 @@ export default function ProductDetail() {
 
 
   const buildProduct = (objectProduct) => {
-    console.log(objectProduct);
+
     if (Object.entries(objectProduct).length) {
-       
-      const { 
+
+      const {
         name,
         image,
         tags,
@@ -91,44 +91,44 @@ export default function ProductDetail() {
         creationdate,
         updatedate,
         _id: id_product,
-      }  = objectProduct;
-      
-      return(
-        <AppCardProductDetail
-            key={id_product}
-            cardId={id_product}
-            cardLink={`/product-detail/${id_product}`}
-            cardCategory={category.name}
+      } = objectProduct;
 
-            cardName={name}
-            cardImage={image}
-            cardTags={tags}
-            sustance={sustance}
-            formulation={formulation}
-            terapeutic_indications={terapeutic_indications}
-            general_description={general_description}
-            dose={dose}
-            cardDate={creationdate}
-            updatedate={updatedate}
-          />
-        );
-        
-      }
-      return <React.Fragment>{buildSkeleton()}</React.Fragment>;
-    };
+      return (
+        <AppCardProductDetail
+          key={id_product}
+          cardId={id_product}
+          cardLink={`/product-detail/${id_product}`}
+          cardCategory={category.name}
+
+          cardName={name}
+          cardImage={image}
+          cardTags={tags}
+          sustance={sustance}
+          formulation={formulation}
+          terapeutic_indications={terapeutic_indications}
+          general_description={general_description}
+          dose={dose}
+          cardDate={creationdate}
+          updatedate={updatedate}
+        />
+      );
+
+    }
+    return <React.Fragment>{buildSkeleton()}</React.Fragment>;
+  };
 
   return (
     <React.Fragment>
       <Header />
       <div className="container">
-          <div className="row">
-              <div className="col-2 d-none d-md-block col-md-3 col-lg-2"><LeftMenuDoctor /></div>
-              <div className="col-12 col-md-9 col-lg-7 px-lg-3 mt-5">
-                  {buildProduct(product)}
-                  {/* <AppCardProductDetail/> */}
-              </div>
-              <div className="col-3 d-none d-lg-block mt-5"><img src={Promo} alt="" className="w-100 }" /></div>
+        <div className="row">
+          <div className="col-2 d-none d-md-block col-md-3 col-lg-2"><LeftMenuDoctor /></div>
+          <div className="col-12 col-md-9 col-lg-7 px-lg-3 mt-5">
+            {buildProduct(product)}
+            {/* <AppCardProductDetail/> */}
           </div>
+          <div className="col-3 d-none d-lg-block mt-5"><img src={Promo} alt="" className="w-100 }" /></div>
+        </div>
       </div>
       <Footer />
     </React.Fragment>

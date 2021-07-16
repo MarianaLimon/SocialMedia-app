@@ -17,6 +17,7 @@ export default function Login() {
   const [emailError, setEmailError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
   const [serviceError, setServiceError] = useState(false);
+  const [serviceValidation, setServiceValidation] = useState(false);
 
   const history = useHistory();
 
@@ -60,11 +61,15 @@ export default function Login() {
 
         const dataUser = jwt_decode(token);
 
-        localStorage.setItem("token", token);
+        if (dataUser.role[0] === "medico" && dataUser.status === "Validando") {
+          setServiceValidation(true);
+        } else {
+          localStorage.setItem("token", token);
 
-        dataUser.role[0] === "admin"
-          ? history.push("/homeadmin")
-          : history.push("/home");
+          dataUser.role[0] === "admin"
+            ? history.push("/homeadmin")
+            : history.push("/home");
+        }
       } else {
         setServiceError(true);
       }
@@ -114,6 +119,12 @@ export default function Login() {
                 <AppFeedback
                   className="big"
                   feedback="Email ó contraseña incorrectos"
+                />
+              ) : null}
+              {serviceValidation ? (
+                <AppFeedback
+                  className="big text-center"
+                  feedback="Su cuenta esta siendo validada"
                 />
               ) : null}
               <AppButton
