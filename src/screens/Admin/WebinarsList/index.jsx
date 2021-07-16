@@ -38,10 +38,10 @@ export default function WebinarsListAdmin() {
         <tr>
           <th scope="row"><AppCheckbox /></th>
           <td>{`${title}`}</td>
-          <td className="d-lg-block d-none">{`${category_id.name}`}</td>
-          <td className="">{`${duration}`}</td>
-          <td className="">{`${getDateFormatAdmin(datewebinar)}`}</td>
-          <td className="">{`${getDateFormatAdmin(creationdate)}`}</td>
+          <td className="d-lg-block d-none table-show">{`${category_id.name}`}</td>
+          <td className="table-show">{`${duration}`}</td>
+          <td className="table-show">{`${getDateFormatAdmin(datewebinar)}`}</td>
+          <td className="table-show">{`${getDateFormatAdmin(creationdate)}`}</td>
           <th scope="col"><button className={`btn-validate`} onClick={() => { history.push(`/edit-webinar/${idWebinar}`) }}><Icons value={'edit'} /></button></th>
         </tr>
       </React.Fragment>
@@ -74,10 +74,10 @@ export default function WebinarsListAdmin() {
                 <tr key="webinars1">
                   <th scope="col"><Icons value={'delete'} /></th>
                   <th scope="col"><span className="table-show">Título</span></th>
-                  <th scope="col" className="">Categoría</th>
-                  <th scope="col" className="">Duración</th>
-                  <th scope="col" className="">Publicación</th>
-                  <th scope="col" className="">Actualizacion</th>
+                  <th scope="col" className="table-show">Categoría</th>
+                  <th scope="col" className="table-show">Duración</th>
+                  <th scope="col" className="table-show">Publicación</th>
+                  <th scope="col" className="table-show">Actualizacion</th>
                   <th scope="col"> </th>
                 </tr>
               </thead>
